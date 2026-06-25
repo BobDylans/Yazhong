@@ -28,7 +28,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "prebuild": "node scripts/fetch-products.mjs",
+    "build": "npm run prebuild && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",

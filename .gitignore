@@ -66,3 +66,6 @@ docs/research/
 
 # Deployment scripts (contain secrets)
 scripts/upload-images-to-r2.sh
+
+# Build-time generated data (regenerated on each build)
+src/data/generated/

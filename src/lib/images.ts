@@ -2,22 +2,30 @@
  * Image URL utility
  *
  * During development: serves images from /public/images/
- * When deployed with R2: serves images from Cloudflare R2
+ * When deployed with R2: serves images from the admin Worker proxy
  *
- * To enable R2 mode, set NEXT_PUBLIC_R2_URL in .env.local:
- *   NEXT_PUBLIC_R2_URL=https://pub-xxxxx.r2.dev
+ * Set NEXT_PUBLIC_ADMIN_URL in .env.local or .env.production.local:
+ *   NEXT_PUBLIC_ADMIN_URL=https://admin.rimhappywoods.top
+ *
+ * If not set, falls back to local /images/ path.
  */
 
 export function getImageUrl(path: string): string {
-  const r2Url = process.env.NEXT_PUBLIC_R2_URL;
+  const adminUrl = process.env.NEXT_PUBLIC_ADMIN_URL || process.env.NEXT_PUBLIC_R2_URL;
 
-  // If R2 is configured, use it
-  if (r2Url) {
-    // path is like "/images/production_2.webp"
+  // If admin URL is configured, proxy through the Worker's R2 endpoint
+  if (adminUrl) {
+    // path is like "/images/product-carseat1.jpg" or "/images/imgs/productsImgs/..."
     const filename = path.replace("/images/", "");
-    return `${r2Url}/${filename}`;
+    // If it's already a full R2 path (starts with "imgs/"), use directly
+    if (filename.startsWith("imgs/")) {
+      return `${adminUrl}/r2/${filename}`;
+    }
+    // Legacy paths: map to the correct R2 folder
+    // This handles the transition period where old code still uses /images/xxx.jpg
+    return `${adminUrl}/r2/imgs/productsImgs/${filename}`;
   }
 
-  // Otherwise use local path
+  // Otherwise use local path (dev mode)
   return path;
 }

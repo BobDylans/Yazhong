@@ -1,6 +1,14 @@
 import type { ProductCardData } from "@/components/ProductCard";
 
-export const products: ProductCardData[] = [
+// Try to load generated data from prebuild script, fall back to hardcoded
+let generated: ProductCardData[] | null = null;
+try {
+  generated = require("./generated/products.json");
+} catch {
+  // Prebuild script not run yet, use hardcoded defaults
+}
+
+const hardcoded: ProductCardData[] = [
   {
     id: "1",
     title: "Sports Series Car Seat Cover - Smoked Black",
@@ -121,7 +129,7 @@ export const products: ProductCardData[] = [
   },
 ];
 
-export const productCategories = [
+let hardcodedCats = [
   "All",
   "Seat Covers",
   "Steering Covers",
@@ -129,4 +137,11 @@ export const productCategories = [
   "Accessories",
 ];
 
+let generatedCats: string[] | null = null;
+try {
+  generatedCats = require("./generated/categories.json");
+} catch {}
+
+export const products = generated || hardcoded;
+export const productCategories = generatedCats || hardcodedCats;
 export const featuredProducts = products.slice(0, 8);
