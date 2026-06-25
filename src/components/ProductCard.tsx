@@ -43,13 +43,13 @@ export function ProductCard({ product, className, whatsappNumber = WHATSAPP_NUMB
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi! I'm interested in: ${product.title}`)}`;
 
   return (
-    <div className={cn("group", className)}>
-      {/* Outer shell (double-bezel) */}
-      <div className="rounded-2xl bg-[#f3f4f6] p-1.5 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-[#e5e7eb]">
-        {/* Inner card */}
-        <div className="overflow-hidden rounded-[calc(1rem-0.375rem)] bg-white shadow-premium transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:shadow-premium-hover">
-          {/* Image container */}
-          <div className="relative aspect-square overflow-hidden bg-[#f9fafb]">
+    <div className={cn("group h-full", className)}>
+      {/* Outer shell */}
+      <div className="h-full rounded-2xl bg-[#f3f4f6] p-1.5 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-[#e5e7eb]">
+        {/* Inner card — flex column to equalize heights */}
+        <div className="flex h-full flex-col rounded-[calc(1rem-0.375rem)] bg-white shadow-premium transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:shadow-premium-hover">
+          {/* Image — fixed aspect ratio, overflow hidden only here */}
+          <div className="relative aspect-square shrink-0 overflow-hidden rounded-t-[calc(1rem-0.375rem)] bg-[#f9fafb]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={getImageUrl(product.image)}
@@ -57,13 +57,12 @@ export function ProductCard({ product, className, whatsappNumber = WHATSAPP_NUMB
               className="h-full w-full object-cover transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.08]"
               loading="lazy"
             />
-            {/* Image overlay gradient on hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             {product.badge && <Badge text={product.badge} color={product.badgeColor ?? "red"} />}
           </div>
 
-          {/* Info */}
-          <div className="flex flex-col gap-1 px-3.5 pt-3 pb-3.5">
+          {/* Info — flex-1 pushes button to bottom */}
+          <div className="flex flex-1 flex-col gap-1 px-3.5 pt-3 pb-3.5">
             {product.category && (
               <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-[#8c9196]">
                 {product.category}
@@ -78,12 +77,14 @@ export function ProductCard({ product, className, whatsappNumber = WHATSAPP_NUMB
               </p>
             )}
 
-            <div className="mt-2.5 pt-2.5 divider-premium">
+            {/* Button pushed to bottom via mt-auto */}
+            <div className="mt-auto pt-2.5">
+              <div className="divider-premium mb-2.5" />
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-[#25D366] px-4 py-2.5 min-h-[38px] text-xs font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#22c35e] active:scale-[0.97]"
+                className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 min-h-[36px] text-xs font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#22c35e] active:scale-[0.97]"
               >
                 <MessageCircle className="h-3.5 w-3.5 shrink-0" />
                 <span>Inquire on WhatsApp</span>
