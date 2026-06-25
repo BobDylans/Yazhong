@@ -51,8 +51,15 @@ temp/
 # Assets (tracked via R2/CDN, not git)
 public/images/
 
+# Design reference screenshots (local research only)
+docs/design-references/
+docs/research/
+
 # Tool/agent artifacts
 .serena/
+
+# Example env (not a real config, just a template)
+.env.local.example
 
 # Cloudflare Workers build artifacts
 .wrangler/
