@@ -1,0 +1,1658 @@
+{
+  "url": "https://carfurnisher.com/?srsltid=AfmBOopik9NFweLkq6kD2EhqSoOTU7Xp6yD4THgpWmaACtuW8tePWJSG",
+  "timestamp": "2026-06-25T00:33:18.961Z",
+  "fonts": {
+    "families": [
+      "Poppins, sans-serif",
+      "Arial, system-ui, -apple-system, Arial, sans-serif"
+    ],
+    "weights": [
+      "500",
+      "400",
+      "700",
+      "600",
+      "100"
+    ],
+    "googleFonts": [],
+    "preconnect": []
+  },
+  "colors": {
+    "cssVars": {
+      "--borderRadiusSmall": "0px",
+      "--up-text-xl--line-height": "calc(1.75/1.25)",
+      "--disabledBackgroundColor": "",
+      "--up-text-xs--line-height": "calc(1/.75)",
+      "--tw-inset-shadow-alpha": "100%",
+      "--accentTextColor": "#FFFFFF",
+      "--lxs-color-on-tertiary-container": "#221631",
+      "--tw-ring-shadow": "0 0 #0000",
+      "--lxs-color-background": "#fcfcff",
+      "--alertColor": "#EF0000",
+      "--lxs-shadow-level-1": "0px 3px 14px -2px rgba(0, 0, 0, .12)",
+      "--lxs-color-shadow": "#000000",
+      "--lxs-color-error-container": "#ffe9e9",
+      "--up-color-white": "#fff",
+      "--rb-smart-search-quick-view-product-title-color": "#232323",
+      "--titleColor": "#202626",
+      "--baseFont": "Poppins, sans-serif",
+      "--lxs-color-error": "#bb171b",
+      "--up-text-lg--line-height": "calc(1.75/1.125)",
+      "--up-container-4xl": "896px",
+      "--rb-smart-search-results-product-title-color": "#232323",
+      "--inputContent": "#000000",
+      "--up-animate-spin": "spin 1s linear infinite",
+      "--lxs-font-size-base": "16px",
+      "--up-text-2xl": "24.5px",
+      "--lxs-line-height-xs": "1.5",
+      "--lxs-line-height-l": "1.4",
+      "--tw-outline-style": "solid",
+      "--up-color-neutral-500": "oklch(55.6% 0 0)",
+      "--up-color-red-50": "oklch(97.1% .013 17.38)",
+      "--up-color-gray-600": "oklch(44.6% .03 256.802)",
+      "--rb-smart-search-results-pagination-button-text-color": "#ffffff",
+      "--tw-inset-ring-shadow": "0 0 #0000",
+      "--up-color-blue-800": "oklch(42.4% .199 265.638)",
+      "--up-radius-3xl": "22px",
+      "--up-default-transition-timing-function": "cubic-bezier(.4,0,.2,1)",
+      "--up-radius-xl": "16px",
+      "--rb-smart-search-quick-view-button-background-color": "#1d4c8e",
+      "--rb-smart-search-results-product-price-compare-at-color": "#9a9a9a",
+      "--lxs-shadow-floating": "0px -2px 12px rgba(0, 0, 0, .08)",
+      "--lxs-font-size-xs": "12px",
+      "--up-color-blue-300": "oklch(80.9% .105 251.813)",
+      "--up-color-gray-900": "oklch(21% .034 264.665)",
+      "--up-color-gray-700": "oklch(37.3% .034 259.733)",
+      "--rb-smart-search-quick-view-button-text-color": "#ffffff",
+      "--inputFill": "#EFEFEF",
+      "--up-radius-2xl": "18px",
+      "--titleFont": "Poppins, sans-serif",
+      "--up-ease-out": "cubic-bezier(0,0,.2,1)",
+      "--up-spacing": "5px",
+      "--rb-smart-search-results-content-inactive-tab-color": "#546b7d",
+      "--rb-smart-search-quick-view-product-price-compare-at-color": "#9a9a9a",
+      "--lxs-shadow-level-2": "0px 3px 15px -4px rgba(0, 0, 0, .22)",
+      "--up-text-lg": "17.5px",
+      "--lxs-color-secondary": "#53606e",
+      "--rb-smart-search-quick-view-product-price-sale-color": "#44BE70",
+      "--up-text-3xl": "28.5px",
+      "--tw-inset-shadow": "0 0 #0000",
+      "--tw-ring-offset-color": "#fff",
+      "--bigFontSize": "40px",
+      "--rb-smart-search-quick-view-reviews-background-color": "#E5E5E5",
+      "--mediumFontSize": "28px",
+      "--gLinkColor": "#202626",
+      "--up-color-green-600": "oklch(62.7% .194 149.214)",
+      "--tw-shadow-alpha": "100%",
+      "--rb-smart-search-results-content-description-color": "#405768",
+      "--rb-smart-search-results-reviews-text-color": "#535353",
+      "--rb-smart-search-quick-view-reviews-text-color": "#535353",
+      "--lxs-color-star-color": "#ff8d00",
+      "--lxs-font-weight-bold": "bold",
+      "--up-color-neutral-700": "oklch(37.1% 0 0)",
+      "--tw-scale-z": "1",
+      "--baseFontSize": "16px",
+      "--rb-smart-search-quick-view-button-border-width": "2px",
+      "--up-container-xl": "576px",
+      "--lxs-color-on-primary": "#ffffff",
+      "--up-color-gray-500": "oklch(55.1% .027 264.364)",
+      "--rb-smart-search-quick-view-product-price-color": "#535353",
+      "--up-text-xs": "12px",
+      "--up-color-gray-200": "oklch(92.8% .006 264.531)",
+      "--tw-ring-offset-width": "0px",
+      "--lxs-font-weight-semibold": "600",
+      "--up-tracking-normal": "0em",
+      "--lxs-color-on-secondary-container": "#0f1d29",
+      "--up-font-weight-bold": "700",
+      "--accentColor01": "rgba(29, 76, 142, 0.1)",
+      "--maxwidth": "1400px",
+      "--textColor": "#191d21",
+      "--lxs-shadow-level-3": "0px 0px 35px -10px rgba(0, 0, 0, .25)",
+      "--up-color-gray-100": "oklch(96.7% .003 264.542)",
+      "--lxs-font-size-l": "18px",
+      "--rb-smart-search-results-reviews-foreground-color": "#FBCA10",
+      "--lxs-rating-icon-color": "#EBBF20",
+      "--lxs-color-inverse-primary": "#97cbff",
+      "--lxs-line-height-s": "1.5",
+      "--lxs-color-tertiary": "#685878",
+      "--rb-smart-search-results-pagination-button-border-color": "#1d4c8e",
+      "--mediumSubtitleFontSize": "22.4px",
+      "--lxs-color-scrim": "#000000",
+      "--lxs-color-on-primary-container": "#001d33",
+      "--subHeadingFontSize": "18px",
+      "--lxs-color-on-error-container": "#7e0000",
+      "--lxs-color-on-tertiary": "#ffffff",
+      "--up-text-base": "16px",
+      "--up-font-weight-medium": "500",
+      "--linkColor": "#202626",
+      "--accentColor005": "rgba(29, 76, 142, 0.05)",
+      "--up-font-weight-semibold": "600",
+      "--rb-smart-search-results-pagination-button-radius": "5px",
+      "--lxs-color-inverse-surface": "#2f3033",
+      "--rb-widget-input-border-color": "#cccccc",
+      "--tw-ring-offset-shadow": "0 0 #0000",
+      "--lxs-color-on-surface": "#1a1c1e",
+      "--lxs-line-height-base": "1.5",
+      "--up-color-neutral-400": "oklch(70.8% 0 0)",
+      "--up-radius-sm": "2px",
+      "--accentColor025": "rgba(29, 76, 142, 0.25)",
+      "--rb-smart-search-results-reviews-background-color": "#E5E5E5",
+      "--lxs-control-icon-size": "1.5em",
+      "--up-radius-4xl": "28px",
+      "--rb-widget-input-border-focus-color": "#1d4c8e",
+      "--lxs-control-padding": "12px",
+      "--accentColor05": "rgba(29, 76, 142, 0.5)",
+      "--lxs-color-on-error": "#fff4f4",
+      "--up-ease-in": "cubic-bezier(.4,0,1,1)",
+      "--up-color-gray-300": "oklch(87.2% .01 258.338)",
+      "--lxs-font-weight-regular": "normal",
+      "--rb-smart-search-results-product-price-sale-color": "#44BE70",
+      "--tw-translate-z": "0",
+      "--lxs-color-inverse-on-surface": "#f1f0f3",
+      "--up-font-weight-normal": "400",
+      "--up-text-5xl": "40px",
+      "--lxs-line-height-xl": "1.4",
+      "--up-text-3xl--line-height": "1.2",
+      "--tw-scale-y": "1",
+      "--borderRadius": "0px",
+      "--lxs-color-surface": "#fcfcff",
+      "--lxs-font-size-s": "14px",
+      "--disabledTextColor": "",
+      "--lxs-color-on-background": "#1a1c1e",
+      "--lxs-color-primary": "#00639c",
+      "--up-text-sm": "14px",
+      "--up-color-blue-500": "oklch(62.3% .214 259.815)",
+      "--up-container-2xl": "672px",
+      "--up-container-xs": "320px",
+      "--tw-translate-y": "0",
+      "--rb-smart-search-results-product-price-color": "#535353",
+      "--smallFontSize": "14px",
+      "--up-text-xl": "19.5px",
+      "--up-radius-lg": "10px",
+      "--rb-smart-search-quick-view-reviews-foreground-color": "#FBCA10",
+      "--lxs-color-secondary-container": "#d6e4f5",
+      "--up-color-gray-400": "oklch(70.7% .022 261.325)",
+      "--alertColor005": "rgba(239, 0, 0, 0.05)",
+      "--lxs-color-primary-hover": "#00639c",
+      "--lxs-border-radius": "16px",
+      "--headingFontSize": "28px",
+      "--up-default-transition-duration": ".15s",
+      "--lxs-line-height-3xl": "1.25",
+      "--rb-smart-search-quick-view-button-radius": "5px",
+      "--tw-divide-y-reverse": "0",
+      "--up-text-2xl--line-height": "calc(2/1.5)",
+      "--tw-border-style": "solid",
+      "--up-text-5xl--line-height": "1",
+      "--lxs-font-size-xl": "20px",
+      "--accentColor075": "rgba(29, 76, 142, 0.75)",
+      "--lxs-font-size-3xl": "42px",
+      "--rb-smart-search-quick-view-button-border-color": "#1d4c8e",
+      "--lxs-color-primary-container": "#cee5ff",
+      "--up-container-sm": "384px",
+      "--tw-shadow": "0 0 #0000",
+      "--lxs-line-height-2xl": "1.25",
+      "--tw-translate-x": "0",
+      "--lxs-color-outline-variant": "#c2c7ce",
+      "--secondaryBodyBackgroundColor": "#FFFFFF",
+      "--rb-smart-search-results-pagination-button-background-color": "#1d4c8e",
+      "--up-container-md": "448px",
+      "--up-radius-none": "0px",
+      "--rb-smart-search-results-content-heading-color": "#000",
+      "--rb-smart-search-results-content-active-tab-color": "#335eea",
+      "--rb-smart-search-results-pagination-button-border-width": "2px",
+      "--up-color-indigo-600": "oklch(51.1% .262 276.966)",
+      "--up-text-base--line-height": "1.5",
+      "--up-text-sm--line-height": "calc(1.25/.875)",
+      "--bodyBackgroundColor": "#FFFFFF",
+      "--secondaryTextColor": "#1d4c8e",
+      "--tw-scale-x": "1",
+      "--lxs-spacing": "4px",
+      "--up-color-gray-800": "oklch(27.8% .033 256.848)",
+      "--lxs-color-tertiary-container": "#efdbff",
+      "--lxs-shadow-bottom": "0px -4px 11px rgba(0, 0, 0, .04), 0px -3px 6px rgba(0, 0, 0, .03), 0px -1px 3px rgba(0, 0, 0, .03), 0px -.5px 1px rgba(0, 0, 0, .01), 0px -.1px .5px rgba(0, 0, 0, .005)",
+      "--accentColor": "#1d4c8e",
+      "--lxs-color-surface-variant": "#dfe3ea",
+      "--up-ease-in-out": "cubic-bezier(.4,0,.2,1)",
+      "--tw-space-y-reverse": "0",
+      "--lxs-color-on-secondary": "#ffffff",
+      "--up-color-black": "#000",
+      "--lxs-color-on-surface-variant": "#42474d",
+      "--secondaryAccentTextColor": "#1d4c8e",
+      "--secondaryAccentColor": "#ffffff",
+      "--lxs-color-outline": "#73777e",
+      "--cardPadding": "6px",
+      "--lxs-font-size-2xl": "28px",
+      "--up-radius-md": "6px"
+    },
+    "elementColors": {
+      "background": "rgb(255, 255, 255)",
+      "text": "rgb(25, 29, 33)",
+      "h1": {
+        "color": "rgb(32, 38, 38)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "h2": {
+        "color": "rgb(32, 38, 38)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "h3": {
+        "color": "rgb(25, 29, 33)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "a": {
+        "color": "rgb(32, 38, 38)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "button": {
+        "color": "rgb(0, 0, 0)",
+        "bg": "rgba(0, 0, 0, 0)"
+      },
+      "header": {
+        "color": "rgb(25, 29, 33)",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "palette": [
+      "rgb(25, 29, 33)",
+      "rgb(229, 231, 235)",
+      "rgb(32, 38, 38)",
+      "rgba(255, 255, 255, 0.97)",
+      "rgb(69, 160, 222)",
+      "rgb(255, 255, 255)",
+      "rgb(128, 128, 128)",
+      "rgb(0, 0, 0)",
+      "rgb(239, 239, 239)",
+      "rgb(29, 76, 142)",
+      "rgba(0, 0, 0, 0.35)",
+      "rgb(239, 0, 0)",
+      "rgb(255, 106, 0)",
+      "rgb(30, 30, 30)",
+      "rgb(206, 206, 206)",
+      "rgb(252, 252, 255)",
+      "rgb(194, 199, 206)",
+      "rgb(26, 28, 30)",
+      "rgb(241, 240, 243)",
+      "rgb(47, 48, 51)",
+      "rgb(72, 119, 189)",
+      "rgba(0, 0, 0, 0.2)",
+      "rgb(17, 24, 39)",
+      "rgb(35, 35, 35)",
+      "rgb(238, 238, 238)",
+      "rgb(229, 231, 235) rgb(229, 231, 235) rgb(0, 0, 0)",
+      "rgba(255, 255, 255, 0)",
+      "rgb(67, 67, 67)",
+      "rgb(255, 0, 0)",
+      "rgb(83, 83, 83)",
+      "rgb(153, 153, 153)",
+      "rgba(0, 0, 0, 0.7)",
+      "rgba(0, 0, 0, 0.5)",
+      "rgb(226, 226, 226)",
+      "rgb(54, 127, 238)",
+      "rgb(34, 45, 56)"
+    ],
+    "cssTextSample": "\n  body.cart-updating .rebuy-cart__checkout-button,\n  body.cart-updating .rebuy-cart__view-cart-button,\n  body.cart-updating .secondary-checkout-button {\n    opacity: 0.7 !important;\n    cursor: not-allowed !important;\n    pointer-events: none !important;\n  }\n\n  body.cart-updating .rebuy-cart__checkout-button::before\n{\n    content: '';\n    display: inline-block;\n    width: 16px;\n    height: 16px;\n    border: 2px solid rgba(255, 255, 255, 0.3);\n    border-radius: 50%;\n    border-top-color: #fff;\n    animation: spin 1s ease-in-out infinite;\n    margin-right: 8px;\n    vertical-align: middle;\n}\n\n  body.cart-updating .rebuy-cart__view-cart-button::before\n  {\n    content: '';\n    display: inline-block;\n    width: 16px;\n    height: 16px;\n    border: 2px solid rgba(0, 0, 0, 0.3);\n    border-radius: 50%;\n    border-top-color: #fff;\n    animation: spin 1s ease-in-out infinite;\n    margin-right: 8px;\n    vertical-align: middle;\n  }\n  \n\n  body.cart-updating .quantity--input__button,\n  body.cart-updating .cart__trash {\n  visibility:hidden;\n    position: relative;\n    pointer-events: none;\n    opacity: 0.7;\n  }\n\n  body.cart-updating .quantity--input__button::after,\n  body.cart-updating .cart__trash::after {\n  visibility:visible;\n    content: '';\n    display: inline-block;\n    width: 16px;\n    height: 16px;\n    border: 2px solid rgba(0, 0, 0, 0.7);\n    border-radius: 50%;\n    border-top-color: #fff;\n    animation: spin 1s ease-in-out infinite;\n    vertical-align: middle;\n  }\n\n\n  body.cart-updating .secondary-checkout-button span::before {\n    content: '';\n    display: inline-block;\n    width: 16px;\n    height: 16px;\n    border: 2px solid rgba(255, 255, 255, 0.3);\n    border-radius: 50%;\n    border-top-color: #fff;\n    animation: spin 1s ease-in-out infinite;\n    margin-right: 8px;\n    vertical-align: middle;\n  }\n\n\n\n\n.easysearch-hidden,.easysearch-hidden-item,.easysearch-holder .easysearch-preload-loader.easysearch-hidden{display:none!important}.easysearch-text-center{text-align:center!important}.easysearch-text-left{text-align:left!important}.easysearch-text-right{text-align:right!important}.easysearch-container{padding:20px}.easysearch-main-holder{display:flex;align-items:center;justify-content:center}.easysearch-logo-holder{font-size:0;line-height:0}.easysearch-fitment-results:not(.easysearch-fitment-fail) .easysearch-fitment-icon-fail,.easysearch-fitment-results:not(.easysearch-fitment-success) .easysearch-fitment-icon-success,.easysearch-fitment-results:not(.easysearch-fitment-unreferenced) .easysearch-fitment-icon-unreferenced,.easysearch-fitment-widget .easysearch-clear-holder label,.easysearch-ft-hidden-page-row,.easysearch-garage-collapsed-title:empty,.easysearch-garage-opened-title:empty,.easysearch-garage-overlay-logo:empty,.easysearch-header-holder:empty,.easysearch-item-selector+*,.easysearch-item[data-tags],.easysearch-logo-holder:empty,.easysearch-vertical-mode .easysearch-btn-garage-holder label,.easysearch-vertical-mode .easysearch-btn-holder la"
+  },
+  "layout": {
+    "bodyMargin": "0px",
+    "bodyPadding": "0px",
+    "maxWidth": "none",
+    "fontFamily": "Poppins, sans-serif",
+    "fontSize": "16px",
+    "lineHeight": "normal",
+    "color": "rgb(25, 29, 33)",
+    "bgColor": "rgb(255, 255, 255)"
+  },
+  "topology": [
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "container",
+      "rect": "top=-104 h=6758 w=1425",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 136,
+      "links": 386,
+      "children": 6
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "container__top-part",
+      "rect": "top=-104 h=106 w=1425",
+      "heading": "",
+      "images": 14,
+      "links": 201,
+      "children": 4
+    },
+    {
+      "tag": "div",
+      "id": "shopify-section-header--default",
+      "classes": "shopify-section",
+      "rect": "top=-104 h=106 w=1425",
+      "heading": "",
+      "images": 14,
+      "links": 201,
+      "children": 6
+    },
+    {
+      "tag": "header",
+      "id": "",
+      "classes": "page__header page__header--desktop page__header--sticky",
+      "rect": "top=-28 h=106 w=1425",
+      "heading": "",
+      "images": 11,
+      "links": 105,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "nav__submenu nav__submenu--mega row fancy-scroll",
+      "rect": "top=51 h=50 w=1400",
+      "heading": "",
+      "images": 8,
+      "links": 16,
+      "children": 8
+    },
+    {
+      "tag": "div",
+      "id": "s--template--24417625833757__16596721948eb921de",
+      "classes": "inherit middle layout__boxed  s__holder row",
+      "rect": "top=2 h=218 w=1400",
+      "heading": "",
+      "images": 8,
+      "links": 16,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row layout__content s__content",
+      "rect": "top=2 h=218 w=1400",
+      "heading": "",
+      "images": 8,
+      "links": 16,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row center",
+      "rect": "top=2 h=218 w=1400",
+      "heading": "",
+      "images": 8,
+      "links": 16,
+      "children": 8
+    },
+    {
+      "tag": "div",
+      "id": "s--template--24417625833757__section_content_UQHgC9",
+      "classes": "inherit middle layout__boxed bg__middle s__holder row lazyloaded",
+      "rect": "top=220 h=436 w=1400",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 0,
+      "links": 6,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row center layout__content s__content",
+      "rect": "top=220 h=436 w=1400",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 0,
+      "links": 6,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "b--liquid_block_4hYpAd",
+      "classes": "\n          s__block s__block--liquidBlock\n          middle center\n          col-md-3 col-12",
+      "rect": "top=220 h=424 w=350",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 0,
+      "links": 6,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "block__template--24417625833757__section_content_UQHgC9-liquid_block_4hYpAd",
+      "classes": "block__liquid ",
+      "rect": "top=232 h=400 w=1400",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 0,
+      "links": 6,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "spx-video-banner",
+      "rect": "top=232 h=400 w=1400",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 0,
+      "links": 6,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "spx-desktop-container",
+      "rect": "top=232 h=170 w=1400",
+      "heading": "Upgrade Your Drive with Premium Accessories",
+      "images": 0,
+      "links": 5,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "shopify-block-AQTB0NHVpdzRtZUJWW__easysearch_ymm_easysearch_widget_zMQDYU",
+      "classes": "shopify-block shopify-app-block",
+      "rect": "top=680 h=108 w=1425",
+      "heading": "",
+      "images": 0,
+      "links": 1,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "easysearch-block-container",
+      "rect": "top=680 h=108 w=1425",
+      "heading": "",
+      "images": 0,
+      "links": 1,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "easysearch-container    ",
+      "rect": "top=680 h=108 w=1425",
+      "heading": "",
+      "images": 0,
+      "links": 1,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row center middle s__content layout__content",
+      "rect": "top=788 h=307 w=1400",
+      "heading": "Seat Cover Experts",
+      "images": 0,
+      "links": 0,
+      "children": 5
+    },
+    {
+      "tag": "div",
+      "id": "column--column_icon_4Ejjqh",
+      "classes": "col-12 s__block s__block--columnIcon center top columns__column col-md-1-5",
+      "rect": "top=788 h=307 w=280",
+      "heading": "Seat Cover Experts",
+      "images": 0,
+      "links": 0,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "s--template--24417625833757__section_heading_JPx7fn",
+      "classes": "inherit  layout__boxed  s__holder row",
+      "rect": "top=1095 h=101 w=1400",
+      "heading": "Custom Fit Car Seat Covers",
+      "images": 0,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "layout__content s__content",
+      "rect": "top=1095 h=101 w=1400",
+      "heading": "Custom Fit Car Seat Covers",
+      "images": 0,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "col-12 column start section__heading",
+      "rect": "top=1095 h=69 w=1400",
+      "heading": "Custom Fit Car Seat Covers",
+      "images": 0,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "block__template--24417625833757__section_content_fjFNiF-html_Upx3mF ",
+      "classes": "block__html",
+      "rect": "top=1196 h=125 w=1400",
+      "heading": "",
+      "images": 88,
+      "links": 88,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "marquee-container",
+      "rect": "top=1196 h=125 w=1400",
+      "heading": "",
+      "images": 88,
+      "links": 88,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "marquee-content",
+      "rect": "top=1196 h=125 w=1400",
+      "heading": "",
+      "images": 88,
+      "links": 88,
+      "children": 88
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row",
+      "rect": "top=1532 h=738 w=1400",
+      "heading": "",
+      "images": 12,
+      "links": 36,
+      "children": 12
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "col-6 col-md-1-5 card--holder",
+      "rect": "top=1532 h=369 w=224",
+      "heading": "",
+      "images": 1,
+      "links": 3,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "card--default  card--noButton",
+      "rect": "top=1532 h=357 w=212",
+      "heading": "",
+      "images": 1,
+      "links": 3,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "rm-product-badge-wrap rm-badge-67cde991509bebe6287fe88d rm-badge-67cde34e509bebe6287fe56c",
+      "rect": "top=1532 h=212 w=212",
+      "heading": "",
+      "images": 0,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "card__info",
+      "rect": "top=1752 h=105 w=212",
+      "heading": "",
+      "images": 0,
+      "links": 2,
+      "children": 8
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "card--default card--soldout card--noButton",
+      "rect": "top=1532 h=357 w=212",
+      "heading": "",
+      "images": 1,
+      "links": 3,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "LOOX-V2_CAROUSEL-AUmV4bThUbklMbm5FV__loox_reviews_loox_card_carousel_section_3HiQ8h",
+      "classes": "loox-v2-carousel-container loox-widget",
+      "rect": "top=2412 h=480 w=1400",
+      "heading": "",
+      "images": 0,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "loox-trust-badge-template--24417625833757__171992029010bbd7e1",
+      "classes": "loox-trust-badge-container loox-widget",
+      "rect": "top=2892 h=69 w=1400",
+      "heading": "",
+      "images": 0,
+      "links": 1,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row s__content middle layout__content",
+      "rect": "top=2981 h=394 w=1400",
+      "heading": "Carfurnisher is on ETSY!",
+      "images": 1,
+      "links": 1,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "richtext--rich_text_MytjBK",
+      "classes": "font__size--base font__family--base",
+      "rect": "top=3124 h=80 w=668",
+      "heading": "",
+      "images": 0,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "col-12 column center section__heading",
+      "rect": "top=3415 h=69 w=1400",
+      "heading": "Car Interior Insights",
+      "images": 0,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "blog--733056467229",
+      "classes": "col-12 col-md-4 s__block",
+      "rect": "top=3516 h=358 w=467",
+      "heading": "",
+      "images": 1,
+      "links": 1,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "bcard__img--container",
+      "rect": "top=3516 h=221 w=443",
+      "heading": "",
+      "images": 1,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "bcard__img--ratio",
+      "rect": "top=3516 h=221 w=443",
+      "heading": "",
+      "images": 1,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "bcard__img border-radius",
+      "rect": "top=3516 h=221 w=443",
+      "heading": "",
+      "images": 1,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "bcard__info inherit",
+      "rect": "top=3743 h=107 w=443",
+      "heading": "",
+      "images": 0,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "video-container",
+      "rect": "top=4273 h=296 w=1392",
+      "heading": "Our Approach to Online Shopping",
+      "images": 1,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "row s__content top layout__content",
+      "rect": "top=4581 h=292 w=1400",
+      "heading": "Sourcing the Best: Carfurnisher's Strategy",
+      "images": 1,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "wrapper--bottom",
+      "rect": "top=5980 h=674 w=1425",
+      "heading": "",
+      "images": 1,
+      "links": 27,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "layout__content row",
+      "rect": "top=6012 h=151 w=1400",
+      "heading": "",
+      "images": 0,
+      "links": 6,
+      "children": 3
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "layout__content row p-reset--all",
+      "rect": "top=6211 h=427 w=1400",
+      "heading": "",
+      "images": 1,
+      "links": 21,
+      "children": 6
+    },
+    {
+      "tag": "div",
+      "id": "OfferCartpopup",
+      "classes": "new-modal hide-mobile",
+      "rect": "top=-45 h=990 w=1567",
+      "heading": "",
+      "images": 1,
+      "links": 0,
+      "children": 1
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "new-modal-content",
+      "rect": "top=191 h=519 w=922",
+      "heading": "",
+      "images": 1,
+      "links": 0,
+      "children": 2
+    },
+    {
+      "tag": "div",
+      "id": "",
+      "classes": "popup-container",
+      "rect": "top=532 h=92 w=327",
+      "heading": "",
+      "images": 0,
+      "links": 0,
+      "children": 1
+    }
+  ],
+  "assets": {
+    "images": [
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/300PX_trans_LOGO_256x.webp?v=1719658073",
+        "alt": "logo",
+        "w": 256,
+        "h": 256
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/300PX_trans_LOGO_256x.webp?v=1719658073",
+        "alt": "logo",
+        "w": 256,
+        "h": 256
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/logo_hd_trans_500X_fbaa2af2-e03e-48f5-99d4-9bbe638b9e56_256x.png?v=1687719555",
+        "alt": "logo",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/300PX_trans_LOGO_256x.webp?v=1719658073",
+        "alt": "logo",
+        "w": 256,
+        "h": 256
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/300PX_trans_LOGO_256x.webp?v=1719658073",
+        "alt": "logo",
+        "w": 256,
+        "h": 256
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/logo_hd_trans_500X_fbaa2af2-e03e-48f5-99d4-9bbe638b9e56_256x.png?v=1687719555",
+        "alt": "logo",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Volvo-min_100x100.jpg?v=1688580739",
+        "alt": "Volvo Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Volkswagen_2_1_-min_100x100.jpg?v=1688580735",
+        "alt": "Volkswagen Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Toyota-min_100x100.jpg?v=1688580731",
+        "alt": "Toyota Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/tesla_3-min_100x100.jpg?v=1688580727",
+        "alt": "tesla Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Tata-min_100x100.jpg?v=1688580723",
+        "alt": "Tata Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Suzuki-min_100x100.jpg?v=1688580719",
+        "alt": "Suzuki Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/SSangyong-min_100x100.jpg?v=1688580715",
+        "alt": "SSangyong Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Smart-min_100x100.jpg?v=1688580711",
+        "alt": "Smart Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Skoda-min_100x100.jpg?v=1688580706",
+        "alt": "Skoda Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Seat-min_100x100.jpg?v=1688580702",
+        "alt": "Seat Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Rover-min_100x100.jpg?v=1688580698",
+        "alt": "Rover Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Renault-min_100x100.jpg?v=1688580693",
+        "alt": "Renault Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Proton-min_100x100.jpg?v=1688580689",
+        "alt": "Proton Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Porsche-min_100x100.jpg?v=1688580685",
+        "alt": "Porsche Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Peugeot-min_100x100.jpg?v=1688580681",
+        "alt": "Peugeot Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Opel-min_100x100.jpg?v=1688580676",
+        "alt": "Opel Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Nissan-min_100x100.jpg?v=1688580672",
+        "alt": "Nissan Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Mitsubishi-min_100x100.jpg?v=1688580668",
+        "alt": "Mitsubishi Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/MINI-min_100x100.jpg?v=1688580663",
+        "alt": "Mini Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Mercedes-Benz-min_100x100.jpg?v=1688580658",
+        "alt": "Mercedes Benz Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/MAZDA-min_100x100.jpg?v=1688580652",
+        "alt": "MAZDA Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Man-min_100x100.jpg?v=1688580648",
+        "alt": "Man Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Land_Rover_2-min_100x100.jpg?v=1688580644",
+        "alt": "LandRover Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Lada-min_100x100.jpg?v=1688580639",
+        "alt": "Lada Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/KIA_2-min_100x100.jpg?v=1688580635",
+        "alt": "KIA Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Jeep-min_100x100.jpg?v=1688580630",
+        "alt": "Jeep Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Iveco-min_100x100.jpg?v=1688580610",
+        "alt": "Iveco Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Isuzu-min_100x100.jpg?v=1688580604",
+        "alt": "Isuzu Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Hyundai-min_100x100.jpg?v=1688580599",
+        "alt": "Hyundai Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Honda-min_100x100.jpg?v=1688580593",
+        "alt": "Honda Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Geely-min_100x100.jpg?v=1688580589",
+        "alt": "Geely Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Ford-min_100x100.jpg?v=1688580584",
+        "alt": "Ford Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/FIAT-min_100x100.jpg?v=1688580580",
+        "alt": "FIAT Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Dfm-min_100x100.jpg?v=1688580576",
+        "alt": "Dfm Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/DAIHATSU_2-min_100x100.jpg?v=1688580571",
+        "alt": "DAIHATSU Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Daf-min_100x100.jpg?v=1688580567",
+        "alt": "Daf Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Daewoo-min_100x100.jpg?v=1688580562",
+        "alt": "Daewoo Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Dacia-min_100x100.jpg?v=1688580554",
+        "alt": "Dacia Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Citroen-min_100x100.jpg?v=1688580549",
+        "alt": "Citroen Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Chevrolet-min_22c289a2-a034-4782-b68c-9427b8d14122_100x100.jpg?v=1688580501",
+        "alt": "Chevrolet Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Chery-min_100x100.jpg?v=1688580492",
+        "alt": "Chery Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/BMW-min_100x100.jpg?v=1688580488",
+        "alt": "BMW Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Audi-min_100x100.jpg?v=1688580483",
+        "alt": "Audi Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Alfa_Romeo-min_100x100.jpg?v=1688580478",
+        "alt": "Alfa Romeo Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Volvo-min_100x100.jpg?v=1688580739",
+        "alt": "Volvo Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Volkswagen_2_1_-min_100x100.jpg?v=1688580735",
+        "alt": "Volkswagen Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Toyota-min_100x100.jpg?v=1688580731",
+        "alt": "Toyota Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/tesla_3-min_100x100.jpg?v=1688580727",
+        "alt": "tesla Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Tata-min_100x100.jpg?v=1688580723",
+        "alt": "Tata Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Suzuki-min_100x100.jpg?v=1688580719",
+        "alt": "Suzuki Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/SSangyong-min_100x100.jpg?v=1688580715",
+        "alt": "SSangyong Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Smart-min_100x100.jpg?v=1688580711",
+        "alt": "Smart Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Skoda-min_100x100.jpg?v=1688580706",
+        "alt": "Skoda Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Seat-min_100x100.jpg?v=1688580702",
+        "alt": "Seat Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Rover-min_100x100.jpg?v=1688580698",
+        "alt": "Rover Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Renault-min_100x100.jpg?v=1688580693",
+        "alt": "Renault Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Proton-min_100x100.jpg?v=1688580689",
+        "alt": "Proton Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Porsche-min_100x100.jpg?v=1688580685",
+        "alt": "Porsche Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Peugeot-min_100x100.jpg?v=1688580681",
+        "alt": "Peugeot Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Opel-min_100x100.jpg?v=1688580676",
+        "alt": "Opel Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Nissan-min_100x100.jpg?v=1688580672",
+        "alt": "Nissan Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Mitsubishi-min_100x100.jpg?v=1688580668",
+        "alt": "Mitsubishi Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/MINI-min_100x100.jpg?v=1688580663",
+        "alt": "Mini Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Mercedes-Benz-min_100x100.jpg?v=1688580658",
+        "alt": "Mercedes Benz Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/MAZDA-min_100x100.jpg?v=1688580652",
+        "alt": "MAZDA Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Man-min_100x100.jpg?v=1688580648",
+        "alt": "Man Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Land_Rover_2-min_100x100.jpg?v=1688580644",
+        "alt": "LandRover Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Lada-min_100x100.jpg?v=1688580639",
+        "alt": "Lada Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/KIA_2-min_100x100.jpg?v=1688580635",
+        "alt": "KIA Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Jeep-min_100x100.jpg?v=1688580630",
+        "alt": "Jeep Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Iveco-min_100x100.jpg?v=1688580610",
+        "alt": "Iveco Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Isuzu-min_100x100.jpg?v=1688580604",
+        "alt": "Isuzu Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Hyundai-min_100x100.jpg?v=1688580599",
+        "alt": "Hyundai Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Honda-min_100x100.jpg?v=1688580593",
+        "alt": "Honda Car Seat Covers",
+        "w": 100,
+        "h": 100
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Geely-min_100x100.jpg?v=1688580589",
+        "alt": "Geely Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Ford-min_100x100.jpg?v=1688580584",
+        "alt": "Ford Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/FIAT-min_100x100.jpg?v=1688580580",
+        "alt": "FIAT Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Dfm-min_100x100.jpg?v=1688580576",
+        "alt": "Dfm Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/DAIHATSU_2-min_100x100.jpg?v=1688580571",
+        "alt": "DAIHATSU Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Daf-min_100x100.jpg?v=1688580567",
+        "alt": "Daf Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Daewoo-min_100x100.jpg?v=1688580562",
+        "alt": "Daewoo Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Dacia-min_100x100.jpg?v=1688580554",
+        "alt": "Dacia Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Citroen-min_100x100.jpg?v=1688580549",
+        "alt": "Citroen Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Chevrolet-min_22c289a2-a034-4782-b68c-9427b8d14122_100x100.jpg?v=1688580501",
+        "alt": "Chevrolet Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Chery-min_100x100.jpg?v=1688580492",
+        "alt": "Chery Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/BMW-min_100x100.jpg?v=1688580488",
+        "alt": "BMW Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Audi-min_100x100.jpg?v=1688580483",
+        "alt": "Audi Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/Alfa_Romeo-min_100x100.jpg?v=1688580478",
+        "alt": "Alfa Romeo Car Seat Covers",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/WEN_BANNER_MAIN_ETSY_77_1_1.webp?v=1722973276",
+        "alt": "",
+        "w": 656,
+        "h": 369
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/articles/d4bf40c4ba66426e7db711b35fa0816c_01787d51-8f02-4d30-8c4b-7f96c5d65d81.jpg?v=1723214163",
+        "alt": "mercedes vito car seat covers mercedes vito seat covers mercedes vito seat covers",
+        "w": 360,
+        "h": 360
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/articles/4df5e7ed37f95a8ab0e240e38046374a.jpg?v=1723213931",
+        "alt": "mercedes vito car seat covers mercedes vito seat covers mercedes vito seat covers",
+        "w": 360,
+        "h": 552
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/articles/f53cda8eb8daa196ed7ff530ea74c381.jpg?v=1723213615",
+        "alt": "mercedes vito car seat covers mercedes vito seat covers mercedes vito seat covers",
+        "w": 360,
+        "h": 360
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/articles/8ee524e053c77567e98f5fef35b056e7.jpg?v=1723157561",
+        "alt": "mercedes vito car seat covers mercedes vito seat covers mercedes vito seat covers",
+        "w": 360,
+        "h": 360
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/articles/d06f4523918e8419c0851634c29b1d3b.jpg?v=1723157557",
+        "alt": "beaded seat cover beaded auto seat covers beaded car seat covers",
+        "w": 360,
+        "h": 360
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/articles/332b9adf0e8f9b85c64d83c35a9a7127_d367430e-832f-49c9-8187-bb968b611d1b.jpg?v=1723138565",
+        "alt": "beaded seat cover beaded auto seat covers beaded car seat covers",
+        "w": 360,
+        "h": 360
+      },
+      {
+        "src": "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/carfurnisher_video_showcase_2.webp?v=1721206312",
+        "alt": "Carfurnisher Video Showcase Car Seat Covers",
+        "w": 1029,
+        "h": 324
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/car_seat_cover_store_carfurnisher_production_2.webp?v=1719682942",
+        "alt": "",
+        "w": 1440,
+        "h": 450
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/car_seat_cover_store_carfurnisher_production_3.webp?v=1719682971",
+        "alt": "",
+        "w": 1440,
+        "h": 450
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/car_seat_cover_store_carfurnisher_production_4.webp?v=1719682994",
+        "alt": "",
+        "w": 1440,
+        "h": 450
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/car_seat_cover_store_carfurnisher_production_5.webp?v=1719683019",
+        "alt": "",
+        "w": 1440,
+        "h": 450
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/logo_hd_trans_500X_fbaa2af2-e03e-48f5-99d4-9bbe638b9e56_400x.webp?v=1722973342",
+        "alt": "",
+        "w": 400,
+        "h": 439
+      },
+      {
+        "src": "https://carfurnisher.com/cdn/shop/files/BEFOREAFTER3X-ezgif.com-optimize_1_medium.gif?v=1739913669",
+        "alt": "",
+        "w": 240,
+        "h": 135
+      }
+    ],
+    "bgImages": [
+      {
+        "url": "url(\"https://carfurnisher.com/cdn/shop/files/BEFOREAFTER3X-ezgif.com-optimize_1_1024x.gif?v=1739913669\")",
+        "tag": "DIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(2%202)%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%23FFF%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212.75%22%20stroke%3D%22%23222D38%22%20stroke-width%3D%221.5%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22%23222D38%22%20opacity%3D%221%22%20transform%3D%22translate(6%206)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22rotate(45%206.24%206.01)%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22scale(-1%201)%20rotate(45%200%20-9.058)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"https://code.jivosite.com/images/pattern/9.svg\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2240%22%20viewBox%3D%220%200%2032%2040%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2382a8fb%22%20d%3D%22M0%200h9.02L32%2033.196V40H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%2318c139%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='36' height='36'%3E%3Cdefs%3E%3Ccircle id='a' cx='18' cy='18' r='18'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cuse fill='%23FFF' opacity='.12' xlink:href='%23a'/%3E%3Cpath fill='%23FFF' fill-rule='nonzero' d='M27.588 29.805h-1.891a3.783 3.783 0 0 1-3.783-3.783v-1.215c.837-.995 1.437-2.171 1.81-3.414.039-.21.24-.313.375-.457.724-.725.866-1.946.323-2.816-.074-.132-.207-.247-.2-.41 0-1.11.006-2.22-.001-3.329-.03-1.338-.412-2.73-1.35-3.72-.758-.801-1.798-1.278-2.87-1.482-1.357-.259-2.775-.246-4.118.096-1.163.294-2.257.975-2.933 1.986-.598.878-.86 1.945-.905 2.996-.017 1.128-.004 2.26-.007 3.39.025.227-.167.38-.253.568-.512.928-.287 2.192.535 2.867.209.144.248.407.324.633a9.148 9.148 0 0 0 1.704 3.051v1.256a3.783 3.783 0 0 1-3.782 3.783H8.674S5.246 30.751 3 35.479v1.892a1.89 1.89 0 0 0 1.891 1.89h26.48a1.89 1.89 0 0 0 1.891-1.89v-1.892c-2.246-4.728-5.674-5.674-5.674-5.674z' mask='url(%23b)' opacity='.18'/%3E%3C/g%3E%3C/svg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"https://files.jivosite.com/avatars/2110396/6397a714ee5c0.jpg\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='36' height='36'%3E%3Cdefs%3E%3Ccircle id='a' cx='18' cy='18' r='18'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cuse fill='%23191D2E' opacity='.1' xlink:href='%23a'/%3E%3Cpath fill='%23BFC0C5' fill-rule='nonzero' d='M27.588 29.805h-1.891a3.783 3.783 0 0 1-3.783-3.783v-1.215c.837-.995 1.437-2.171 1.81-3.414.039-.21.24-.313.375-.457.724-.725.866-1.946.323-2.816-.074-.132-.207-.247-.2-.41 0-1.11.006-2.22-.001-3.329-.03-1.338-.412-2.73-1.35-3.72-.758-.801-1.798-1.278-2.87-1.482-1.357-.259-2.775-.246-4.118.096-1.163.294-2.257.975-2.933 1.986-.598.878-.86 1.945-.905 2.996-.017 1.128-.004 2.26-.007 3.39.025.227-.167.38-.253.568-.512.928-.287 2.192.535 2.867.209.144.248.407.324.633a9.148 9.148 0 0 0 1.704 3.051v1.256a3.783 3.783 0 0 1-3.782 3.783H8.674S5.246 30.751 3 35.479v1.892a1.89 1.89 0 0 0 1.891 1.89h26.48a1.89 1.89 0 0 0 1.891-1.89v-1.892c-2.246-4.728-5.674-5.674-5.674-5.674z' mask='url(%23b)'/%3E%3C/g%3E%3C/svg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"https://files.jivosite.com/avatars/2110396/6397a714ee5c0.jpg\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='36' height='36'%3E%3Cdefs%3E%3Ccircle id='a' cx='18' cy='18' r='18'/%3E%3C/defs%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cuse fill='%23191D2E' opacity='.1' xlink:href='%23a'/%3E%3Cpath fill='%23BFC0C5' fill-rule='nonzero' d='M27.588 29.805h-1.891a3.783 3.783 0 0 1-3.783-3.783v-1.215c.837-.995 1.437-2.171 1.81-3.414.039-.21.24-.313.375-.457.724-.725.866-1.946.323-2.816-.074-.132-.207-.247-.2-.41 0-1.11.006-2.22-.001-3.329-.03-1.338-.412-2.73-1.35-3.72-.758-.801-1.798-1.278-2.87-1.482-1.357-.259-2.775-.246-4.118.096-1.163.294-2.257.975-2.933 1.986-.598.878-.86 1.945-.905 2.996-.017 1.128-.004 2.26-.007 3.39.025.227-.167.38-.253.568-.512.928-.287 2.192.535 2.867.209.144.248.407.324.633a9.148 9.148 0 0 0 1.704 3.051v1.256a3.783 3.783 0 0 1-3.782 3.783H8.674S5.246 30.751 3 35.479v1.892a1.89 1.89 0 0 0 1.891 1.89h26.48a1.89 1.89 0 0 0 1.891-1.89v-1.892c-2.246-4.728-5.674-5.674-5.674-5.674z' mask='url(%23b)'/%3E%3C/g%3E%3C/svg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cdefs%3E%3Cpath%20id%3D%22a%22%20d%3D%22M0%200h24v24H0z%22%2F%3E%3C%2Fdefs%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22rotate(-90%2012%2012)%22%3E%3Cmask%20id%3D%22b%22%20fill%3D%22%23fff%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%2F%3E%3C%2Fmask%3E%3Cg%20stroke%3D%22%23c6cbd1%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%221.5%22%20mask%3D%22url(%23b)%22%3E%3Cpath%20d%3D%22M13.343%2016.814l-4.657-4.657L13.343%207.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20width%3D%2234%22%20height%3D%2234%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Ccircle%20fill%3D%22%23f1f0f0%22%20cx%3D%2217%22%20cy%3D%2217%22%20r%3D%2217%22%2F%3E%3Cg%20transform%3D%22translate(10%209)%22%20fill%3D%22%23FFF%22%3E%3Crect%20x%3D%226%22%20y%3D%222%22%20width%3D%222%22%20height%3D%2214%22%20rx%3D%221%22%2F%3E%3Crect%20transform%3D%22rotate(-45%209.879%204.879)%22%20x%3D%228.879%22%20y%3D%22-.121%22%20width%3D%222%22%20height%3D%2210%22%20rx%3D%221%22%2F%3E%3Crect%20transform%3D%22scale(-1%201)%20rotate(-45%200%2015)%22%20x%3D%223.2%22%20y%3D%220%22%20width%3D%222%22%20height%3D%2210%22%20rx%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2224%22%3E%3Cdefs%2F%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M0%200h12v24H0z%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%225%22%20r%3D%222%22%20fill%3D%22%23a3aab5%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%2212%22%20r%3D%222%22%20fill%3D%22%23a3aab5%22%2F%3E%3Ccircle%20cx%3D%226%22%20cy%3D%2219%22%20r%3D%222%22%20fill%3D%22%23a3aab5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23a3aab5%22%20fill-rule%3D%22nonzero%22%20d%3D%22M16.5%208v9.5c0%202.21-1.79%204-4%204s-4-1.79-4-4V7a2.5%202.5%200%200%201%205%200v8.5c0%20.55-.45%201-1%201s-1-.45-1-1V8H10v7.5a2.5%202.5%200%200%200%205%200V7c0-2.21-1.79-4-4-4S7%204.79%207%207v10.5c0%203.04%202.46%205.5%205.5%205.5s5.5-2.46%205.5-5.5V8h-1.5z%22%2F%3E%0A%3C%2Fsvg%3E%0A\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%0A%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(3%204)%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%228.5%22%20cy%3D%228.5%22%20r%3D%229.3%22%20stroke%3D%22%23a3aab5%22%20stroke-width%3D%221.6%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%225.375%22%20cy%3D%226.375%22%20r%3D%221.375%22%20fill%3D%22%23a3aab5%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2211.875%22%20cy%3D%226.375%22%20r%3D%221.375%22%20fill%3D%22%23a3aab5%22%20transform%3D%22matrix(-1%200%200%201%2023.75%200)%22%2F%3E%0A%20%20%20%20%3Cpath%20stroke%3D%22%23a3aab5%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%221.6%22%20d%3D%22M4.25%2010.5S4.5%2013%208.5%2013s4.25-2.5%204.25-2.5%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Ccircle%20fill%3D%22%23FFCC4D%22%20cx%3D%2218%22%20cy%3D%2218%22%20r%3D%2218%22%2F%3E%3Cpath%20fill%3D%22%23664500%22%20d%3D%22M27.335%2022.629c-.178-.161-.444-.171-.635-.029-.039.029-3.922%202.9-8.7%202.9-4.766%200-8.662-2.871-8.7-2.9-.191-.142-.457-.13-.635.029-.177.16-.217.424-.094.628C8.7%2023.472%2011.788%2028.5%2018%2028.5s9.301-5.028%209.429-5.243c.123-.205.084-.468-.094-.628zM26%2019c-.419%200-.809-.265-.948-.684C24.849%2017.717%2024.033%2016%2023%2016c-1.062%200-1.889%201.827-2.052%202.316-.175.523-.736.808-1.265.632-.523-.174-.807-.74-.632-1.265C19.177%2017.307%2020.355%2014%2023%2014s3.823%203.307%203.948%203.684c.175.524-.108%201.091-.632%201.265-.105.034-.212.051-.316.051zm-10%200c-.419%200-.809-.265-.949-.684C14.848%2017.717%2014.034%2016%2013%2016c-1.062%200-1.888%201.827-2.051%202.316-.175.523-.738.808-1.265.632-.524-.174-.807-.74-.632-1.265C9.177%2017.307%2010.355%2014%2013%2014s3.823%203.307%203.949%203.684c.175.524-.108%201.091-.632%201.265-.106.034-.213.051-.317.051z%22%2F%3E%3Cpath%20fill%3D%22%23FFAC33%22%20d%3D%22M33.175%208.316s-9.042.161-15.175.161c-3.905%200-15.206-.118-15.206-.118l-.521.876c3.043%201.856%209.064%202.917%2015.727%202.917%206.596%200%2012.576-1.04%2015.652-2.86l.078-.047s-.374-.664-.555-.929z%22%2F%3E%3Cpath%20fill%3D%22%235DADEC%22%20d%3D%22M23.777.345c-1.212-.094-2.473-.159-3.773-.19C19.343.139%2018.676.129%2018%20.129c-.672%200-1.336.01-1.993.025-1.302.031-2.564.096-3.777.19C5.34.88.169%202.451.169%205.287c0%203.588%208.264%205.771%2017.831%205.771s17.831-2.183%2017.831-5.771c0-2.835-5.168-4.405-12.054-4.942zM18%207.383c-6.861%200-12.91-.833-12.91-2.736%200-.536.494-1.023%201.339-1.449%201.153-.581%202.978-1.044%205.189-1.349%201.911-.262%204.098-.41%206.382-.41%202.291%200%204.485.148%206.4.413%202.242.31%204.086.783%205.232%201.377.807.418%201.278.894%201.278%201.418%200%201.903-6.049%202.736-12.91%202.736z%22%2F%3E%3Cpath%20fill%3D%22%233B94D9%22%20d%3D%22M24.4%201.853c2.242.31%204.086.783%205.232%201.377l.062.017c-2.285-1.674-4.57-2.56-5.917-2.902-1.212-.094-2.473-.159-3.773-.19l.018.007L24.4%201.853zM6.429%203.199c1.153-.581%202.978-1.044%205.189-1.349L15.984.162l.023-.008c-1.302.031-2.564.096-3.777.19-1.347.342-3.633%201.227-5.919%202.902l.118-.047z%22%2F%3E%3Cpath%20fill%3D%22%23FFCC4D%22%20d%3D%22M28.472%203.375c-.66-.443-1.346-.91-2.001-1.26C23.947.765%2021.063%200%2018%200c-2.929%200-5.695.7-8.14%201.941-1.089.553-1.881.999-2.17%201.434h20.782z%22%2F%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Cpath%20fill%3D%22%23C1CDD5%22%20d%3D%22M36%2019.854C33.518%209.923%2025.006%201.909%2016.031%206.832c0%200-4.522-1.496-5.174-1.948-.635-.44-1.635-.904-.912.436.423.782.875%201.672%202.403%203.317C8%2012.958%209.279%2018.262%207.743%2021.75c-1.304%202.962-2.577%204.733-1.31%206.976%201.317%202.33%204.729%203.462%207.018%201.06%201.244-1.307.471-1.937%203.132-4.202%202.723-.543%204.394-1.791%204.394-4.375%200%200%20.795-.382%201.826%206.009.456%202.818-.157%205.632-.039%208.783H36V19.854z%22%2F%3E%3Cpath%20fill%3D%22%2360379A%22%20d%3D%22M31.906%206.062c.531%201.312.848%203.71.595%205.318-.15-3.923-3.188-6.581-4.376-7.193-2.202-1.137-4.372-.979-6.799-.772.111.168.403.814.32%201.547-.479-.875-1.604-1.42-2.333-1.271-1.36.277-2.561.677-3.475%201.156-.504.102-1.249.413-2.372%201.101-1.911%201.171-4.175%204.338-6.737%203.511%201.042%202.5%203.631%201.845%203.631%201.845%201.207-1.95%204.067-3.779%206.168-4.452%207.619-1.745%2012.614%203.439%2015.431%209.398.768%201.625%202.611%207.132%204.041%2010.292V10.956c-.749-1.038-1.281-3.018-4.094-4.894z%22%2F%3E%3Cpath%20fill%3D%22%23C1CDD5%22%20d%3D%22M13.789%203.662c.573.788%203.236.794%204.596%203.82%201.359%203.026-1.943%202.63-3.14%201.23-1.334-1.561-1.931-2.863-2.165-3.992-.124-.596-.451-2.649.709-1.058z%22%2F%3E%3Cpath%20fill%3D%22%23758795%22%20d%3D%22M14.209%204.962c.956.573%202.164%201.515%202.517%202.596.351%201.081-.707.891-1.349-.042-.641-.934-.94-1.975-1.285-2.263-.346-.289.117-.291.117-.291z%22%2F%3E%3Ccircle%20fill%3D%22%23292F33%22%20cx%3D%2215.255%22%20cy%3D%2214.565%22%20r%3D%22.946%22%2F%3E%3Cpath%20fill%3D%22%2353626C%22%20d%3D%22M8.63%2026.877c.119.658-.181%201.263-.67%201.351-.49.089-.984-.372-1.104-1.03-.119-.659.182-1.265.671-1.354.49-.088.984.373%201.103%201.033z%22%2F%3E%3Cpath%20fill%3D%22%23EE7C0E%22%20d%3D%22M13.844%208.124l.003-.002-.005-.007-.016-.014c-.008-.007-.011-.019-.019-.025-.009-.007-.021-.011-.031-.018C12.621%207.078.933-.495.219.219-.51.948%2010.443%209.742%2011.149%2010.28l.011.006.541.439c.008.007.01.018.018.024.013.01.028.015.042.024l.047.038-.009-.016c.565.361%201.427.114%201.979-.592.559-.715.577-1.625.066-2.079z%22%2F%3E%3Cpath%20fill%3D%22%23C43512%22%20d%3D%22M4.677%202.25l.009-.025c-.301-.174-.594-.341-.878-.5-.016.038-.022.069-.041.11-.112.243-.256.484-.429.716-.166.224-.349.424-.541.595-.02.018-.036.026-.056.043.238.22.489.446.745.676.234-.21.456-.449.654-.717.214-.287.395-.589.537-.898zm2.275%202.945c.306-.41.521-.822.66-1.212-.292-.181-.584-.36-.876-.538-.076.298-.247.699-.586%201.152-.31.417-.613.681-.864.845.259.223.52.445.779.665.314-.244.619-.552.887-.912zM9.87%207.32c.365-.49.609-.983.734-1.437l-.906-.586c-.023.296-.172.81-.631%201.425-.412.554-.821.847-1.1.978l.814.671c.381-.256.761-.611%201.089-1.051z%22%2F%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Cpath%20fill%3D%22%23FFCC4D%22%20d%3D%22M36%2018c0%209.941-8.059%2018-18%2018-9.94%200-18-8.059-18-18C0%208.06%208.06%200%2018%200c9.941%200%2018%208.06%2018%2018%22%2F%3E%3Cellipse%20fill%3D%22%23664500%22%20cx%3D%2211.5%22%20cy%3D%2216.5%22%20rx%3D%222.5%22%20ry%3D%223.5%22%2F%3E%3Cellipse%20fill%3D%22%23664500%22%20cx%3D%2224.5%22%20cy%3D%2216.5%22%20rx%3D%222.5%22%20ry%3D%223.5%22%2F%3E%3Cpath%20fill%3D%22%23664500%22%20d%3D%22M12%2028c2-5%2013-5%2013-3%200%201-8-1-13%203z%22%2F%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Ccircle%20fill%3D%22%23AA8DD8%22%20cx%3D%2218%22%20cy%3D%2218%22%20r%3D%2218%22%2F%3E%3Cpath%20fill%3D%22%23AA8DD8%22%20d%3D%22M10%204C7.42%204%204.369%201.534%203.414.586%202.843.014%201.981-.157%201.235.153.487.462%200%201.191%200%202c0%203.459%201.672%2010%208%2010%20.757%200%201.45-.428%201.789-1.106l2-4c.31-.62.277-1.356-.088-1.946C11.337%204.359%2010.693%204%2010%204zM34.766.153c-.75-.311-1.607-.139-2.18.434C31.7%201.472%2028.589%204%2026%204c-.693%200-1.337.359-1.701.949-.364.589-.397%201.326-.088%201.946l2%204C26.55%2011.572%2027.242%2012%2028%2012c6.328%200%208-6.541%208-10%200-.809-.487-1.538-1.234-1.847z%22%2F%3E%3Cpath%20fill%3D%22%23553986%22%20d%3D%22M27.335%2025.629c-.178-.161-.444-.171-.635-.029-.039.029-3.922%202.9-8.7%202.9-4.766%200-8.662-2.871-8.7-2.9-.191-.142-.457-.13-.635.029-.177.16-.217.424-.094.628C8.7%2026.472%2011.788%2031.5%2018%2031.5s9.301-5.028%209.429-5.243c.123-.205.084-.468-.094-.628zm-11.628-7.336C12.452%2015.038%207.221%2015%207%2015c-.552%200-.999.447-.999.998-.001.552.446%201.001.998%201.002.029%200%201.925.022%203.983.737-.593.64-.982%201.634-.982%202.763%200%201.934%201.119%203.5%202.5%203.5s2.5-1.566%202.5-3.5c0-.174-.019-.34-.037-.507.013%200%20.025.007.037.007.256%200%20.512-.098.707-.293.391-.391.391-1.023%200-1.414zM29%2015c-.221%200-5.451.038-8.707%203.293-.391.391-.391%201.023%200%201.414.195.195.451.293.707.293.013%200%20.024-.007.036-.007-.016.167-.036.333-.036.507%200%201.934%201.119%203.5%202.5%203.5s2.5-1.566%202.5-3.5c0-1.129-.389-2.123-.982-2.763%202.058-.715%203.954-.737%203.984-.737.551-.001.998-.45.997-1.002-.001-.551-.447-.998-.999-.998z%22%2F%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Ccircle%20fill%3D%22%23FFCC4D%22%20cx%3D%2218%22%20cy%3D%2218%22%20r%3D%2218%22%2F%3E%3Cpath%20fill%3D%22%23664500%22%20d%3D%22M23.485%2028.879C23.474%2028.835%2022.34%2024.5%2018%2024.5s-5.474%204.335-5.485%204.379c-.053.213.044.431.232.544.188.112.433.086.596-.06.009-.008%201.013-.863%204.657-.863%203.59%200%204.617.83%204.656.863.095.09.219.137.344.137.084%200%20.169-.021.246-.064.196-.112.294-.339.239-.557zM11.226%2015.512c-.317%200-.636.039-.947.116-2.87.707-3.513%204.121-3.539%204.267-.04.223.076.443.281.54.067.031.14.047.211.047.145%200%20.287-.063.385-.18.01-.012%201.01-1.178%203.379-1.761.714-.176%201.412-.265%202.073-.265%201.104%200%201.732.253%201.735.254.067.028.131.04.207.04.272.012.509-.221.509-.5%200-.165-.08-.311-.203-.402-.367-.435-1.953-2.156-4.091-2.156zm13.548%200c.317%200%20.636.039.947.116%202.87.707%203.513%204.121%203.539%204.267.04.223-.076.443-.281.54-.067.031-.14.047-.211.047-.145%200-.287-.063-.385-.18-.01-.012-1.01-1.178-3.379-1.761-.714-.176-1.412-.265-2.073-.265-1.104%200-1.731.253-1.735.254-.067.028-.131.04-.206.04-.272.012-.509-.221-.509-.5%200-.165.08-.311.203-.402.366-.435%201.952-2.156%204.09-2.156z%22%2F%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      },
+      {
+        "url": "url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2036%2036%22%3E%3Ccircle%20fill%3D%22%23FFCC4D%22%20cx%3D%2218%22%20cy%3D%2218%22%20r%3D%2218%22%2F%3E%3Cellipse%20fill%3D%22%23664500%22%20cx%3D%2211.5%22%20cy%3D%2215.5%22%20rx%3D%222.5%22%20ry%3D%223.5%22%2F%3E%3Cpath%20fill%3D%22%23664500%22%20d%3D%22M28.457%2017.797c-.06-.135-1.499-3.297-4.457-3.297-2.957%200-4.397%203.162-4.457%203.297-.092.207-.032.449.145.591.175.142.426.147.61.014.012-.009%201.262-.902%203.702-.902%202.426%200%203.674.881%203.702.901.088.066.194.099.298.099.11%200%20.221-.037.312-.109.177-.142.238-.386.145-.594zM5.999%2011c-.208%200-.419-.065-.599-.2-.442-.331-.531-.958-.2-1.4C8.462%205.05%2012.816%205%2013%205c.552%200%201%20.448%201%201%200%20.551-.445.998-.996%201-.155.002-3.568.086-6.204%203.6-.196.262-.497.4-.801.4zm23.002%203c-.305%200-.604-.138-.801-.4-2.592-3.456-6.961-2.628-7.004-2.62-.547.11-1.068-.244-1.177-.784-.108-.541.243-1.068.784-1.177.231-.047%205.657-1.072%208.996%203.38.332.442.242%201.069-.2%201.4-.179.136-.389.201-.598.201zm-8.922%2013.042c1.335-.412%202.629-1.156%202.629-2.5%200-2.619-4.912-2.968-5.472-2.999-.274-.026-.509.193-.527.468-.017.274.19.511.464.53.035.002%203.535.299%203.535%202.001s-3.5%201.999-3.535%202.001c-.014.001-.024.009-.037.011-.052.006-.101.018-.146.04l-.019.011c-.047.026-.088.057-.125.098-.014.015-.024.031-.036.048-.023.032-.044.063-.059.102-.012.029-.018.061-.024.092-.004.023-.016.044-.018.067%200%20.011.004.021.004.031s-.005.021-.004.031c.001.024.013.045.018.068.006.031.011.061.023.09.013.03.031.057.049.084.017.024.032.05.052.071.023.023.05.041.078.061.024.017.046.034.074.047.032.015.066.021.101.027.024.006.044.018.069.02.035.002%203.535.299%203.535%202.001s-3.5%201.999-3.535%202.001c-.274.02-.481.257-.464.53.017.265.237.469.499.469l.028-.001c.56-.031%205.472-.38%205.472-2.999%200-1.345-1.294-2.089-2.629-2.501z%22%2F%3E%3Cpath%20fill%3D%22%23FFAC33%22%20d%3D%22M34.202%2025.803c-.236-.79-.779-1.486-1.578-1.875-.922-.449-1.956-.391-2.793.06-.16-.936-.75-1.789-1.67-2.237-1.517-.74-3.348-.11-4.087%201.406-.105.215-.18.437-.23.659-.775%202.556.64%206.341%202.192%207.948%201.23.13%202.953-.198%204.513-.873%201.5-1.46%202.733-3.183%203.653-5.088z%22%2F%3E%3Cpath%20fill%3D%22%23DD2E44%22%20d%3D%22M35.654%2027.222c.739-1.516.11-3.347-1.405-4.086-.922-.449-1.956-.391-2.793.06-.16-.936-.75-1.789-1.67-2.237-1.517-.74-3.348-.109-4.087%201.406-.105.215-.18.437-.23.659-.774%202.556.64%206.341%202.192%207.948%202.223.234%206.077-.979%207.615-3.161.145-.179.273-.374.378-.589z%22%2F%3E%3C%2Fsvg%3E\")",
+        "tag": "JDIV"
+      }
+    ],
+    "favicons": [
+      "https://cdn.shopify.com/s/files/1/0777/4932/2013/files/2bbac017bf3d684f4459cba3e691be68d50f43015b2e74d9a8915bb6383a704d1767947529759.png?v=1767947532",
+      "https://carfurnisher.com/cdn/shop/files/FAVICON_logo_hd_trans2_180x180_crop_center.png?v=1687719649",
+      "https://carfurnisher.com/cdn/shop/files/FAVICON_logo_hd_trans2_32x32_crop_center.png?v=1687719649",
+      "https://carfurnisher.com/cdn/shop/files/FAVICON_logo_hd_trans2_16x16_crop_center.png?v=1687719649"
+    ]
+  },
+  "behaviors": {
+    "scrollHeight": 6806,
+    "sticky": [
+      {
+        "tag": "DIV",
+        "cls": "booster__popup--holder",
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "shopify-section",
+        "text": ".page__header {\n        width: 100%;\n   "
+      },
+      {
+        "tag": "HEADER",
+        "cls": "page__header page__header--desktop page__header--sticky",
+        "text": "Home\n                    \n              "
+      },
+      {
+        "tag": "LABEL",
+        "cls": "overlay",
+        "text": ""
+      },
+      {
+        "tag": "HEADER",
+        "cls": "page__header page__header--mobile hide-desktop page__header-",
+        "text": "Home\n                    \n              "
+      },
+      {
+        "tag": "DIV",
+        "cls": "modal",
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "add-to-cart__success--holder modal",
+        "text": "Item added to cart!\n\n\n\n\n\n%title%\n%varian"
+      },
+      {
+        "tag": "DIV",
+        "cls": "col add-to-cart__success--single",
+        "text": "%title%\n%variant%\n\n\nYou have %itemCount%"
+      },
+      {
+        "tag": "DIV",
+        "cls": "",
+        "text": ""
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "button--primary__filled\n    \n    ",
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "",
+        "text": "var ajaxyLiveSearchSettings = {\"labels\":"
+      },
+      {
+        "tag": "DIV",
+        "cls": "als-overlay",
+        "text": "No Recent Searches\n                \n    "
+      },
+      {
+        "tag": "DIV",
+        "cls": "up-popup-container up:flex up:fixed up:space-y-4! up:z-[9999",
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "",
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "rebuy-cart__flyout",
+        "text": "Your Cart  Close Cart \n          \n      "
+      },
+      {
+        "tag": "DIV",
+        "cls": "rebuy-cart__background",
+        "text": ""
+      },
+      {
+        "tag": "DIV",
+        "cls": "new-modal hide-mobile",
+        "text": "Exclusive Deal: $15 Off Your First Order"
+      },
+      {
+        "tag": "DIV",
+        "cls": "",
+        "text": ""
+      },
+      {
+        "tag": "JDIV",
+        "cls": "notranslate",
+        "text": ""
+      },
+      {
+        "tag": "JDIV",
+        "cls": "notranslate",
+        "text": "JakeCustomer SupportJakeHello there. If "
+      },
+      {
+        "tag": "JDIV",
+        "cls": "avatarShadow__uB44m",
+        "text": ""
+      },
+      {
+        "tag": "JDIV",
+        "cls": "jv-pseudo-height",
+        "text": ""
+      },
+      {
+        "tag": "JDIV",
+        "cls": "jv-mouse-track",
+        "text": ""
+      }
+    ],
+    "animating": 168,
+    "transitions": 3251
+  }
+}

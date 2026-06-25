@@ -47,3 +47,19 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Wrangler local dev state (NOT project config)
+.wrangler/state/
+.wrangler/tmp/
+
+# Serena editor config
+.serena/
+
+# Image assets (served from R2/CDN, not in git)
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.svg
+*.ico
