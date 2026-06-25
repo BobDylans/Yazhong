@@ -47,3 +47,15 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Assets (tracked via R2/CDN, not git)
+public/images/
+
+# Tool/agent artifacts
+.serena/
+
+# Cloudflare Workers build artifacts
+.wrangler/
+
+# Deployment scripts (contain secrets)
+scripts/upload-images-to-r2.sh
