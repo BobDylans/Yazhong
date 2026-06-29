@@ -28,12 +28,12 @@ function ProductsContent() {
   return (
     <>
       {/* Page Header */}
-      <section className="bg-[#f5f5f5] py-12 md:py-16">
+      <section className="bg-secondary py-12 md:py-16">
         <div className="max-w-[1400px] mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-[#202626]">
+          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
             Our Products
           </h1>
-          <p className="mt-3 text-[#808080] max-w-2xl mx-auto">
+          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
             Browse our selection of premium automotive accessories. Contact us
             on WhatsApp for pricing and custom orders.
           </p>
@@ -50,8 +50,8 @@ function ProductsContent() {
               className={cn(
                 "px-4 py-2 text-sm font-medium transition-colors rounded-sm",
                 activeCategory === cat
-                  ? "bg-[#45a0de] text-white"
-                  : "bg-[#f5f5f5] text-[#191d21] hover:bg-[#efefef]",
+                  ? "bg-accent text-white"
+                  : "bg-secondary text-foreground hover:bg-muted",
               )}
             >
               {cat}
@@ -63,7 +63,7 @@ function ProductsContent() {
       {/* Products Grid */}
       <section className="max-w-[1400px] mx-auto px-4 py-8 pb-16">
         {filtered.length === 0 ? (
-          <p className="text-center text-[#808080] py-12">
+          <p className="text-center text-muted-foreground py-12">
             No products found in this category.
           </p>
         ) : (
@@ -82,7 +82,7 @@ export default function ProductsPage() {
         <Suspense
           fallback={
             <div className="flex items-center justify-center py-20">
-              <p className="text-[#808080]">Loading products...</p>
+              <p className="text-muted-foreground">Loading products...</p>
             </div>
           }
         >

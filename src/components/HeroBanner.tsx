@@ -40,10 +40,10 @@ export function HeroBanner() {
         <img
           src={getImageUrl("/images/hero-bg.jpg")}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover animate-kenburns-in"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
         {/* Content */}
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-4 text-center py-10 md:py-16">
@@ -75,32 +75,32 @@ export function HeroBanner() {
       </div>
 
       {/* Search by Vehicle */}
-      <div className="flex w-full justify-center bg-[#f0f2f4] px-4 py-6 md:py-8">
-        <div className="flex w-full max-w-3xl flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-xl sm:border sm:border-[#e5e7eb] sm:bg-white sm:p-1 sm:shadow-sm">
+      <div className="flex w-full justify-center bg-secondary px-4 py-6 md:py-8">
+        <div className="flex w-full max-w-3xl flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-xl sm:border sm:border-border sm:bg-white sm:p-1 sm:shadow-sm">
           <select value={search.year} onChange={e => setSearch(s => ({ year: e.target.value, make: "", model: "" }))}
             className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-r-none sm:border-r-0 sm:flex-1 sm:border-0 sm:bg-transparent",
-              "border-[#e5e7eb] bg-white text-[#191d21] focus:border-[#3178c6] focus:ring-1 focus:ring-[#3178c6]/30 appearance-none cursor-pointer",
-              !search.year && "text-[#8c9196]")}>
+              "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
+              !search.year && "text-muted-foreground")}>
             <option value="">Year</option>
             {vehicleYears.map(y => <option key={y} value={y}>{y}</option>)}
           </select>
           <select value={search.make} disabled={!search.year} onChange={e => setSearch(s => ({ ...s, make: e.target.value, model: "" }))}
             className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-none sm:flex-1 sm:border-0 sm:bg-transparent",
-              "border-[#e5e7eb] bg-white text-[#191d21] focus:border-[#3178c6] focus:ring-1 focus:ring-[#3178c6]/30 appearance-none cursor-pointer",
-              !search.make && "text-[#8c9196]", !search.year && "cursor-not-allowed opacity-40")}>
+              "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
+              !search.make && "text-muted-foreground", !search.year && "cursor-not-allowed opacity-40")}>
             <option value="">Make</option>
             {makes.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <select value={search.model} disabled={!search.make} onChange={e => setSearch(s => ({ ...s, model: e.target.value }))}
             className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-none sm:flex-1 sm:border-0 sm:bg-transparent",
-              "border-[#e5e7eb] bg-white text-[#191d21] focus:border-[#3178c6] focus:ring-1 focus:ring-[#3178c6]/30 appearance-none cursor-pointer",
-              !search.model && "text-[#8c9196]", !search.make && "cursor-not-allowed opacity-40")}>
+              "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
+              !search.model && "text-muted-foreground", !search.make && "cursor-not-allowed opacity-40")}>
             <option value="">Model</option>
             {models.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <a href={inquiryUrl} target="_blank" rel="noopener noreferrer"
             className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] sm:rounded-l-none sm:w-auto sm:px-5",
-              canSearch ? "bg-blue-gradient hover:shadow-lg hover:shadow-blue-500/25" : "bg-[#2563eb] hover:bg-[#1d4ed8]")}>
+              canSearch ? "bg-blue-gradient hover:shadow-lg hover:shadow-blue-500/25" : "bg-accent hover:bg-accent/90")}>
             <MessageCircle className="h-4 w-4 shrink-0" />
             {canSearch ? "Check on WhatsApp" : "Contact Us"}
           </a>

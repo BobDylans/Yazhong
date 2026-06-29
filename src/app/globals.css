@@ -29,6 +29,8 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
+  --color-gold: var(--accent-warm);
+  --color-gold-foreground: var(--accent-warm-foreground);
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -61,14 +63,14 @@
   --secondary-foreground: #1a1a1a;
   --muted: #f0eeeb;
   --muted-foreground: #8a8a8a;
-  --accent: #2563eb;
+  --accent: #45a0de;
   --accent-foreground: #ffffff;
   --accent-warm: #c99a4a;
   --accent-warm-foreground: #ffffff;
   --destructive: #dc2626;
   --border: #e5e2dd;
   --input: #e5e2dd;
-  --ring: #2563eb;
+  --ring: #45a0de;
   --radius: 0.5rem;
 }
 
@@ -129,8 +131,12 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+  @keyframes kenburns-in {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
+  }
 
-  ::selection { background: #2563eb; color: white; }
+  ::selection { background: #45a0de; color: white; }
 }
 
 @layer utilities {
@@ -155,6 +161,23 @@
       0 12px 40px rgba(0, 0, 0, 0.06);
   }
 
+  /* Premium elevated shadow for marquee / feature cards */
+  .shadow-premium {
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 8px 24px rgba(0, 0, 0, 0.06),
+      0 16px 48px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Cinematic "opening shot" push-in for hero imagery */
+  .animate-kenburns-in {
+    animation: kenburns-in 1.6s cubic-bezier(0.32, 0.72, 0, 1) both;
+    will-change: transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-kenburns-in { animation: none; }
+  }
+
   /* Double-bezel outer shell */
   .shell {
     background: #f0eeeb;
@@ -177,7 +200,7 @@
   }
   /* Blue accent gradient */
   .bg-blue-gradient {
-    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+    background: linear-gradient(135deg, #45a0de 0%, #7cbbea 100%);
   }
 
   /* Eyebrow badge */
@@ -190,8 +213,8 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     border-radius: 9999px;
-    background: rgba(37, 99, 235, 0.08);
-    color: #2563eb;
+    background: rgba(69, 160, 222, 0.08);
+    color: #45a0de;
   }
 
   /* Premium gradient divider */

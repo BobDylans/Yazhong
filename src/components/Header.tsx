@@ -50,13 +50,13 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled || pathname !== "/"
-          ? "bg-white/97 shadow-sm border-b border-[#efefef]"
-          : "bg-white/97 border-b border-[#efefef]"
+          ? "bg-white/97 shadow-sm border-b border-border"
+          : "bg-white/97 border-b border-border"
       )}
     >
       {/* Announcement Bar */}
       {announcementVisible && (
-        <div className="bg-[#191d21] text-white text-center text-xs py-2 px-4 relative">
+        <div className="bg-foreground text-white text-center text-xs py-2 px-4 relative">
           <span className="font-medium">
             🚀 Contact us on WhatsApp for custom seat cover orders & free consultation
           </span>
@@ -76,7 +76,7 @@ export function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 -ml-2 text-[#191d21] hover:text-[#45a0de] transition-colors"
+            className="lg:hidden p-2 -ml-2 text-foreground hover:text-accent transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -85,7 +85,7 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-[#202626] font-bold text-xl lg:text-2xl tracking-tight shrink-0"
+            className="text-foreground font-bold text-xl lg:text-2xl tracking-tight shrink-0"
           >
             Yazhong
           </Link>
@@ -102,9 +102,9 @@ export function Header() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#191d21] hover:text-[#45a0de] transition-colors rounded-md",
-                    pathname === link.href && "text-[#45a0de]",
-                    openDropdown === link.label && "text-[#45a0de]"
+                    "flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors rounded-md",
+                    pathname === link.href && "text-accent",
+                    openDropdown === link.label && "text-accent"
                   )}
                 >
                   {link.label}
@@ -120,12 +120,12 @@ export function Header() {
 
                 {/* Dropdown */}
                 {link.children && openDropdown === link.label && (
-                  <div className="absolute top-full left-0 bg-white border border-[#efefef] shadow-lg rounded-md py-3 min-w-[200px] animate-in fade-in duration-200">
+                  <div className="absolute top-full left-0 bg-white border border-border shadow-lg rounded-md py-3 min-w-[200px] animate-in fade-in duration-200">
                     {link.children.map((child) => (
                       <Link
                         key={child.label}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-[#191d21] hover:text-[#45a0de] hover:bg-[#f5f5f5] transition-colors"
+                        className="block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-muted transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -196,8 +196,8 @@ function MobileNavItem({ link }: { link: (typeof navLinks)[number] }) {
       <Link
         href={link.href}
         className={cn(
-          "block px-3 py-3 min-h-[44px] text-[#191d21] font-medium text-sm rounded-md flex items-center",
-          pathname === link.href && "text-[#45a0de]"
+          "block px-3 py-3 min-h-[44px] text-foreground font-medium text-sm rounded-md flex items-center",
+          pathname === link.href && "text-accent"
         )}
       >
         {link.label}
@@ -209,7 +209,7 @@ function MobileNavItem({ link }: { link: (typeof navLinks)[number] }) {
     <div>
       <button
         onClick={() => setExpanded(!expanded)}
-        className="flex items-center justify-between w-full px-3 py-3 min-h-[44px] text-[#191d21] font-medium text-sm rounded-md"
+        className="flex items-center justify-between w-full px-3 py-3 min-h-[44px] text-foreground font-medium text-sm rounded-md"
       >
         {link.label}
         <ChevronDown
@@ -225,7 +225,7 @@ function MobileNavItem({ link }: { link: (typeof navLinks)[number] }) {
             <Link
               key={child.label}
               href={child.href}
-              className="block px-3 py-3 min-h-[44px] text-sm text-[#808080] hover:text-[#45a0de] rounded-md flex items-center"
+              className="block px-3 py-3 min-h-[44px] text-sm text-muted-foreground hover:text-accent rounded-md flex items-center"
             >
               {child.label}
             </Link>

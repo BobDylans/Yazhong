@@ -29,13 +29,13 @@ function FeatureCard({ icon: Icon, title, subtitle, index }: typeof features[0] 
         willChange: "transform, opacity",
       }}
     >
-      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#3178c6]/10 to-[#3178c6]/5 text-[#3178c6] ring-1 ring-[#3178c6]/10 transition-all duration-500 group-hover:scale-110">
+      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 text-accent ring-1 ring-accent/10 transition-all duration-500 group-hover:scale-110">
         <Icon className="h-7 w-7" strokeWidth={1.5} />
       </div>
-      <h3 className="mb-1 font-sans text-sm font-semibold text-[#1a1f24]">
+      <h3 className="mb-1 font-sans text-sm font-semibold text-foreground">
         {title}
       </h3>
-      <p className="font-sans text-xs text-[#8c9196]">
+      <p className="font-sans text-xs text-muted-foreground">
         {subtitle}
       </p>
     </div>

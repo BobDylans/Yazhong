@@ -32,10 +32,10 @@ export default function Home() {
             <div className="text-center mt-14">
               <a
                 href="/products"
-                className="group inline-flex items-center gap-3 rounded-full border border-[#e5e2dd] px-8 py-3.5 text-sm font-semibold text-[#1a1a1a] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#1a1a1a] hover:text-white active:scale-[0.97] shadow-ambient hover:shadow-ambient-hover"
+                className="group inline-flex items-center gap-3 rounded-full border border-border px-8 py-3.5 text-sm font-semibold text-foreground transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-foreground hover:text-white active:scale-[0.97] shadow-ambient hover:shadow-ambient-hover"
               >
                 View All Products
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1a1a] text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-white group-hover:text-[#1a1a1a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-white group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -51,14 +51,14 @@ export default function Home() {
 
         {/* Blog Preview */}
         <Reveal delay={100}>
-          <section className="bg-[#f0eeeb] py-24 md:py-32">
+          <section className="bg-secondary py-24 md:py-32">
             <div className="max-w-[1400px] mx-auto px-4">
               <div className="text-center mb-14 md:mb-16">
                 <span className="eyebrow mb-4">Insights</span>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
                   Car Interior Insights
                 </h2>
-                <p className="mt-3 text-sm text-[#8a8a8a] max-w-lg mx-auto">
+                <p className="mt-3 text-sm text-muted-foreground max-w-lg mx-auto">
                   Tips, guides, and inspiration from our team of automotive
                   enthusiasts.
                 </p>
@@ -68,10 +68,10 @@ export default function Home() {
               <div className="text-center mt-14">
                 <a
                   href="/blog"
-                  className="group inline-flex items-center gap-3 rounded-full border border-[#e5e2dd] px-8 py-3.5 text-sm font-semibold text-[#1a1a1a] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#1a1a1a] hover:text-white active:scale-[0.97] shadow-ambient hover:shadow-ambient-hover"
+                  className="group inline-flex items-center gap-3 rounded-full border border-border px-8 py-3.5 text-sm font-semibold text-foreground transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-foreground hover:text-white active:scale-[0.97] shadow-ambient hover:shadow-ambient-hover"
                 >
                   Read All Articles
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1a1a1a] text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-white group-hover:text-[#1a1a1a] group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-white group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

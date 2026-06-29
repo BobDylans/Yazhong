@@ -29,19 +29,19 @@ export default async function BlogPostPage({ params }: Props) {
       .split("\n")
       .map((line) => {
         if (line.startsWith("**") && line.endsWith("**")) {
-          return `<h3 class="text-lg font-semibold text-[#191d21] mt-6 mb-3">${line.replace(/\*\*/g, "")}</h3>`;
+          return `<h3 class="text-lg font-semibold text-foreground mt-6 mb-3">${line.replace(/\*\*/g, "")}</h3>`;
         }
         if (line.startsWith("- ")) {
-          return `<li class="text-[#808080] text-sm leading-relaxed ml-4 list-disc">${line.slice(2)}</li>`;
+          return `<li class="text-muted-foreground text-sm leading-relaxed ml-4 list-disc">${line.slice(2)}</li>`;
         }
         if (line.match(/^\*\*\d\.\s/)) {
-          return `<h4 class="font-semibold text-[#191d21] mt-4 mb-1">${line.replace(/\*\*/g, "")}</h4>`;
+          return `<h4 class="font-semibold text-foreground mt-4 mb-1">${line.replace(/\*\*/g, "")}</h4>`;
         }
         if (line.trim() === "") return "";
         if (line.startsWith("  ")) {
-          return `<p class="text-[#808080] text-sm leading-relaxed ml-4">${line.trim()}</p>`;
+          return `<p class="text-muted-foreground text-sm leading-relaxed ml-4">${line.trim()}</p>`;
         }
-        return `<p class="text-[#808080] text-sm leading-relaxed mb-2">${line}</p>`;
+        return `<p class="text-muted-foreground text-sm leading-relaxed mb-2">${line}</p>`;
       })
       .join("\n");
   };
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
         <section className="max-w-[800px] mx-auto px-4 pt-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-[#808080] hover:text-[#45a0de] transition-colors"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Blog
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Article */}
         <article className="max-w-[800px] mx-auto px-4 py-8 pb-16">
           {/* Header image */}
-          <div className="relative aspect-[16/9] overflow-hidden bg-[#f5f5f5] mb-8">
+          <div className="relative aspect-[16/9] overflow-hidden bg-secondary mb-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={getImageUrl(post.image)}
@@ -74,8 +74,8 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Meta */}
-          <div className="flex items-center gap-3 text-xs text-[#808080] mb-4">
-            <span className="bg-[#45a0de] text-white px-2 py-0.5 uppercase tracking-wide">
+          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
+            <span className="bg-accent text-white px-2 py-0.5 uppercase tracking-wide">
               {post.category}
             </span>
             <span>{post.date}</span>
@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Title */}
-          <h1 className="text-2xl md:text-3xl font-bold text-[#202626] mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             {post.title}
           </h1>
 
@@ -94,12 +94,12 @@ export default async function BlogPostPage({ params }: Props) {
           />
 
           {/* Tags */}
-          <div className="mt-10 pt-6 border-t border-[#efefef]">
+          <div className="mt-10 pt-6 border-t border-border">
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="bg-[#f5f5f5] text-[#808080] text-xs px-3 py-1"
+                  className="bg-secondary text-muted-foreground text-xs px-3 py-1"
                 >
                   {tag}
                 </span>
@@ -108,8 +108,8 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* CTA */}
-          <div className="mt-10 bg-[#f5f5f5] p-6 text-center">
-            <p className="text-sm text-[#808080] mb-3">
+          <div className="mt-10 bg-secondary p-6 text-center">
+            <p className="text-sm text-muted-foreground mb-3">
               Have questions about this topic? We&apos;re here to help.
             </p>
             <a

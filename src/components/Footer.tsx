@@ -22,7 +22,7 @@ const customerServiceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#1a1f24] text-white">
+    <footer className="bg-foreground text-white">
       {/* Noise overlay */}
       <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.008]"
         style={{
@@ -39,7 +39,7 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
               About Yazhong
             </h3>
-            <p className="text-[#9ca3af] text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Yazhong is your trusted source for premium car seat covers,
               steering wheel covers, and custom-fit automotive accessories.
             </p>
@@ -54,7 +54,7 @@ export function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a href={link.href}
-                    className="text-[#9ca3af] text-sm hover:text-white transition-all duration-300 hover:translate-x-0.5 inline-block">
+                    className="text-muted-foreground text-sm hover:text-white transition-all duration-300 hover:translate-x-0.5 inline-block">
                     {link.label}
                   </a>
                 </li>
@@ -71,7 +71,7 @@ export function Footer() {
               {customerServiceLinks.map((link) => (
                 <li key={link.label}>
                   <a href={link.href}
-                    className="text-[#9ca3af] text-sm hover:text-white transition-all duration-300 hover:translate-x-0.5 inline-block">
+                    className="text-muted-foreground text-sm hover:text-white transition-all duration-300 hover:translate-x-0.5 inline-block">
                     {link.label}
                   </a>
                 </li>
@@ -84,7 +84,7 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
               Newsletter
             </h3>
-            <p className="text-[#9ca3af] text-sm leading-relaxed mb-4">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               Subscribe for exclusive offers and new arrivals.
             </p>
             <form onSubmit={e => e.preventDefault()} className="flex flex-col sm:flex-row gap-2">
@@ -107,10 +107,10 @@ export function Footer() {
       {/* Bottom */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#6b7280] text-xs">
+          <p className="text-muted-foreground text-xs">
             &copy; {new Date().getFullYear()} Yazhong. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-[#6b7280] text-[11px] uppercase tracking-wider font-medium">
+          <div className="flex items-center gap-4 text-muted-foreground text-[11px] uppercase tracking-wider font-medium">
             <span>Visa</span>
             <span>Mastercard</span>
             <span>PayPal</span>

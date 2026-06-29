@@ -1,19 +1,23 @@
 /**
  * Image URL utility
  *
- * During development: serves images from /public/images/
- * When deployed with R2: serves images from the admin Worker proxy
+ * Defaults to serving images from the local /public/images/ asset set
+ * (the bundled demo product photos). To serve real product photos from the
+ * admin Worker's R2 bucket instead, opt in with a single env flag:
  *
- * Set NEXT_PUBLIC_ADMIN_URL in .env.local or .env.production.local:
+ *   NEXT_PUBLIC_USE_R2=true
  *   NEXT_PUBLIC_ADMIN_URL=https://admin.rimhappywoods.top
  *
- * If not set, falls back to local /images/ path.
+ * Flip NEXT_PUBLIC_USE_R2 back off (or unset it) to return to local assets.
  */
 
 export function getImageUrl(path: string): string {
-  const adminUrl = process.env.NEXT_PUBLIC_ADMIN_URL || process.env.NEXT_PUBLIC_R2_URL;
+  const useR2 = process.env.NEXT_PUBLIC_USE_R2 === "true";
+  const adminUrl = useR2
+    ? process.env.NEXT_PUBLIC_ADMIN_URL || process.env.NEXT_PUBLIC_R2_URL
+    : null;
 
-  // If admin URL is configured, proxy through the Worker's R2 endpoint
+  // If R2 is opted in and an admin URL is configured, proxy through the Worker's R2 endpoint
   if (adminUrl) {
     // path is like "/images/product-carseat1.jpg" or "/images/imgs/productsImgs/..."
     const filename = path.replace("/images/", "");
@@ -22,10 +26,14 @@ export function getImageUrl(path: string): string {
       return `${adminUrl}/r2/${filename}`;
     }
     // Legacy paths: map to the correct R2 folder
-    // This handles the transition period where old code still uses /images/xxx.jpg
     return `${adminUrl}/r2/imgs/productsImgs/${filename}`;
   }
 
-  // Otherwise use local path (dev mode)
-  return path;
+  // Default: local /images/ assets. Generated API paths carry an "imgs/productsImgs/"
+  // prefix that only exists on R2 — normalize to the flat local filename so the bundled
+  // asset set resolves regardless of the path shape.
+  const filename = path
+    .replace("/images/", "")
+    .replace(/^imgs\/productsImgs\//, "");
+  return `/images/${filename}`;
 }
