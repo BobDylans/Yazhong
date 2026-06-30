@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { MessageCircle } from "lucide-react";
 import { getImageUrl } from "@/lib/images";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -19,10 +18,7 @@ export interface ProductCardData {
 interface ProductCardProps {
   product: ProductCardData;
   className?: string;
-  whatsappNumber?: string;
 }
-
-const WHATSAPP_NUMBER = "15138009985";
 
 function Badge({ text, color }: { text: string; color: string }) {
   const styles: Record<string, string> = {
@@ -46,18 +42,17 @@ function Badge({ text, color }: { text: string; color: string }) {
   );
 }
 
-export function ProductCard({ product, className, whatsappNumber = WHATSAPP_NUMBER }: ProductCardProps) {
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi! I'm interested in: ${product.title}`)}`;
-
+export function ProductCard({ product, className }: ProductCardProps) {
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-      className={cn("group h-full", className)}
-    >
-      <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-ambient transition-all duration-500 group-hover:shadow-ambient-hover">
-        {/* Image */}
-        <div className="relative aspect-square shrink-0 overflow-hidden bg-secondary">
+    <Link href={`/products/${product.id}`} className="block group h-full">
+      <motion.div
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        className={cn("h-full", className)}
+      >
+        <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-ambient transition-all duration-500 group-hover:shadow-ambient-hover group-hover:border-gold/30">
+          {/* Image */}
+          <div className="relative aspect-square shrink-0 overflow-hidden bg-secondary">
           <motion.img
             src={getImageUrl(product.image)}
             alt={product.title}
@@ -88,21 +83,17 @@ export function ProductCard({ product, className, whatsappNumber = WHATSAPP_NUMB
 
           <div className="mt-auto pt-3">
             <div className="mb-2.5 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-            <motion.a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 min-h-[36px] text-xs font-semibold text-white transition-all duration-300 hover:bg-[#22c35e]"
-            >
-              <MessageCircle className="h-3.5 w-3.5 shrink-0" />
-              <span>Inquire on WhatsApp</span>
-            </motion.a>
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-medium text-gold group-hover:gap-1.5 transition-all inline-flex items-center gap-1">
+                View Details
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </motion.div>
+  </Link>
   );
 }
 
@@ -158,9 +149,7 @@ export function ProductGrid({
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
             }}
           >
-            <Link href={`/products/${product.id}`} className="block">
-              <ProductCard product={product} />
-            </Link>
+            <ProductCard product={product} />
           </motion.div>
         ))}
       </motion.div>

@@ -1,12 +1,19 @@
 import type { ProductCardData } from "@/components/ProductCard";
 
-// Try to load generated data from prebuild script, fall back to hardcoded
-let generated: ProductCardData[] | null = null;
+// Generated data (from prebuild script) — works at build time in Next.js server
+let generatedData: ProductCardData[] | null = null;
+let generatedCats: string[] | null = null;
+
 try {
-  generated = require("./generated/products.json");
-} catch {
-  // Prebuild script not run yet, use hardcoded defaults
-}
+  const fs = require("fs");
+  const p = process.cwd() + "/src/data/generated/products.json";
+  if (fs.existsSync(p)) {
+    generatedData = JSON.parse(fs.readFileSync(p, "utf-8"));
+    const cp = process.cwd() + "/src/data/generated/categories.json";
+    generatedCats = JSON.parse(fs.readFileSync(cp, "utf-8"));
+  }
+} catch {}
+
 
 const hardcoded: ProductCardData[] = [
   {
@@ -129,7 +136,7 @@ const hardcoded: ProductCardData[] = [
   },
 ];
 
-let hardcodedCats = [
+const hardcodedCats = [
   "All",
   "Seat Covers",
   "Steering Covers",
@@ -137,11 +144,6 @@ let hardcodedCats = [
   "Accessories",
 ];
 
-let generatedCats: string[] | null = null;
-try {
-  generatedCats = require("./generated/categories.json");
-} catch {}
-
-export const products = generated || hardcoded;
+export const products = (generatedData || hardcoded) as ProductCardData[];
 export const productCategories = generatedCats || hardcodedCats;
-export const featuredProducts = products.slice(0, 8);
+export const featuredProducts = (products as ProductCardData[]).slice(0, 8);
