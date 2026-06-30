@@ -151,85 +151,134 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation Overlay */}
-      <div
-        className={cn(
-          "fixed inset-0 top-[60px] bg-white z-40 lg:hidden transition-transform duration-300 ease-in-out overflow-y-auto",
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        )}
-      >
-        <nav className="p-4 space-y-1">
-          {navLinks.map((link) => (
-            <MobileNavItem key={link.label} link={link} />
-          ))}
-          <div className="pt-4 px-3">
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 text-sm font-medium rounded-sm"
-            >
-              <MessageCircle className="size-4" />
-              Chat on WhatsApp
-            </a>
-          </div>
-        </nav>
-      </div>
-
-      {/* Overlay backdrop for mobile */}
+      {/* Mobile Navigation — Fullscreen Card Style */}
       {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 top-[60px] bg-black/20 z-30 lg:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-        />
+        <div className="fixed inset-0 top-0 z-40 lg:hidden">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/30" onClick={() => setMobileMenuOpen(false)} />
+          {/* Panel */}
+          <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-xl overflow-y-auto animate-in slide-in-from-right duration-300">
+            {/* Header */}
+            <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-border px-5 py-4 flex items-center justify-between">
+              <span className="font-bold text-lg text-foreground">Yazhong</span>
+              <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 -mr-1.5 rounded-full hover:bg-muted transition-colors" aria-label="Close">
+                <X className="size-5" />
+              </button>
+            </div>
+
+            <nav className="p-5 space-y-1">
+              {navLinks.map((link, i) => (
+                <MobileNavCard key={link.label} link={link} index={i} />
+              ))}
+            </nav>
+
+            {/* WhatsApp CTA */}
+            <div className="px-5 pb-6">
+              <div className="border-t border-border pt-5">
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-3.5 px-5 rounded-xl text-sm font-semibold hover:bg-[#22c35e] transition-all duration-200 active:scale-[0.98] shadow-sm"
+                >
+                  <MessageCircle className="size-5" />
+                  Chat on WhatsApp
+                </a>
+                <p className="text-center text-[11px] text-muted-foreground mt-2.5">
+                  ✈️ Free shipping worldwide on orders over $200
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </header>
   );
 }
 
-function MobileNavItem({ link }: { link: (typeof navLinks)[number] }) {
+const navIcons: Record<string, string> = {
+  "Home": "🏠",
+  "Products": "📦",
+  "Blog": "📝",
+  "About Us": "ℹ️",
+  "Contact": "✉️",
+  "Seat Covers": "🪑",
+  "Steering Covers": "🔧",
+  "Floor Mats": "🗺️",
+  "Accessories": "🎯",
+};
+
+function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
-
-  if (!link.children) {
-    return (
-      <Link
-        href={link.href}
-        className={cn(
-          "block px-3 py-3 min-h-[44px] text-foreground font-medium text-sm rounded-md flex items-center",
-          pathname === link.href && "text-accent"
-        )}
-      >
-        {link.label}
-      </Link>
-    );
-  }
+  const icon = navIcons[link.label] || "•";
+  const isActive = pathname === link.href;
+  const animationDelay = `${index * 50}ms`;
 
   return (
-    <div>
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="flex items-center justify-between w-full px-3 py-3 min-h-[44px] text-foreground font-medium text-sm rounded-md"
-      >
-        {link.label}
-        <ChevronDown
+    <div
+      className="animate-in fade-in slide-in-from-right duration-300"
+      style={{ animationDelay }}
+    >
+      {!link.children ? (
+        <Link
+          href={link.href}
           className={cn(
-            "size-3.5 transition-transform duration-200 shrink-0",
-            expanded && "rotate-180"
+            "flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200",
+            isActive
+              ? "bg-accent/10 text-accent font-semibold"
+              : "text-foreground hover:bg-muted"
           )}
-        />
-      </button>
-      {expanded && (
-        <div className="ml-4 space-y-0.5 pb-2">
-          {link.children.map((child) => (
-            <Link
-              key={child.label}
-              href={child.href}
-              className="block px-3 py-3 min-h-[44px] text-sm text-muted-foreground hover:text-accent rounded-md flex items-center"
-            >
-              {child.label}
-            </Link>
-          ))}
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg shrink-0">
+            {icon}
+          </span>
+          <span className="text-sm font-medium">{link.label}</span>
+        </Link>
+      ) : (
+        <div>
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className={cn(
+              "flex items-center justify-between w-full px-4 py-3.5 rounded-xl transition-all duration-200",
+              expanded ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+            )}
+          >
+            <span className="flex items-center gap-4">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg shrink-0">
+                {icon}
+              </span>
+              <span className="text-sm font-medium">{link.label}</span>
+            </span>
+            <ChevronDown
+              className={cn(
+                "size-4 transition-transform duration-200 shrink-0",
+                expanded && "rotate-180"
+              )}
+            />
+          </button>
+          {expanded && (
+            <div className="ml-14 mt-1 mb-1 space-y-0.5">
+              {link.children.map((child) => {
+                const childIcon = navIcons[child.label] || "•";
+                return (
+                  <Link
+                    key={child.label}
+                    href={child.href}
+                    className={cn(
+                      "flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all duration-200",
+                      pathname === child.href
+                        ? "bg-accent/10 text-accent font-medium"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    )}
+                  >
+                    <span className="text-base shrink-0">{childIcon}</span>
+                    {child.label}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
     </div>

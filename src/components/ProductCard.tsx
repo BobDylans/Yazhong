@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { MessageCircle } from "lucide-react";
 import { getImageUrl } from "@/lib/images";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export interface ProductCardData {
   id: string;
@@ -157,7 +158,9 @@ export function ProductGrid({
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
             }}
           >
-            <ProductCard product={product} />
+            <Link href={`/products/${product.id}`} className="block">
+              <ProductCard product={product} />
+            </Link>
           </motion.div>
         ))}
       </motion.div>
