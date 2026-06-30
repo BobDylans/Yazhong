@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
+import { Menu, X, ChevronDown, MessageCircle, Home, Package, FileText, Info, Mail, Wrench, Map } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -196,91 +196,111 @@ export function Header() {
   );
 }
 
-const navIcons: Record<string, string> = {
-  "Home": "🏠",
-  "Products": "📦",
-  "Blog": "📝",
-  "About Us": "ℹ️",
-  "Contact": "✉️",
-  "Seat Covers": "🪑",
-  "Steering Covers": "🔧",
-  "Floor Mats": "🗺️",
-  "Accessories": "🎯",
+function NavIcon({ icon, active }: { icon: React.ReactNode; active?: boolean }) {
+  return (
+    <span className={cn(
+      "flex h-10 w-10 items-center justify-center rounded-lg shrink-0 transition-all duration-200",
+      active
+        ? "bg-accent/20 text-accent"
+        : "bg-gradient-to-br from-secondary to-secondary/50 text-foreground/70 group-hover:from-accent/10 group-hover:to-accent/5 group-hover:text-accent"
+    )}>
+      {icon}
+    </span>
+  );
+}
+
+const navIcons: Record<string, React.ReactNode> = {
+  "Home": <Home className="size-[18px]" />,
+  "Products": <Package className="size-[18px]" />,
+  "Blog": <FileText className="size-[18px]" />,
+  "About Us": <Info className="size-[18px]" />,
+  "Contact": <Mail className="size-[18px]" />,
+  "Seat Covers": <Wrench className="size-[18px]" />,
+  "Steering Covers": <Wrench className="size-[18px]" />,
+  "Floor Mats": <Map className="size-[18px]" />,
+  "Accessories": <Package className="size-[18px]" />,
 };
 
 function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
-  const icon = navIcons[link.label] || "•";
+  const icon = navIcons[link.label] || null;
   const isActive = pathname === link.href;
   const animationDelay = `${index * 50}ms`;
+
+  const linkContent = (
+    <Link
+      href={link.href}
+      className={cn(
+        "flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200 group",
+        isActive
+          ? "bg-accent/10 text-accent font-semibold"
+          : "text-foreground hover:bg-muted"
+      )}
+    >
+      <NavIcon icon={icon} active={isActive} />
+      <span className="text-sm font-medium">{link.label}</span>
+    </Link>
+  );
+
+  if (!link.children) {
+    return (
+      <div
+        className="animate-in fade-in slide-in-from-right duration-300"
+        style={{ animationDelay }}
+      >
+        {linkContent}
+      </div>
+    );
+  }
 
   return (
     <div
       className="animate-in fade-in slide-in-from-right duration-300"
       style={{ animationDelay }}
     >
-      {!link.children ? (
-        <Link
-          href={link.href}
+      <div>
+        <button
+          onClick={() => setExpanded(!expanded)}
           className={cn(
-            "flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200",
-            isActive
-              ? "bg-accent/10 text-accent font-semibold"
-              : "text-foreground hover:bg-muted"
+            "flex items-center justify-between w-full px-4 py-3.5 rounded-xl transition-all duration-200 group",
+            expanded ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
           )}
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg shrink-0">
-            {icon}
+          <span className="flex items-center gap-4">
+            <NavIcon icon={icon} active={expanded} />
+            <span className="text-sm font-medium">{link.label}</span>
           </span>
-          <span className="text-sm font-medium">{link.label}</span>
-        </Link>
-      ) : (
-        <div>
-          <button
-            onClick={() => setExpanded(!expanded)}
+          <ChevronDown
             className={cn(
-              "flex items-center justify-between w-full px-4 py-3.5 rounded-xl transition-all duration-200",
-              expanded ? "bg-accent/10 text-accent" : "text-foreground hover:bg-muted"
+              "size-4 transition-transform duration-200 shrink-0",
+              expanded && "rotate-180"
             )}
-          >
-            <span className="flex items-center gap-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg shrink-0">
-                {icon}
-              </span>
-              <span className="text-sm font-medium">{link.label}</span>
-            </span>
-            <ChevronDown
-              className={cn(
-                "size-4 transition-transform duration-200 shrink-0",
-                expanded && "rotate-180"
-              )}
-            />
-          </button>
-          {expanded && (
-            <div className="ml-14 mt-1 mb-1 space-y-0.5">
-              {link.children.map((child) => {
-                const childIcon = navIcons[child.label] || "•";
-                return (
-                  <Link
-                    key={child.label}
-                    href={child.href}
-                    className={cn(
-                      "flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all duration-200",
-                      pathname === child.href
-                        ? "bg-accent/10 text-accent font-medium"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    )}
-                  >
-                    <span className="text-base shrink-0">{childIcon}</span>
-                    {child.label}
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-        </div>
-      )}
+          />
+        </button>
+        {expanded && (
+          <div className="ml-14 mt-1 mb-1 space-y-0.5">
+            {link.children.map((child) => {
+              const childIcon = navIcons[child.label] || null;
+              return (
+                <Link
+                  key={child.label}
+                  href={child.href}
+                  className={cn(
+                    "flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all duration-200",
+                    pathname === child.href
+                      ? "bg-accent/10 text-accent font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  )}
+                >
+                  <NavIcon icon={childIcon} active={pathname === child.href} />
+                  {child.label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
