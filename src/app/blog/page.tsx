@@ -7,6 +7,8 @@ import { BlogGrid } from "@/components/BlogCard";
 import { blogPosts, blogCategories } from "@/data/blog-posts";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { cn } from "@/lib/utils";
+import { MessageCircle, Search } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/config";
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -21,14 +23,15 @@ export default function BlogPage() {
       <Header />
       <main className="pt-[106px] min-h-screen">
         {/* Page Header */}
-        <section className="bg-secondary py-12 md:py-16">
+        <section className="bg-secondary py-14 md:py-20">
           <div className="max-w-[1400px] mx-auto px-4 text-center">
+            <span className="eyebrow mb-4 inline-flex">Insights</span>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
               Car Interior Insights
             </h1>
-            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-              Tips, guides, and inspiration for keeping your car&apos;s interior
-              looking and feeling its best.
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto text-sm">
+              Tips, guides, and inspiration from our team of automotive enthusiasts.
+              Learn how to keep your car&apos;s interior looking and feeling its best.
             </p>
           </div>
         </section>
@@ -41,10 +44,10 @@ export default function BlogPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium transition-colors rounded-sm",
+                  "px-4 py-2 text-sm font-medium transition-all duration-200 rounded-full",
                   activeCategory === cat
-                    ? "bg-accent text-white"
-                    : "bg-secondary text-foreground hover:bg-border"
+                    ? "bg-accent text-white shadow-sm"
+                    : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-border"
                 )}
               >
                 {cat}
@@ -56,12 +59,35 @@ export default function BlogPage() {
         {/* Blog Grid */}
         <section className="max-w-[1400px] mx-auto px-4 py-8 pb-16">
           {filtered.length === 0 ? (
-            <p className="text-center text-muted-foreground py-12">
-              No posts found in this category.
-            </p>
+            <div className="text-center py-16">
+              <Search className="h-8 w-8 mx-auto text-muted-foreground mb-3" />
+              <p className="text-muted-foreground">No posts found in this category.</p>
+            </div>
           ) : (
             <BlogGrid posts={filtered} />
           )}
+        </section>
+
+        {/* Newsletter CTA */}
+        <section className="max-w-[1400px] mx-auto px-4 pb-20">
+          <div className="rounded-xl bg-foreground p-8 md:p-10 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
+              Have Questions? We&apos;re Here to Help
+            </h2>
+            <p className="text-zinc-400 text-sm max-w-lg mx-auto mb-6">
+              Not sure which product fits your car? Chat with our team on WhatsApp
+              for personalized recommendations in minutes.
+            </p>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat on WhatsApp
+            </a>
+          </div>
         </section>
       </main>
       <Footer />

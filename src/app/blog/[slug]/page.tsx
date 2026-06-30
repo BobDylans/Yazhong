@@ -5,7 +5,9 @@ import { blogPosts } from "@/data/blog-posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getImageUrl } from "@/lib/images";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Calendar, User, Tag, Share2, MessageCircle } from "lucide-react";
+import type { Metadata } from "next";
+import { WHATSAPP_NUMBER } from "@/lib/config";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -15,7 +17,7 @@ export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return { title: "Blog Post" };
@@ -28,122 +30,137 @@ export async function generateMetadata({ params }: Props) {
       description: post.excerpt || post.title,
       type: "article",
       url: `https://rimhappywoods.top/blog/${slug}`,
-      images: post.image ? [{ url: post.image, width: 1200, height: 630, alt: post.title }] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt || post.title,
+      images: post.image ? [{ url: post.image, width: 1200, height: 630 }] : undefined,
     },
   };
+}
+
+function renderContent(content: string): string {
+  const lines = content.split("\n").filter(Boolean);
+  let html = "";
+  let inList = false;
+
+  for (const line of lines) {
+    if (line.startsWith("**") && line.endsWith("**")) {
+      html += `<h2 class="text-lg md:text-xl font-bold text-foreground mt-8 mb-4">${line.replace(/\*\*/g, "")}</h2>`;
+    } else if (line.startsWith("- ")) {
+      if (!inList) { html += '<ul class="list-disc pl-5 space-y-2 my-3">'; inList = true; }
+      html += `<li class="text-sm text-muted-foreground leading-relaxed">${line.slice(2)}</li>`;
+    } else if (line.match(/^\d+\.\s/)) {
+      html += `<li class="text-sm text-muted-foreground leading-relaxed mb-1">${line}</li>`;
+    } else {
+      if (inList) { html += "</ul>"; inList = false; }
+      html += `<p class="text-sm text-muted-foreground leading-relaxed mb-3">${line}</p>`;
+    }
+  }
+  if (inList) html += "</ul>";
+  return html;
 }
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) notFound();
 
-  if (!post) {
-    notFound();
-  }
-
-  // Simple markdown to HTML conversion
-  const renderContent = (content: string) => {
-    return content
-      .split("\n")
-      .map((line) => {
-        if (line.startsWith("**") && line.endsWith("**")) {
-          return `<h3 class="text-lg font-semibold text-foreground mt-6 mb-3">${line.replace(/\*\*/g, "")}</h3>`;
-        }
-        if (line.startsWith("- ")) {
-          return `<li class="text-muted-foreground text-sm leading-relaxed ml-4 list-disc">${line.slice(2)}</li>`;
-        }
-        if (line.match(/^\*\*\d\.\s/)) {
-          return `<h4 class="font-semibold text-foreground mt-4 mb-1">${line.replace(/\*\*/g, "")}</h4>`;
-        }
-        if (line.trim() === "") return "";
-        if (line.startsWith("  ")) {
-          return `<p class="text-muted-foreground text-sm leading-relaxed ml-4">${line.trim()}</p>`;
-        }
-        return `<p class="text-muted-foreground text-sm leading-relaxed mb-2">${line}</p>`;
-      })
-      .join("\n");
-  };
+  const relatedPosts = blogPosts.filter((p) => p.category === post.category && p.slug !== slug).slice(0, 3);
+  const shareText = encodeURIComponent(`${post.title} — read more on Yazhong Blog`);
+  const whatsappShare = `https://wa.me/?text=${shareText}%20https://rimhappywoods.top/blog/${slug}`;
 
   return (
     <>
       <Header />
       <main className="pt-[106px] min-h-screen">
-        {/* Back link */}
-        <section className="max-w-[800px] mx-auto px-4 pt-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Blog
-          </Link>
-        </section>
+        {/* Hero image */}
+        <div className="relative h-[40vh] md:h-[50vh] overflow-hidden bg-muted">
+          <img src={getImageUrl(post.image)} alt={post.title} className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        </div>
 
         {/* Article */}
-        <article className="max-w-[800px] mx-auto px-4 py-8 pb-16">
-          {/* Header image */}
-          <div className="relative aspect-[16/9] overflow-hidden bg-secondary mb-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={getImageUrl(post.image)}
-              alt={post.title}
-              className="h-full w-full object-cover"
+        <article className="max-w-3xl mx-auto px-4 -mt-20 relative z-10">
+          {/* Back link + Share */}
+          <div className="flex items-center justify-between mb-6">
+            <Link href="/blog"
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-accent transition-colors bg-card px-3 py-2 rounded-full border border-border">
+              <ArrowLeft className="h-3.5 w-3.5" />
+              All Articles
+            </Link>
+            <a href={whatsappShare} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-[#25D366] transition-colors bg-card px-3 py-2 rounded-full border border-border">
+              <Share2 className="h-3.5 w-3.5" />
+              Share
+            </a>
+          </div>
+
+          {/* Content card */}
+          <div className="bg-card border border-border rounded-xl p-6 md:p-8 shadow-ambient">
+            {/* Meta */}
+            <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-4">
+              <span className="bg-accent text-white px-2 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-sm">
+                {post.category}
+              </span>
+              <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {post.date}</span>
+              <span className="inline-flex items-center gap-1"><User className="h-3 w-3" /> {post.author}</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-6 leading-tight">
+              {post.title}
+            </h1>
+
+            {/* Body */}
+            <div
+              className="prose-custom"
+              dangerouslySetInnerHTML={{ __html: renderContent(post.content) }}
             />
-          </div>
 
-          {/* Meta */}
-          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
-            <span className="bg-accent text-white px-2 py-0.5 uppercase tracking-wide">
-              {post.category}
-            </span>
-            <span>{post.date}</span>
-            <span>By {post.author}</span>
-          </div>
+            {/* Tags */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="flex items-center gap-2 mt-8 pt-6 border-t border-border">
+                <Tag className="h-3.5 w-3.5 text-muted-foreground" />
+                {post.tags.map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 text-[10px] font-medium bg-secondary text-muted-foreground rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
 
-          {/* Title */}
-          <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-            {post.title}
-          </h1>
-
-          {/* Content */}
-          <div
-            className="prose prose-sm max-w-none"
-            dangerouslySetInnerHTML={{ __html: renderContent(post.content) }}
-          />
-
-          {/* Tags */}
-          <div className="mt-10 pt-6 border-t border-border">
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-secondary text-muted-foreground text-xs px-3 py-1"
-                >
-                  {tag}
-                </span>
-              ))}
+            {/* CTA */}
+            <div className="mt-8 p-5 bg-secondary rounded-lg flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex-1">
+                <div className="text-sm font-semibold text-foreground">Need a custom fit for your car?</div>
+                <div className="text-xs text-muted-foreground mt-1">Chat with us on WhatsApp for personalized recommendations.</div>
+              </div>
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 text-sm font-medium rounded-full hover:bg-[#22c35e] transition-colors whitespace-nowrap">
+                <MessageCircle className="h-4 w-4" />
+                Ask on WhatsApp
+              </a>
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="mt-10 bg-secondary p-6 text-center">
-            <p className="text-sm text-muted-foreground mb-3">
-              Have questions about this topic? We&apos;re here to help.
-            </p>
-            <a
-              href="https://wa.me/15138009985"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#22c35e] transition-colors"
-            >
-              Ask on WhatsApp
-            </a>
-          </div>
+          {/* Related Posts */}
+          {relatedPosts.length > 0 && (
+            <section className="mt-12 mb-16">
+              <h2 className="text-lg font-bold text-foreground mb-6">Related Articles</h2>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {relatedPosts.map((rp) => (
+                  <Link key={rp.slug} href={`/blog/${rp.slug}`}
+                    className="group">
+                    <div className="aspect-[16/9] rounded-lg overflow-hidden bg-muted mb-3">
+                      <img src={getImageUrl(rp.image)} alt={rp.title}
+                        className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="text-xs text-muted-foreground mb-1">{rp.date}</div>
+                    <div className="text-sm font-semibold text-foreground group-hover:text-accent transition-colors line-clamp-2">
+                      {rp.title}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </article>
       </main>
       <Footer />
