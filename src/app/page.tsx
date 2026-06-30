@@ -11,11 +11,28 @@ export const metadata: Metadata = {
   description:
     "Shop premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories. Handcrafted eco-leather, made to order for your exact vehicle.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+    description:
+      "Shop premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories.",
+    url: "https://rimhappywoods.top",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+    description:
+      "Shop premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories.",
+    images: ["/og-image.png"],
+  },
 };
 import { BlogGrid } from "@/components/BlogCard";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Reveal } from "@/components/Reveal";
+import { HowItWorks } from "@/components/HowItWorks";
+import { CustomerGallery } from "@/components/CustomerGallery";
+import { testimonials } from "@/data/testimonials";
 import { featuredProducts, products } from "@/data/products";
 import { blogPosts } from "@/data/blog-posts";
 
@@ -26,6 +43,9 @@ export default function Home() {
       <main>
         <HeroBanner />
         <TrustBadges />
+
+        {/* How It Works */}
+        <HowItWorks />
 
         <Reveal>
           <IconFeatures />
@@ -54,6 +74,66 @@ export default function Home() {
             </div>
           </section>
         </Reveal>
+
+        {/* Customer Reviews */}
+        <Reveal delay={100}>
+          <section className="py-16 md:py-20 bg-secondary">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+              <Reveal direction="up">
+                <div className="text-center mb-12">
+                  <span className="eyebrow mb-3">Testimonials</span>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                    Trusted by Drivers Worldwide
+                  </h2>
+                  <p className="text-sm text-muted-foreground max-w-xl mx-auto mt-3">
+                    Real reviews from real customers who transformed their driving experience.
+                  </p>
+                </div>
+              </Reveal>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+                {testimonials.slice(0, 3).map((t, i) => (
+                  <Reveal key={t.name} delay={i * 100} direction="up">
+                    <div className="p-6 border border-border rounded-xl bg-card shadow-ambient h-full flex flex-col">
+                      <div className="flex gap-1 mb-3">
+                        {Array.from({ length: 5 }).map((_, si) => (
+                          <svg key={si} className={si < t.rating ? "h-4 w-4 fill-gold text-gold" : "h-4 w-4 fill-none text-border"} viewBox="0 0 24 24">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="text-sm text-foreground leading-relaxed mb-4 flex-1">
+                        &ldquo;{t.text}&rdquo;
+                      </p>
+                      <div className="flex items-center gap-3 pt-3 border-t border-border">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
+                          {t.name.charAt(0)}
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-foreground">{t.name}</div>
+                          <div className="text-[11px] text-muted-foreground">{t.vehicle}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+              <Reveal delay={300}>
+                <div className="text-center mt-10">
+                  <a
+                    href="/about"
+                    className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
+                  >
+                    Read More Reviews
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                  </a>
+                </div>
+              </Reveal>
+            </div>
+          </section>
+        </Reveal>
+
+        {/* Customer Gallery + Reviews */}
+        <CustomerGallery />
 
         <Reveal delay={150}>
           <BrandMarquee />

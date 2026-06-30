@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MessageCircle, Mail, MapPin, Clock, CheckCircle, Star, ChevronRight, HelpCircle, Send } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/config";
+import { FaqPageSchema, BreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Contact Us — Get in Touch with Yazhong",
@@ -43,6 +44,11 @@ export default function ContactPage() {
   return (
     <>
       <Header />
+      <FaqPageSchema items={faqs.map(f => ({ question: f.q, answer: f.a }))} />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Contact", href: "/contact" },
+      ]} />
       <main className="min-h-screen">
         {/* Hero */}
         <section className="relative flex min-h-[45vh] items-center justify-center overflow-hidden pt-20">

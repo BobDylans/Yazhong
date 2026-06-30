@@ -8,6 +8,7 @@ import { getImageUrl } from "@/lib/images";
 import { ArrowLeft, Calendar, User, Tag, Share2, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import { WHATSAPP_NUMBER } from "@/lib/config";
+import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,16 +22,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return { title: "Blog Post" };
+  const img = post.image ? getImageUrl(post.image) : "/og-image.png";
   return {
-    title: post.title,
+    title: `${post.title} — Yazhong`,
     description: post.excerpt,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
-      title: post.title,
+      title: `${post.title} — Yazhong`,
       description: post.excerpt || post.title,
       type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
       url: `https://rimhappywoods.top/blog/${slug}`,
-      images: post.image ? [{ url: post.image, width: 1200, height: 630 }] : undefined,
+      images: [{ url: img, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} — Yazhong`,
+      description: post.excerpt,
+      images: [img],
     },
   };
 }
@@ -69,6 +79,20 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <>
       <Header />
+      <ArticleSchema
+        headline={post.title}
+        description={post.excerpt}
+        image={getImageUrl(post.image)}
+        datePublished={post.date}
+        author={post.author}
+        category={post.category}
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Blog", href: "/blog" },
+        { name: post.category, href: `/blog?category=${encodeURIComponent(post.category)}` },
+        { name: post.title, href: `/blog/${post.slug}` },
+      ]} />
       <main className="pt-[106px] min-h-screen">
         {/* Hero image */}
         <div className="relative h-[40vh] md:h-[50vh] overflow-hidden bg-muted">

@@ -5,9 +5,11 @@ import { products } from "@/data/products";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getImageUrl } from "@/lib/images";
-import { ArrowLeft, MessageCircle, CheckCircle, Truck, Shield, RotateCcw } from "lucide-react";
+import { ArrowLeft, CheckCircle, Truck, Shield, RotateCcw } from "lucide-react";
 import type { Metadata } from "next";
 import { WHATSAPP_NUMBER } from "@/lib/config";
+import { ProductSchema, BreadcrumbSchema } from "@/lib/schema";
+import { ProductConfigurator } from "@/components/ProductConfigurator";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -22,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((p) => p.id === slug);
   if (!product) return { title: "Product" };
+  const img = product.image ? getImageUrl(product.image) : "/og-image.png";
   return {
     title: `${product.title} — Yazhong`,
     description: product.description || `${product.title} — Custom-fit for your vehicle.`,
@@ -29,7 +32,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${product.title} — Yazhong`,
       description: product.description || "",
-      images: product.image ? [{ url: product.image }] : undefined,
+      url: `https://rimhappywoods.top/products/${slug}`,
+      images: [{ url: img, width: 1200, height: 630, alt: product.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.title} — Yazhong`,
+      description: product.description || "",
+      images: [img],
     },
   };
 }
@@ -57,6 +67,19 @@ export default async function ProductDetailPage({ params }: Props) {
   return (
     <>
       <Header />
+      <ProductSchema
+        name={product.title}
+        description={product.description || product.title}
+        image={getImageUrl(product.image)}
+        sku={product.id}
+        brand="Yazhong"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Products", href: "/products" },
+        ...(product.category ? [{ name: product.category, href: `/products?category=${encodeURIComponent(product.category)}` }] : []),
+        { name: product.title, href: `/products/${product.id}` },
+      ]} />
       <main className="pt-[106px] min-h-screen">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           {/* Breadcrumb */}
@@ -125,20 +148,12 @@ export default async function ProductDetailPage({ params }: Props) {
                 ))}
               </div>
 
-              {/* CTA */}
+              {/* Configurator — replaces simple CTA */}
               <div className="mt-auto pt-6 border-t border-border">
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-white py-3.5 px-6 rounded-xl text-sm font-semibold hover:bg-[#22c35e] transition-all duration-200 active:scale-[0.98] shadow-sm"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  Inquire on WhatsApp
-                </a>
-                <p className="text-center text-xs text-muted-foreground mt-2">
-                  Average response: &lt; 5 minutes
-                </p>
+                <ProductConfigurator
+                  productTitle={product.title}
+                  productId={product.id}
+                />
               </div>
             </div>
           </div>

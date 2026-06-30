@@ -5,12 +5,28 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Shield, Truck, Award, Headphones, Star, MessageCircle, ChevronRight } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 import Link from "next/link";
+import { BreadcrumbSchema } from "@/lib/schema";
+import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
   title: "About Us — Crafted for Your Drive",
   description:
     "Learn about Yazhong — our mission to deliver premium, custom-fit car accessories. Handcrafted quality, precision engineering, customer-first service.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us — Yazhong",
+    description:
+      "Learn about Yazhong — our mission to deliver premium, custom-fit car accessories.",
+    url: "https://rimhappywoods.top/about",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us — Yazhong",
+    description:
+      "Learn about Yazhong — premium custom-fit car accessories.",
+    images: ["/og-image.png"],
+  },
 };
 
 const stats = [
@@ -43,31 +59,14 @@ const values = [
   },
 ];
 
-const testimonials = [
-  {
-    name: "James M.",
-    vehicle: "BMW X5 2024",
-    text: "The custom-fit seat covers transformed my X5's interior. Installation took 15 minutes and the fit is absolutely perfect. Highly recommend!",
-    rating: 5,
-  },
-  {
-    name: "Sarah K.",
-    vehicle: "Mercedes C-Class 2023",
-    text: "I was skeptical about ordering seat covers online, but the WhatsApp team helped me pick the perfect color and model. Looks better than OEM!",
-    rating: 5,
-  },
-  {
-    name: "Mike R.",
-    vehicle: "Toyota RAV4 2025",
-    text: "Floor mats are incredible quality. Raised edges caught a coffee spill perfectly. Easy to clean too. Will buy again for my second car.",
-    rating: 5,
-  },
-];
-
 export default function AboutPage() {
   return (
     <>
       <Header />
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about" },
+      ]} />
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden pt-20">

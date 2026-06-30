@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { OrganizationSchema } from "@/lib/schema";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -108,6 +109,7 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans antialiased">
         {children}
+        <OrganizationSchema />
       </body>
     </html>
   );

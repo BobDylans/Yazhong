@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Blog — Car Interior Tips & Buying Guides",
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
       "Car interior tips, buying guides, and maintenance advice from Yazhong.",
     url: "https://rimhappywoods.top/blog",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — Yazhong",
+    description:
+      "Car interior tips, buying guides, and maintenance advice from Yazhong.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function BlogLayout({
@@ -18,5 +26,13 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Blog", href: "/blog" },
+      ]} />
+      {children}
+    </>
+  );
 }
