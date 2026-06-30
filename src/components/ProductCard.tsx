@@ -72,11 +72,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
               {product.category}
             </span>
           )}
-          <h3 className="font-sans text-sm font-semibold leading-snug text-foreground line-clamp-2">
+          <h3 className="font-sans text-sm font-semibold leading-snug text-foreground truncate">
             {product.title}
           </h3>
           {product.description && (
-            <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+            <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground truncate">
               {product.description}
             </p>
           )}

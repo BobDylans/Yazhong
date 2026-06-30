@@ -199,10 +199,10 @@ export function Header() {
 function NavIcon({ icon, active }: { icon: React.ReactNode; active?: boolean }) {
   return (
     <span className={cn(
-      "flex h-10 w-10 items-center justify-center rounded-lg shrink-0 transition-all duration-200",
+      "flex h-11 w-11 items-center justify-center rounded-xl shrink-0 transition-all duration-300",
       active
-        ? "bg-accent/20 text-accent"
-        : "bg-gradient-to-br from-secondary to-secondary/50 text-foreground/70 group-hover:from-accent/10 group-hover:to-accent/5 group-hover:text-accent"
+        ? "bg-accent text-white shadow-md shadow-accent/25"
+        : "bg-gradient-to-br from-zinc-100 to-zinc-50 text-zinc-500 shadow-sm ring-1 ring-zinc-200/50 group-hover:shadow-md group-hover:from-accent group-hover:to-amber-600 group-hover:text-white group-hover:ring-accent/30"
     )}>
       {icon}
     </span>
@@ -210,15 +210,15 @@ function NavIcon({ icon, active }: { icon: React.ReactNode; active?: boolean }) 
 }
 
 const navIcons: Record<string, React.ReactNode> = {
-  "Home": <Home className="size-[18px]" />,
-  "Products": <Package className="size-[18px]" />,
-  "Blog": <FileText className="size-[18px]" />,
-  "About Us": <Info className="size-[18px]" />,
-  "Contact": <Mail className="size-[18px]" />,
-  "Seat Covers": <Wrench className="size-[18px]" />,
-  "Steering Covers": <Wrench className="size-[18px]" />,
-  "Floor Mats": <Map className="size-[18px]" />,
-  "Accessories": <Package className="size-[18px]" />,
+  "Home": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></>,
+  "Products": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></>,
+  "Blog": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></>,
+  "About Us": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="8" r="3.5"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/><circle cx="12" cy="12" r="10"/></svg></>,
+  "Contact": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-9.1 6.3a1 1 0 0 1-1.1 0L2 4"/></svg></>,
+  "Seat Covers": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="2" x2="9" y2="22"/><line x1="15" y1="2" x2="15" y2="22"/></svg></>,
+  "Steering Covers": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><circle cx="12" cy="12" r="2"/></svg></>,
+  "Floor Mats": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></>,
+  "Accessories": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="2" y="7" width="20" height="12" rx="2" ry="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></>,
 };
 
 function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index: number }) {
