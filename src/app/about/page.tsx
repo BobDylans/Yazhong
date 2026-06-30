@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Shield, Truck, Award, Headphones } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us — Crafted for Your Drive",
+  description:
+    "Learn about Yazhong — our mission to deliver premium, custom-fit car accessories. Handcrafted quality, precision engineering, customer-first service.",
+  alternates: { canonical: "/about" },
+};
 
 const values = [
   {

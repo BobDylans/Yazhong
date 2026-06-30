@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { HeroBanner } from "@/components/HeroBanner";
 import { IconFeatures } from "@/components/IconFeatures";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import { ProductGrid } from "@/components/ProductCard";
+
+export const metadata: Metadata = {
+  title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+  description:
+    "Shop premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories. Handcrafted eco-leather, made to order for your exact vehicle.",
+  alternates: { canonical: "/" },
+};
 import { BlogGrid } from "@/components/BlogCard";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";

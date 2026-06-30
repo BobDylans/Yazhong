@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MessageCircle, Mail, MapPin } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact Us — Get in Touch",
+  description:
+    "Contact Yazhong for custom-fit car seat covers and accessories. Chat with us on WhatsApp for the fastest response, or send us a message.",
+  alternates: { canonical: "/contact" },
+};
 
 const WHATSAPP_NUMBER = "1234567890";
 

@@ -69,3 +69,6 @@ scripts/upload-images-to-r2.sh
 
 # Build-time generated data (regenerated on each build)
 src/data/generated/
+
+# graphify output
+graphify-out/

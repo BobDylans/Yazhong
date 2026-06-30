@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -6,12 +6,97 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "400", "500", "600", "700"],
+  display: "swap",
 });
 
+const SITE_URL = "https://rimhappywoods.top";
+const SITE_NAME = "Yazhong";
+const SITE_DESCRIPTION =
+  "Premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories. Handcrafted eco-leather, 3D laser-fit, made to order for your exact vehicle.";
+
 export const metadata: Metadata = {
-  title: "Yazhong - Premium Car Seat Covers & Auto Accessories",
-  description:
-    "Upgrade your drive with premium car seat covers, steering wheel covers, and custom-fit accessories.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+    template: "%s — Yazhong",
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "car seat covers",
+    "custom fit seat covers",
+    "luxury car mats",
+    "steering wheel cover",
+    "floor mats",
+    "car accessories",
+    "eco-leather seat covers",
+    "automotive interior",
+    "premium car accessories",
+    "made to order seat covers",
+  ],
+  authors: [{ name: "Yazhong" }],
+  creator: "Yazhong",
+  publisher: "Yazhong",
+  applicationName: "Yazhong",
+  category: "Automotive",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
+    description: SITE_DESCRIPTION,
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
 };
 
 export default function RootLayout({
@@ -20,8 +105,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans antialiased">{children}</body>
+    <html lang="en" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
+      <body className="min-h-full flex flex-col font-sans antialiased">
+        {children}
+      </body>
     </html>
   );
 }
