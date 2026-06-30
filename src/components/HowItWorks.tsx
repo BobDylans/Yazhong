@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/Reveal";
 import { Search, PenLine, MessageCircle } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/config";
 
 interface StepProps {
   number: number;
@@ -143,7 +144,7 @@ export function HowItWorks({
           <Reveal delay={450} direction="up">
             <div className="mt-12 text-center">
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "15138009985"}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20"

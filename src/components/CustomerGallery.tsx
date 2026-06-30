@@ -11,6 +11,7 @@ import {
   ChevronRight,
   Camera,
 } from "lucide-react";
+import { WHATSAPP_NUMBER } from "@/lib/config";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -290,7 +291,7 @@ export function CustomerGallery({
                 {/* Bottom CTA */}
                 <div className="mt-5 pt-4 border-t border-border text-center">
                   <a
-                    href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "15138009985"}`}
+                    href={`https://wa.me/${WHATSAPP_NUMBER}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold/80 transition-colors"
