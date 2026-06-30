@@ -1,51 +1,21 @@
-"use client";
-
-import { Truck, Shield, RotateCcw, Award } from "lucide-react";
-
-const trustItems = [
-  {
-    icon: Truck,
-    title: "Free Worldwide Shipping",
-    desc: "On orders over $200",
-  },
-  {
-    icon: Shield,
-    title: "Premium Quality Guarantee",
-    desc: "Handcrafted eco-leather",
-  },
-  {
-    icon: RotateCcw,
-    title: "30-Day Easy Returns",
-    desc: "Not satisfied? Send it back",
-  },
-  {
-    icon: Award,
-    title: "Custom Fit Promise",
-    desc: "Made for your exact vehicle",
-  },
-];
-
 export function TrustBadges() {
+  const items = [
+    { title: "Seat Cover Experts", desc: "Premium quality since 2010" },
+    { title: "Free Shipping", desc: "On orders over $50" },
+    { title: "Premium Quality", desc: "TUV Rheinland certified" },
+    { title: "Easy Returns", desc: "30-day return policy" },
+    { title: "24/7 Support", desc: "Dedicated customer service" },
+  ];
+
   return (
-    <section className="w-full py-6 md:py-8 bg-foreground/05">
+    <section className="w-full border-y border-border bg-background">
       <div className="max-w-[1400px] mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-          {trustItems.map((item) => (
-            <div
-              key={item.title}
-              className="flex items-center gap-3 py-2"
-            >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10">
-                <item.icon className="h-5 w-5 text-accent" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-semibold text-foreground leading-tight">
-                  {item.title}
-                </div>
-                <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
-                  {item.desc}
-                </div>
-              </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 py-2.5 md:py-3">
+          {items.map((item) => (
+            <div key={item.title} className="flex items-center gap-1.5 text-[11px] md:text-xs">
+              <span className="text-gold font-semibold whitespace-nowrap">{item.title}</span>
+              <span className="text-muted-foreground hidden sm:inline">·</span>
+              <span className="text-muted-foreground whitespace-nowrap hidden sm:inline">{item.desc}</span>
             </div>
           ))}
         </div>
