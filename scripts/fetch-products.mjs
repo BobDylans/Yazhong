@@ -30,15 +30,29 @@ async function main() {
   console.log("📦 Fetching products from admin API...");
   const products = await fetch(API_URL);
 
-  const mapped = products.map((p) => ({
-    id: p.id,
-    title: p.title,
-    description: p.description || undefined,
-    image: p.image_key ? `/images/${p.image_key}` : undefined,
-    badge: p.badge || undefined,
-    badgeColor: p.badge_color || undefined,
-    category: p.category_name || undefined,
-  })).filter(p => p.image); // only include products with images
+  const mapped = products.map((p) => {
+    // Determine image path: existing files use local path, new files use R2 path
+    let image;
+    if (p.image_key) {
+      const localFile = path.resolve(__dirname, "..", "public/images/" + p.image_key.replace("imgs/productsImgs/", ""));
+      if (fs.existsSync(localFile)) {
+        // File exists locally — use flat path (served as static asset)
+        image = "/images/" + p.image_key.replace("imgs/productsImgs/", "");
+      } else {
+        // File only in R2 — keep the full imgs/ prefix path
+        image = "/images/" + p.image_key;
+      }
+    }
+    return {
+      id: p.id,
+      title: p.title,
+      description: p.description || undefined,
+      image,
+      badge: p.badge || undefined,
+      badgeColor: p.badge_color || undefined,
+      category: p.category_name || undefined,
+    };
+  }).filter(p => p.image); // only include products with images
 
   const cats = ["All", ...new Set(mapped.map((p) => p.category).filter(Boolean))];
 
