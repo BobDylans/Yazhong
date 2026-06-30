@@ -23,7 +23,7 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const WHATSAPP_NUMBER = "1234567890";
+import { whatsappUrl } from "@/lib/config";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -139,7 +139,7 @@ export function Header() {
           {/* Actions */}
           <div className="flex items-center gap-2">
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 text-sm font-medium hover:bg-[#22c35e] transition-colors rounded-sm"
@@ -164,7 +164,7 @@ export function Header() {
           ))}
           <div className="pt-4 px-3">
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 text-sm font-medium rounded-sm"

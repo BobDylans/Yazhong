@@ -1,6 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { MessageCircle } from "lucide-react";
+import { whatsappUrl } from "@/lib/config";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -79,22 +81,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
+          {/* Column 4: Contact / WhatsApp */}
           <div>
             <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
-              Newsletter
+              Get in Touch
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Subscribe for exclusive offers and new arrivals.
+              Chat with us on WhatsApp for the fastest response. We typically reply within minutes.
             </p>
-            <form onSubmit={e => e.preventDefault()} className="flex flex-col sm:flex-row gap-2">
-              <input type="email" placeholder="your@email.com"
-                className="flex-1 rounded-lg bg-white/5 border border-white/10 px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 outline-none focus:border-white/20 focus:ring-2 focus:ring-white/10 transition-all" />
-              <button type="submit"
-                className="rounded-lg bg-warm-gradient px-5 py-2.5 text-sm font-medium text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:opacity-90 active:scale-[0.97]">
-                Subscribe
-              </button>
-            </form>
+            <a
+              href={whatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#22c35e] hover:shadow-lg"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>

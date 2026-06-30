@@ -124,7 +124,7 @@ export default function AboutPage() {
               and custom orders.
             </p>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/15138009985"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-3.5 text-base font-semibold hover:bg-[#22c35e] transition-colors"

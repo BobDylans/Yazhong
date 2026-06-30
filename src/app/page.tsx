@@ -4,6 +4,7 @@ import { HeroBanner } from "@/components/HeroBanner";
 import { IconFeatures } from "@/components/IconFeatures";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import { ProductGrid } from "@/components/ProductCard";
+import { TrustBadges } from "@/components/TrustBadges";
 
 export const metadata: Metadata = {
   title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
@@ -24,6 +25,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroBanner />
+        <TrustBadges />
 
         <Reveal>
           <IconFeatures />

@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: Props) {
               Have questions about this topic? We&apos;re here to help.
             </p>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/15138009985"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-2.5 text-sm font-medium hover:bg-[#22c35e] transition-colors"

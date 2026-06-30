@@ -20,16 +20,20 @@ const vehicleModels: Record<string, string[]> = {
   Honda: ["Civic","Accord","CR-V","Pilot","Odyssey"],
   Ford: ["F-150","Mustang","Explorer","Escape","Bronco"],
 };
-const WHATSAPP_NUMBER = "1234567890";
+import { whatsappUrl } from "@/lib/config";
 
 export function HeroBanner() {
   const [search, setSearch] = useState({ year: "", make: "", model: "" });
   const makes = vehicleMakes;
   const models = search.make ? vehicleModels[search.make] ?? [] : [];
   const canSearch = search.year && search.make && search.model;
-  const inquiryUrl = canSearch
-    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi! I'm looking for seat covers for my ${search.year} ${search.make} ${search.model}. Can you help?`)}`
-    : `https://wa.me/${WHATSAPP_NUMBER}`;
+  const getInquiryUrl = () => {
+    if (canSearch) {
+      const msg = `Hi! I'm looking for seat covers for my ${search.year} ${search.make} ${search.model}. Can you help?`;
+      return whatsappUrl(msg);
+    }
+    return whatsappUrl();
+  };
 
   return (
     <section className="relative w-full">
@@ -59,7 +63,7 @@ export function HeroBanner() {
             accessories. Contact us on WhatsApp for personalized recommendations.
           </p>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}`}
+            href={whatsappUrl()}
             target="_blank" rel="noopener noreferrer"
             className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#22c35e] active:scale-[0.97] shadow-lg shadow-green-500/20"
           >
@@ -98,7 +102,7 @@ export function HeroBanner() {
             <option value="">Model</option>
             {models.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
-          <a href={inquiryUrl} target="_blank" rel="noopener noreferrer"
+          <a href={getInquiryUrl()} target="_blank" rel="noopener noreferrer"
             className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] sm:rounded-l-none sm:w-auto sm:px-5",
               canSearch ? "bg-blue-gradient hover:shadow-lg hover:shadow-blue-500/25" : "bg-accent hover:bg-accent/90")}>
             <MessageCircle className="h-4 w-4 shrink-0" />
