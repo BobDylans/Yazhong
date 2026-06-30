@@ -1,123 +1,151 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Mail, ChevronRight } from "lucide-react";
 import { whatsappUrl } from "@/lib/config";
 
-const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "Shop All Products", href: "/products" },
-  { label: "Best Sellers", href: "/products" },
-  { label: "New Arrivals", href: "/products" },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about" },
-];
-
-const customerServiceLinks = [
-  { label: "Contact Us", href: "/contact" },
-  { label: "FAQ", href: "#" },
-  { label: "Shipping & Delivery", href: "#" },
-  { label: "Returns & Exchanges", href: "#" },
-  { label: "Size Guide", href: "#" },
-  { label: "Installation Guide", href: "#" },
-];
+const footerLinks = {
+  shop: [
+    { label: "Seat Covers", href: "/products?category=Seat+Covers" },
+    { label: "Steering Covers", href: "/products?category=Steering+Covers" },
+    { label: "Floor Mats", href: "/products?category=Floor+Mats" },
+    { label: "Accessories", href: "/products?category=Accessories" },
+    { label: "All Products", href: "/products" },
+  ],
+  support: [
+    { label: "Contact Us", href: "/contact" },
+    { label: "About Us", href: "/about" },
+    { label: "Blog", href: "/blog" },
+    { label: "FAQ", href: "/contact" },
+  ],
+};
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-foreground text-white">
-      {/* Noise overlay */}
-      <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.008]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          backgroundSize: "128px 128px",
-          pointerEvents: "none",
-        }}
-      />
+      {/* Main footer */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="py-12 md:py-16">
+          <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-10">
+            {/* Brand column — wider on desktop */}
+            <div className="col-span-2 md:col-span-4">
+              <div className="text-lg font-bold text-gold mb-3">Yazhong</div>
+              <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
+                Premium custom-fit car seat covers, steering wheel covers, floor mats,
+                and auto accessories. Made to order for your exact vehicle.
+              </p>
+              <div className="flex items-center gap-3 mt-4">
+                <a
+                  href={whatsappUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-[#25D366]/20 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                </a>
+                <a
+                  href="mailto:info@yazhong.com"
+                  className="inline-flex items-center justify-center h-9 w-9 rounded-full bg-accent/20 text-accent hover:bg-accent hover:text-white transition-all duration-300"
+                  aria-label="Email"
+                >
+                  <Mail className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-14">
-          {/* Column 1: About */}
-          <div>
-            <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
-              About Yazhong
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Yazhong is your trusted source for premium car seat covers,
-              steering wheel covers, and custom-fit automotive accessories.
-            </p>
-          </div>
+            {/* Shop links */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-4">
+                Shop
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.shop.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-zinc-400 hover:text-white transition-all duration-200 inline-flex items-center gap-1 group"
+                    >
+                      <ChevronRight className="h-3 w-3 text-gold/0 -ml-4 group-hover:ml-0 group-hover:text-gold transition-all duration-200" />
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href}
-                    className="text-muted-foreground text-sm hover:text-white transition-all duration-300 hover:translate-x-0.5 inline-block">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Support links */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-4">
+                Support
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.support.map((link) => (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="text-sm text-zinc-400 hover:text-white transition-all duration-200 inline-flex items-center gap-1 group"
+                    >
+                      <ChevronRight className="h-3 w-3 text-gold/0 -ml-4 group-hover:ml-0 group-hover:text-gold transition-all duration-200" />
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Column 3: Customer Service */}
-          <div>
-            <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
-              Customer Service
-            </h3>
-            <ul className="space-y-3">
-              {customerServiceLinks.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href}
-                    className="text-muted-foreground text-sm hover:text-white transition-all duration-300 hover:translate-x-0.5 inline-block">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Contact / WhatsApp */}
-          <div>
-            <h3 className="font-heading font-semibold text-white text-sm mb-5 tracking-tight">
-              Get in Touch
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Chat with us on WhatsApp for the fastest response. We typically reply within minutes.
-            </p>
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#22c35e] hover:shadow-lg"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Chat on WhatsApp
-            </a>
+            {/* Contact / CTA */}
+            <div className="col-span-2 md:col-span-4">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-zinc-500 mb-4">
+                Need Help?
+              </h3>
+              <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+                Our team typically replies within 5 minutes on WhatsApp. 
+                Tell us your car model and we&apos;ll find the perfect fit.
+              </p>
+              <a
+                href={whatsappUrl("Hi! I need help finding the right car accessories.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-medium text-white hover:bg-[#22c35e] transition-all duration-300 active:scale-[0.97]"
+              >
+                <MessageCircle className="h-4 w-4 shrink-0" />
+                Chat on WhatsApp
+              </a>
+              <div className="mt-3 text-[11px] text-zinc-600">
+                Available Mon-Sat · Average response &lt; 5 min
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="divider-premium opacity-30" />
-      </div>
+      {/* Bottom bar */}
+      <div className="border-t border-zinc-800">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-5">
+            {/* Copyright */}
+            <p className="text-xs text-zinc-500 order-2 sm:order-1">
+              &copy; {year} Yazhong. All rights reserved.
+            </p>
 
-      {/* Bottom */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-xs">
-            &copy; {new Date().getFullYear()} Yazhong. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4 text-muted-foreground text-[11px] uppercase tracking-wider font-medium">
-            <span>Visa</span>
-            <span>Mastercard</span>
-            <span>PayPal</span>
-            <span>Amex</span>
+            {/* Payment methods — visual badges */}
+            <div className="flex items-center gap-3 order-1 sm:order-2">
+              {[
+                { name: "Visa", color: "bg-blue-900" },
+                { name: "MC", color: "bg-orange-800" },
+                { name: "PP", color: "bg-blue-700" },
+                { name: "AE", color: "bg-sky-800" },
+              ].map((pm) => (
+                <span
+                  key={pm.name}
+                  className={`${pm.color} text-[10px] font-bold text-white/90 px-2.5 py-1 rounded tracking-wider`}
+                >
+                  {pm.name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
