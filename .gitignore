@@ -57,6 +57,12 @@ docs/research/
 
 # Tool/agent artifacts
 .serena/
+.strix/
+strix_runs/
+*.strix.*
+strix-report*
+findings.json
+recon/
 
 # Example env (not a real config, just a template)
 .env.local.example

@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 import { ProductSchema, BreadcrumbSchema } from "@/lib/schema";
 import { ProductConfigurator } from "@/components/ProductConfigurator";
+import { ProductDetails } from "@/components/ProductDetails";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -157,6 +158,9 @@ export default async function ProductDetailPage({ params }: Props) {
               </div>
             </div>
           </div>
+
+          {/* Product Details — specs, features, materials */}
+          <ProductDetails category={product.category} className="mb-16" />
 
           {/* Related Products */}
           {relatedProducts.length > 0 && (
