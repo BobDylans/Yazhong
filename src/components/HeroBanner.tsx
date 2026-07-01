@@ -54,15 +54,14 @@ export function HeroBanner() {
         {/* Content */}
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-4 text-center py-10 md:py-16">
           <span className="eyebrow mb-4 md:mb-5 inline-flex bg-white/10 text-white/80 backdrop-blur-sm border border-white/10">
-            Premium Auto Accessories
+            {t("heroEyebrow")}
           </span>
           <h1 className="font-heading text-3xl font-bold leading-[1.1] text-white sm:text-4xl md:text-[48px] md:leading-[1.08] tracking-tight">
-            <span className="block">Upgrade Your Drive with</span>
-            <span className="block bg-warm-gradient bg-clip-text text-transparent">Premium Car Accessories</span>
+            <span className="block">{t("heroTitle1")}</span>
+            <span className="block bg-warm-gradient bg-clip-text text-transparent">{t("heroTitle2")}</span>
           </h1>
           <p className="mt-4 max-w-lg text-sm text-white/70 sm:text-base leading-relaxed">
-            Discover custom-fit seat covers, steering wheel covers, and interior
-            accessories. Contact us on WhatsApp for personalized recommendations.
+            {t("heroDesc")}
           </p>
           <a
             href={whatsappUrl()}
@@ -70,7 +69,7 @@ export function HeroBanner() {
             className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[#25D366] px-7 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-[#22c35e] active:scale-[0.97] shadow-lg shadow-green-500/20"
           >
             <MessageCircle className="h-5 w-5" />
-            <span>Inquire on WhatsApp</span>
+            <span>{t("heroCTA")}</span>
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:scale-105">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
@@ -87,28 +86,28 @@ export function HeroBanner() {
             className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-r-none sm:border-r-0 sm:flex-1 sm:border-0 sm:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.year && "text-muted-foreground")}>
-            <option value="">Year</option>
+            <option value="">{t("heroYear")}</option>
             {vehicleYears.map(y => <option key={y} value={y}>{y}</option>)}
           </select>
           <select value={search.make} disabled={!search.year} onChange={e => setSearch(s => ({ ...s, make: e.target.value, model: "" }))}
             className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-none sm:flex-1 sm:border-0 sm:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.make && "text-muted-foreground", !search.year && "cursor-not-allowed opacity-40")}>
-            <option value="">Make</option>
+            <option value="">{t("heroMake")}</option>
             {makes.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <select value={search.model} disabled={!search.make} onChange={e => setSearch(s => ({ ...s, model: e.target.value }))}
             className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-none sm:flex-1 sm:border-0 sm:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.model && "text-muted-foreground", !search.make && "cursor-not-allowed opacity-40")}>
-            <option value="">Model</option>
+            <option value="">{t("heroModel")}</option>
             {models.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <a href={getInquiryUrl()} target="_blank" rel="noopener noreferrer"
             className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] sm:rounded-l-none sm:w-auto sm:px-5",
               canSearch ? "bg-blue-gradient hover:shadow-lg hover:shadow-blue-500/25" : "bg-accent hover:bg-accent/90")}>
             <MessageCircle className="h-4 w-4 shrink-0" />
-            {canSearch ? "Check on WhatsApp" : "Contact Us"}
+            {canSearch ? t("heroCheckWA") : t("heroContactUs")}
           </a>
         </div>
       </div>
