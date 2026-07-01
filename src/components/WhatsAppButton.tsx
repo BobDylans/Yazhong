@@ -2,11 +2,13 @@
 
 import { MessageCircle } from "lucide-react";
 import { whatsappUrl } from "@/lib/config";
+import { useLocale } from "@/i18n/LocaleProvider";
 
-const WHATSAPP_MESSAGE = "Hi! I'm interested in your products.";
+const DEFAULT_MSG = "Hi! I'm interested in your products.";
 
 export function WhatsAppButton() {
-  const url = whatsappUrl(WHATSAPP_MESSAGE);
+  const { t } = useLocale();
+  const url = whatsappUrl(t("waDefaultMessage"));
 
   return (
     <a
