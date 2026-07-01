@@ -26,9 +26,9 @@ export default function AboutPage() {
   ];
 
   const testimonials = [
-    { name: "James M.", vehicle: "BMW X5 2024", text: "The custom-fit seat covers transformed my X5's interior. Installation took 15 minutes and the fit is absolutely perfect. Highly recommend!", rating: 5 },
-    { name: "Sarah K.", vehicle: "Mercedes C-Class 2023", text: "I was skeptical about ordering seat covers online, but the WhatsApp team helped me pick the perfect color and model. Looks better than OEM!", rating: 5 },
-    { name: "Ahmed R.", vehicle: "Toyota RAV4 2025", text: "Floor mats are incredible quality. Raised edges caught a coffee spill perfectly. Easy to clean too. Will buy again for my second car.", rating: 5 },
+    { nameKey: "aboutTestimonial1Name", vehicleKey: "aboutTestimonial1Vehicle", textKey: "aboutTestimonial1", rating: 5 },
+    { nameKey: "aboutTestimonial2Name", vehicleKey: "aboutTestimonial2Vehicle", textKey: "aboutTestimonial2", rating: 5 },
+    { nameKey: "aboutTestimonial3Name", vehicleKey: "aboutTestimonial3Vehicle", textKey: "aboutTestimonial3", rating: 5 },
   ];
 
   return (
@@ -116,19 +116,19 @@ export default function AboutPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t("aboutTestimonialsTitle")}</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t) => (
-                <div key={t.name} className="card p-6 border border-border rounded-xl bg-card">
+              {testimonials.map((item) => (
+                <div key={item.nameKey} className="card p-6 border border-border rounded-xl bg-card">
                   <div className="flex gap-1 mb-3">
-                    {Array.from({ length: t.rating }).map((_, i) => (
+                    {Array.from({ length: item.rating }).map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                     ))}
                   </div>
-                  <p className="text-sm text-foreground leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
+                  <p className="text-sm text-foreground leading-relaxed mb-4">&ldquo;{t(item.textKey)}&rdquo;</p>
                   <div className="flex items-center gap-3 pt-3 border-t border-border">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">{t.name.charAt(0)}</div>
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">{t(item.nameKey).charAt(0)}</div>
                     <div>
-                      <div className="text-xs font-semibold text-foreground">{t.name}</div>
-                      <div className="text-[11px] text-muted-foreground">{t.vehicle}</div>
+                      <div className="text-xs font-semibold text-foreground">{t(item.nameKey)}</div>
+                      <div className="text-[11px] text-muted-foreground">{t(item.vehicleKey)}</div>
                     </div>
                   </div>
                 </div>
