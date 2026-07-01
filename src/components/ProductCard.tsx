@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { getImageUrl } from "@/lib/images";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export interface ProductCardData {
   id: string;
@@ -43,6 +44,7 @@ function Badge({ text, color }: { text: string; color: string }) {
 }
 
 export function ProductCard({ product, className }: ProductCardProps) {
+  const { t } = useLocale();
   return (
     <Link href={`/products/${product.id}`} className="block group h-full">
       <motion.div
@@ -85,7 +87,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             <div className="mb-2.5 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-medium text-gold group-hover:gap-1.5 transition-all inline-flex items-center gap-1">
-                View Details
+                {t("productViewDetails")}
                 <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </span>
             </div>
@@ -110,6 +112,7 @@ export function ProductGrid({
   subheading,
   className,
 }: ProductGridProps) {
+  const { t } = useLocale();
   return (
     <section className={cn("w-full", className)}>
       {heading && (
