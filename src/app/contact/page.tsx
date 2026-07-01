@@ -92,7 +92,7 @@ export default function ContactPage() {
 
                 {/* WhatsApp Card */}
                 <div className="p-6 rounded-xl border border-gold/30 bg-card shadow-ambient relative overflow-hidden">
-                  <div className="absolute top-0 right-0 bg-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-bl-lg">{t("contactFastest")}</div>
+                  <div className="absolute top-0 end-0 bg-gold text-black text-[10px] font-bold px-3 py-1 uppercase tracking-wider rounded-bl-lg">{t("contactFastest")}</div>
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#25D366]/10">
                       <MessageCircle className="h-6 w-6 text-[#25D366]" />

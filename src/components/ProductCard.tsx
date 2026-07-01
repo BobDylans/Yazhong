@@ -35,7 +35,7 @@ function Badge({ text, color }: { text: string; color: string }) {
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.2, duration: 0.4 }}
       className={cn(
-        "absolute top-3 left-3 z-10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full shadow-sm",
+        "absolute top-3 start-3 z-10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full shadow-sm",
         styles[color] || styles.red,
       )}
     >

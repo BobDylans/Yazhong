@@ -83,7 +83,7 @@ export function HeroBanner() {
       <div className="flex w-full justify-center bg-secondary px-4 py-6 md:py-8">
         <div className="flex w-full max-w-3xl flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-xl sm:border sm:border-border sm:bg-white sm:p-1 sm:shadow-sm">
           <select value={search.year} onChange={e => setSearch(s => ({ year: e.target.value, make: "", model: "" }))}
-            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-r-none sm:border-r-0 sm:flex-1 sm:border-0 sm:bg-transparent",
+            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-e-none sm:border-e-0 sm:flex-1 sm:border-0 sm:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.year && "text-muted-foreground")}>
             <option value="">{t("heroYear")}</option>
@@ -104,7 +104,7 @@ export function HeroBanner() {
             {models.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <a href={getInquiryUrl()} target="_blank" rel="noopener noreferrer"
-            className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] sm:rounded-l-none sm:w-auto sm:px-5",
+            className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] sm:rounded-s-none sm:w-auto sm:px-5",
               canSearch ? "bg-blue-gradient hover:shadow-lg hover:shadow-blue-500/25" : "bg-accent hover:bg-accent/90")}>
             <MessageCircle className="h-4 w-4 shrink-0" />
             {canSearch ? t("heroCheckWA") : t("heroContactUs")}

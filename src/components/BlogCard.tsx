@@ -30,7 +30,7 @@ export function BlogCard({ post, className }: BlogCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
         {/* Category badge */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute top-3 start-3">
           <span className="bg-accent text-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-sm">
             {post.category}
           </span>

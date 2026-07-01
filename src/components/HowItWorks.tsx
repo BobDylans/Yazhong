@@ -67,7 +67,7 @@ function StepCard({ step, index }: { step: StepProps; index: number }) {
             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-gold to-[#b8862d] text-white shadow-lg shadow-gold/20 transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-gold/30">
               {step.icon}
             </div>
-            <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-foreground text-[11px] font-bold text-background">
+            <span className="absolute -top-2 -end-2 flex h-6 w-6 items-center justify-center rounded-full bg-foreground text-[11px] font-bold text-background">
               {step.number}
             </span>
           </div>

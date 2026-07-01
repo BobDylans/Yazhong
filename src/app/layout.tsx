@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Tajawal } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema } from "@/lib/schema";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -8,6 +8,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const tajawal = Tajawal({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  weight: ["400", "500", "700", "800"],
   display: "swap",
 });
 
@@ -107,7 +114,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" dir="ltr" className={`${poppins.variable} ${tajawal.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

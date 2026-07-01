@@ -68,7 +68,7 @@ function Swatch({
         </span>
       )}
       {selected && (
-        <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-gold">
+        <span className="absolute -top-1 -end-1 flex h-4 w-4 items-center justify-center rounded-full bg-gold">
           <Check className="h-2.5 w-2.5 text-white" />
         </span>
       )}

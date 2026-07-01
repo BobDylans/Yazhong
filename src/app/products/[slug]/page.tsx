@@ -110,7 +110,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 className="h-full w-full object-cover"
               />
               {product.badge && (
-                <span className={`absolute top-4 left-4 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider rounded-full shadow-sm text-white ${
+                <span className={`absolute top-4 start-4 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider rounded-full shadow-sm text-white ${
                   product.badgeColor === "red" ? "bg-[#dc2626]" :
                   product.badgeColor === "blue" ? "bg-accent" :
                   product.badgeColor === "green" ? "bg-[#16a34a]" :

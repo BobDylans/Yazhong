@@ -215,7 +215,7 @@ export function CustomerGallery({
             <Reveal direction="right" delay={200}>
               <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-ambient relative">
                 {/* Quote icon */}
-                <Quote className="h-8 w-8 text-gold/20 absolute top-4 right-4" />
+                <Quote className="h-8 w-8 text-gold/20 absolute top-4 end-4" />
 
                 {/* Rating */}
                 <Stars count={reviews[activeReview].rating} size="md" />

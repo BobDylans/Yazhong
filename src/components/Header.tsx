@@ -49,7 +49,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled || pathname !== "/"
           ? "bg-white/97 shadow-sm border-b border-border"
           : "bg-white/97 border-b border-border"
@@ -63,7 +63,7 @@ export function Header() {
           </span>
           <button
             onClick={() => setAnnouncementVisible(false)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors"
+            className="absolute end-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors"
             aria-label="Dismiss announcement"
           >
             <X className="size-3.5" />
@@ -159,7 +159,7 @@ export function Header() {
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/30" onClick={() => setMobileMenuOpen(false)} />
           {/* Panel */}
-          <div className="absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-xl overflow-y-auto animate-in slide-in-from-right duration-300">
+          <div className="absolute end-0 top-0 h-full w-full max-w-sm bg-white shadow-xl overflow-y-auto animate-in slide-in-from-right duration-300">
             {/* Header */}
             <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-border px-5 py-4 flex items-center justify-between">
               <span className="font-bold text-lg text-foreground">Yazhong</span>
