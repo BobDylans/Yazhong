@@ -32,6 +32,8 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Reveal } from "@/components/Reveal";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CustomerGallery } from "@/components/CustomerGallery";
+import { ReviewsSection } from "@/components/ReviewsSection";
+import { FeaturedSection, FeaturedHeading, InsightsSection } from "@/components/SectionHeadings";
 import { testimonials } from "@/data/testimonials";
 import { featuredProducts, products } from "@/data/products";
 import { blogPosts } from "@/data/blog-posts";
@@ -52,13 +54,13 @@ export default function Home() {
         </Reveal>
 
         {/* Featured Products — symmetrical grid */}
-        <Reveal delay={100}>
-          <section className="max-w-[1400px] mx-auto px-4 py-24 md:py-32">
-            <ProductGrid
-              products={featuredProducts}
-              heading="Featured Products"
-              subheading="Browse our selection of premium car accessories. Contact us on WhatsApp for pricing and custom orders."
-            />
+        <FeaturedSection>
+          <FeaturedHeading />
+          <ProductGrid
+            products={featuredProducts}
+            heading=""
+            subheading=""
+          />
             <div className="text-center mt-14">
               <a
                 href="/products"
@@ -72,65 +74,49 @@ export default function Home() {
                 </span>
               </a>
             </div>
-          </section>
-        </Reveal>
+          </FeaturedSection>
 
         {/* Customer Reviews */}
-        <Reveal delay={100}>
-          <section className="py-16 md:py-20 bg-secondary">
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-              <Reveal direction="up">
-                <div className="text-center mb-12">
-                  <span className="eyebrow mb-3">Testimonials</span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                    Trusted by Drivers Worldwide
-                  </h2>
-                  <p className="text-sm text-muted-foreground max-w-xl mx-auto mt-3">
-                    Real reviews from real customers who transformed their driving experience.
+        <ReviewsSection>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            {testimonials.slice(0, 3).map((t, i) => (
+              <Reveal key={t.name} delay={i * 100} direction="up">
+                <div className="p-6 border border-border rounded-xl bg-card shadow-ambient h-full flex flex-col">
+                  <div className="flex gap-1 mb-3">
+                    {Array.from({ length: 5 }).map((_, si) => (
+                      <svg key={si} className={si < t.rating ? "h-4 w-4 fill-gold text-gold" : "h-4 w-4 fill-none text-border"} viewBox="0 0 24 24">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground leading-relaxed mb-4 flex-1">
+                    &ldquo;{t.text}&rdquo;
                   </p>
-                </div>
-              </Reveal>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
-                {testimonials.slice(0, 3).map((t, i) => (
-                  <Reveal key={t.name} delay={i * 100} direction="up">
-                    <div className="p-6 border border-border rounded-xl bg-card shadow-ambient h-full flex flex-col">
-                      <div className="flex gap-1 mb-3">
-                        {Array.from({ length: 5 }).map((_, si) => (
-                          <svg key={si} className={si < t.rating ? "h-4 w-4 fill-gold text-gold" : "h-4 w-4 fill-none text-border"} viewBox="0 0 24 24">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                          </svg>
-                        ))}
-                      </div>
-                      <p className="text-sm text-foreground leading-relaxed mb-4 flex-1">
-                        &ldquo;{t.text}&rdquo;
-                      </p>
-                      <div className="flex items-center gap-3 pt-3 border-t border-border">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
-                          {t.name.charAt(0)}
-                        </div>
-                        <div>
-                          <div className="text-xs font-semibold text-foreground">{t.name}</div>
-                          <div className="text-[11px] text-muted-foreground">{t.vehicle}</div>
-                        </div>
-                      </div>
+                  <div className="flex items-center gap-3 pt-3 border-t border-border">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
+                      {t.name.charAt(0)}
                     </div>
-                  </Reveal>
-                ))}
-              </div>
-              <Reveal delay={300}>
-                <div className="text-center mt-10">
-                  <a
-                    href="/about"
-                    className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
-                  >
-                    Read More Reviews
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-                  </a>
+                    <div>
+                      <div className="text-xs font-semibold text-foreground">{t.name}</div>
+                      <div className="text-[11px] text-muted-foreground">{t.vehicle}</div>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
+            ))}
+          </div>
+          <Reveal delay={300}>
+            <div className="text-center mt-10">
+              <a
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
+              >
+                Read More Reviews
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </a>
             </div>
-          </section>
-        </Reveal>
+          </Reveal>
+        </ReviewsSection>
 
         {/* Customer Gallery + Reviews */}
         <CustomerGallery />
@@ -140,20 +126,8 @@ export default function Home() {
         </Reveal>
 
         {/* Blog Preview */}
-        <Reveal delay={100}>
-          <section className="bg-secondary py-24 md:py-32">
-            <div className="max-w-[1400px] mx-auto px-4">
-              <div className="text-center mb-14 md:mb-16">
-                <span className="eyebrow mb-4">Insights</span>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight">
-                  Car Interior Insights
-                </h2>
-                <p className="mt-3 text-sm text-muted-foreground max-w-lg mx-auto">
-                  Tips, guides, and inspiration from our team of automotive
-                  enthusiasts.
-                </p>
-              </div>
-              <BlogGrid posts={blogPosts.slice(0, 3)} />
+        <InsightsSection>
+          <BlogGrid posts={blogPosts.slice(0, 3)} />
 
               <div className="text-center mt-14">
                 <a
@@ -168,9 +142,7 @@ export default function Home() {
                   </span>
                 </a>
               </div>
-            </div>
-          </section>
-        </Reveal>
+          </InsightsSection>
       </main>
       <Footer />
       <WhatsAppButton />

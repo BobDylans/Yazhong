@@ -186,6 +186,39 @@ const en = {
   waHeroMessage: "Hi! I'm looking for seat covers for my {year} {make} {model}. Can you help?",
   waContactMessage: "Hi! I need help finding the right car accessories.",
 
+  // How It Works
+  howTitle: "Three Simple Steps to Your Perfect Fit",
+  howDesc: "From browsing to delivery — we keep it simple, personal, and fast.",
+  howStep1: "Choose Your Style",
+  howStep1Desc: "Browse our collection and pick your preferred product — seat covers, steering wheel covers, floor mats, or accessories.",
+  howStep1Detail1: "Select from premium materials: leather, Alcantara, carbon fiber",
+  howStep1Detail2: "Choose your color and stitching to match your interior",
+  howStep1Detail3: "Filter by vehicle type or product category",
+  howStep2: "Customize & Confirm Fit",
+  howStep2Desc: "Tell us your vehicle details and personalization preferences. Our team ensures every product is custom-fit to your exact vehicle.",
+  howStep2Detail1: "Share your car's make, model, and year",
+  howStep2Detail2: "Select material, color, and stitching options",
+  howStep2Detail3: "Get instant fitment confirmation on WhatsApp",
+  howStep3: "Order via WhatsApp",
+  howStep3Desc: "Finalize pricing, delivery timeline, and payment through direct chat. No complicated checkout — just a simple conversation.",
+  howStep3Detail1: "Receive personalized pricing and quotes",
+  howStep3Detail2: "Tracked worldwide shipping in 5–8 business days",
+  howStep3Detail3: "30-day easy return policy if anything isn't right",
+  howCTA: "Start Your Order on WhatsApp",
+
+  // Reviews
+  reviewsTitle: "Trusted by Drivers Worldwide",
+  reviewsDesc: "Real reviews from real customers who transformed their driving experience.",
+
+  // Homepage
+  featuredTitle: "Featured Products",
+  featuredSubtitle: "Browse our selection of premium car accessories. Contact us on WhatsApp for pricing and custom orders.",
+  galleryTitle: "See What Our Customers Are Saying",
+  galleryDesc: "Real installs from real customers. Every product is custom-fit and personally confirmed.",
+  brandsTitle: "Custom Fit Car Seat Covers",
+  insightsTitle: "Car Interior Insights",
+  insightsDesc: "Tips, guides, and inspiration from our team of automotive enthusiasts.",
+
   // Language
   langSwitch: "العربية",
   langEN: "English",

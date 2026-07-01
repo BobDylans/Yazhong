@@ -2,25 +2,26 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/i18n/LocaleProvider";
 import { Menu, X, ChevronDown, MessageCircle, Home, Package, FileText, Info, Mail, Wrench, Map } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Home", href: "/" },
+  { key: "navHome", href: "/" },
   {
-    label: "Products",
+    key: "navProducts",
     href: "/products",
     children: [
-      { label: "Seat Covers", href: "/products?category=Seat+Covers" },
-      { label: "Steering Covers", href: "/products?category=Steering+Covers" },
-      { label: "Floor Mats", href: "/products?category=Floor+Mats" },
-      { label: "Accessories", href: "/products?category=Accessories" },
+      { key: "navSeatCovers", href: "/products?category=Seat+Covers" },
+      { key: "navSteeringCovers", href: "/products?category=Steering+Covers" },
+      { key: "navFloorMats", href: "/products?category=Floor+Mats" },
+      { key: "navAccessories", href: "/products?category=Accessories" },
     ],
   },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { key: "navBlog", href: "/blog" },
+  { key: "navAbout", href: "/about" },
+  { key: "navContact", href: "/contact" },
 ];
 
 import { whatsappUrl } from "@/lib/config";
@@ -95,9 +96,9 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <div
-                key={link.label}
+                key={link.key}
                 className="relative group"
-                onMouseEnter={() => setOpenDropdown(link.label)}
+                onMouseEnter={() => setOpenDropdown(link.key)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <Link
@@ -105,30 +106,30 @@ export function Header() {
                   className={cn(
                     "flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors rounded-md",
                     pathname === link.href && "text-accent",
-                    openDropdown === link.label && "text-accent"
+                    openDropdown === link.key && "text-accent"
                   )}
                 >
-                  {link.label}
+                  {t(link.key)}
                   {link.children && (
                     <ChevronDown
                       className={cn(
                         "size-3.5 transition-transform duration-200",
-                        openDropdown === link.label && "rotate-180"
+                        openDropdown === link.key && "rotate-180"
                       )}
                     />
                   )}
                 </Link>
 
                 {/* Dropdown */}
-                {link.children && openDropdown === link.label && (
+                {link.children && openDropdown === link.key && (
                   <div className="absolute top-full ltr:left-0 rtl:right-0 bg-white border border-border shadow-lg rounded-md py-3 min-w-[200px] animate-in fade-in duration-200">
                     {link.children.map((child) => (
                       <Link
-                        key={child.label}
+                        key={child.key}
                         href={child.href}
                         className="block px-4 py-2 text-sm text-foreground hover:text-accent hover:bg-muted transition-colors"
                       >
-                        {child.label}
+                        {t(child.key)}
                       </Link>
                     ))}
                   </div>
@@ -170,7 +171,7 @@ export function Header() {
 
             <nav className="p-5 space-y-1">
               {navLinks.map((link, i) => (
-                <MobileNavCard key={link.label} link={link} index={i} />
+                <MobileNavCard key={link.key} link={link} index={i} />
               ))}
             </nav>
 
@@ -212,21 +213,22 @@ function NavIcon({ icon, active }: { icon: React.ReactNode; active?: boolean }) 
 }
 
 const navIcons: Record<string, React.ReactNode> = {
-  "Home": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></>,
-  "Products": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></>,
-  "Blog": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></>,
-  "About Us": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="8" r="3.5"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/><circle cx="12" cy="12" r="10"/></svg></>,
-  "Contact": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-9.1 6.3a1 1 0 0 1-1.1 0L2 4"/></svg></>,
-  "Seat Covers": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="2" x2="9" y2="22"/><line x1="15" y1="2" x2="15" y2="22"/></svg></>,
-  "Steering Covers": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><circle cx="12" cy="12" r="2"/></svg></>,
-  "Floor Mats": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></>,
-  "Accessories": <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="2" y="7" width="20" height="12" rx="2" ry="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></>,
+  navHome: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></>,
+  navProducts: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></>,
+  navBlog: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></>,
+  navAbout: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="8" r="3.5"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/><circle cx="12" cy="12" r="10"/></svg></>,
+  navContact: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-9.1 6.3a1 1 0 0 1-1.1 0L2 4"/></svg></>,
+  navSeatCovers: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="2" x2="9" y2="22"/><line x1="15" y1="2" x2="15" y2="22"/></svg></>,
+  navSteeringCovers: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3 12h18"/><circle cx="12" cy="12" r="2"/></svg></>,
+  navFloorMats: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></>,
+  navAccessories: <><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-[18px]"><rect x="2" y="7" width="20" height="12" rx="2" ry="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></>,
 };
 
 function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index: number }) {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
-  const icon = navIcons[link.label] || null;
+  const { t } = useLocale();
+  const icon = navIcons[link.key] || null;
   const isActive = pathname === link.href;
   const animationDelay = `${index * 50}ms`;
 
@@ -241,7 +243,7 @@ function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index
       )}
     >
       <NavIcon icon={icon} active={isActive} />
-      <span className="text-sm font-medium">{link.label}</span>
+      <span className="text-sm font-medium">{t(link.key)}</span>
     </Link>
   );
 
@@ -271,7 +273,7 @@ function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index
         >
           <span className="flex items-center gap-4">
             <NavIcon icon={icon} active={expanded} />
-            <span className="text-sm font-medium">{link.label}</span>
+            <span className="text-sm font-medium">{t(link.key)}</span>
           </span>
           <ChevronDown
             className={cn(
@@ -283,10 +285,10 @@ function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index
         {expanded && (
           <div className="ltr:ml-14 rtl:mr-14 mt-1 mb-1 space-y-0.5">
             {link.children.map((child) => {
-              const childIcon = navIcons[child.label] || null;
+              const childIcon = navIcons[child.key] || null;
               return (
                 <Link
-                  key={child.label}
+                  key={child.key}
                   href={child.href}
                   className={cn(
                     "flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all duration-200",
@@ -296,7 +298,7 @@ function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index
                   )}
                 >
                   <NavIcon icon={childIcon} active={pathname === child.href} />
-                  {child.label}
+                  {t(child.key)}
                 </Link>
               );
             })}

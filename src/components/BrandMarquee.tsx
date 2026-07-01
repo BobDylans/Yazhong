@@ -1,5 +1,7 @@
 "use client";
 
+import { useLocale } from "@/i18n/LocaleProvider";
+
 const carBrands = [
   "Toyota","BMW","Mercedes","Volkswagen","Audi","Honda","Ford","Lexus",
   "Volvo","Porsche","Hyundai","Kia","Mazda","Nissan","Subaru","Mitsubishi",
@@ -25,6 +27,7 @@ function BrandLogoItem({ name }: { name: string }) {
 }
 
 export function BrandMarquee() {
+  const { t } = useLocale();
   const doubledBrands = [...carBrands, ...carBrands];
 
   return (
@@ -32,7 +35,7 @@ export function BrandMarquee() {
       <div className="text-center mb-8 md:mb-10 px-4">
         <span className="eyebrow mb-3">Brands</span>
         <h2 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-          Custom Fit Car Seat Covers
+          {t("brandsTitle")}
         </h2>
       </div>
 
@@ -44,6 +47,8 @@ export function BrandMarquee() {
           }
           .marquee-track {
             display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
             animation: marquee-scroll 40s linear infinite;
             will-change: transform;
           }

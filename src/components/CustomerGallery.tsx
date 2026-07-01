@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/Reveal";
+import { useLocale } from "@/i18n/LocaleProvider";
 import {
   Star,
   MessageCircle,
@@ -149,6 +150,7 @@ export function CustomerGallery({
   placeholder = true,
 }: CustomerGalleryProps) {
   const [activeReview, setActiveReview] = useState(0);
+  const { t } = useLocale();
 
   const prevReview = () => setActiveReview((p) => (p === 0 ? reviews.length - 1 : p - 1));
   const nextReview = () => setActiveReview((p) => (p === reviews.length - 1 ? 0 : p + 1));
@@ -159,12 +161,12 @@ export function CustomerGallery({
         {/* Header */}
         <Reveal direction="up">
           <div className="text-center mb-14">
-            <span className="eyebrow">Real Results</span>
+            <span className="eyebrow">{t("galleryTitle")}</span>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-3">
-              See What Our Customers Are Saying
+              {t("galleryTitle")}
             </h2>
             <p className="text-sm text-muted-foreground max-w-xl mx-auto mt-3">
-              Real installs from real customers. Every product is custom-fit and personally confirmed.
+              {t("galleryDesc")}
             </p>
           </div>
         </Reveal>
