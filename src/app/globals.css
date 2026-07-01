@@ -2,9 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* Arabic font (Tajawal) — loaded dynamically via link tag */
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
