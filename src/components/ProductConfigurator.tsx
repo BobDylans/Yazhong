@@ -108,8 +108,8 @@ function OptionChip({
           style={{ backgroundColor: option.color }}
         />
       )}
-      <span>{option.label}</span>
-      {selected && <Check className="h-3.5 w-3.5 text-gold shrink-0" />}
+      <span className="flex-1">{option.label}</span>
+      <Check className={cn("h-3.5 w-3.5 shrink-0", selected ? "text-gold" : "text-transparent")} />
     </button>
   );
 }

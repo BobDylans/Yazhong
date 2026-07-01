@@ -9,9 +9,11 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { cn } from "@/lib/utils";
 import { MessageCircle, Search } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/config";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const { t } = useLocale();
 
   const filtered =
     activeCategory === "All"
@@ -25,13 +27,12 @@ export default function BlogPage() {
         {/* Page Header */}
         <section className="bg-secondary py-14 md:py-20">
           <div className="max-w-[1400px] mx-auto px-4 text-center">
-            <span className="eyebrow mb-4 inline-flex">Insights</span>
+            <span className="eyebrow mb-4 inline-flex">{t("blogInsights")}</span>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-              Car Interior Insights
+              {t("blogTitle")}
             </h1>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto text-sm">
-              Tips, guides, and inspiration from our team of automotive enthusiasts.
-              Learn how to keep your car&apos;s interior looking and feeling its best.
+              {t("blogDesc")}
             </p>
           </div>
         </section>
@@ -61,7 +62,7 @@ export default function BlogPage() {
           {filtered.length === 0 ? (
             <div className="text-center py-16">
               <Search className="h-8 w-8 mx-auto text-muted-foreground mb-3" />
-              <p className="text-muted-foreground">No posts found in this category.</p>
+              <p className="text-muted-foreground">{t("blogNoPosts")}</p>
             </div>
           ) : (
             <BlogGrid posts={filtered} />
@@ -72,11 +73,10 @@ export default function BlogPage() {
         <section className="max-w-[1400px] mx-auto px-4 pb-20">
           <div className="rounded-xl bg-foreground p-8 md:p-10 text-center">
             <h2 className="text-xl md:text-2xl font-bold text-white mb-3">
-              Have Questions? We&apos;re Here to Help
+              {t("blogNeedHelp")}
             </h2>
             <p className="text-zinc-400 text-sm max-w-lg mx-auto mb-6">
-              Not sure which product fits your car? Chat with our team on WhatsApp
-              for personalized recommendations in minutes.
+              {t("blogNeedHelpDesc")}
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}

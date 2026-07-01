@@ -81,6 +81,7 @@ const en = {
   blogRelated: "Related Articles",
   blogAll: "All Articles",
   blogAskWA: "Ask on WhatsApp",
+  blogInsights: "Insights",
   blogNeedHelp: "Have Questions? We're Here to Help",
   blogNeedHelpDesc: "Not sure which product fits your car? Chat with our team on WhatsApp for personalized recommendations in minutes.",
 
@@ -217,7 +218,9 @@ const en = {
   galleryDesc: "Real installs from real customers. Every product is custom-fit and personally confirmed.",
   brandsTitle: "Custom Fit Car Seat Covers",
   insightsTitle: "Car Interior Insights",
-  insightsDesc: "Tips, guides, and inspiration from our team of automotive enthusiasts.",
+  allProducts: "View All Products",
+  readMoreReviews: "Read More Reviews",
+  chatOnWA: "Chat on WhatsApp",
 
   // Language
   langSwitch: "العربية",

@@ -80,6 +80,7 @@ const ar: Record<string, string> = {
   blogNoPosts: "لا توجد مقالات في هذا التصنيف.",
   blogRelated: "مقالات ذات صلة",
   blogAll: "جميع المقالات",
+  blogInsights: "رؤى",
   blogAskWA: "اسأل عبر واتساب",
   blogNeedHelp: "لديك أسئلة؟ نحن هنا للمساعدة",
   blogNeedHelpDesc: "لست متأكدًا أي منتج يناسب سيارتك؟ تواصل مع فريقنا على واتساب للحصول على توصيات مخصصة في دقائق.",
