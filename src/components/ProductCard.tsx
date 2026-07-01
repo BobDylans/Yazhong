@@ -14,6 +14,7 @@ export interface ProductCardData {
   badge?: string;
   badgeColor?: "red" | "blue" | "green" | "gold";
   category?: string;
+  series?: string;
 }
 
 interface ProductCardProps {
@@ -72,6 +73,11 @@ export function ProductCard({ product, className }: ProductCardProps) {
           {product.category && (
             <span className="text-[10px] font-medium uppercase tracking-[0.15em] text-gold/70">
               {product.category}
+            </span>
+          )}
+          {product.series && (
+            <span className="text-[10px] font-medium uppercase tracking-[0.1em] text-muted-foreground/60">
+              {product.series}
             </span>
           )}
           <h3 className="font-sans text-sm font-semibold leading-snug text-foreground truncate">

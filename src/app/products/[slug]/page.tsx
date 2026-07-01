@@ -129,6 +129,11 @@ export default async function ProductDetailPage({ params }: Props) {
                     {product.category}
                   </span>
                 )}
+                {product.series && (
+                  <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground/60 ml-2">
+                    {product.series}
+                  </span>
+                )}
                 <h1 className="text-2xl md:text-3xl font-bold text-foreground mt-2 mb-4 leading-tight">
                   {product.title}
                 </h1>
