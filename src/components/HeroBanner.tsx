@@ -4,6 +4,8 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { MessageCircle } from "lucide-react";
 import { getImageUrl } from "@/lib/images";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { whatsappUrl } from "@/lib/config";
 
 const vehicleYears = Array.from({ length: 30 }, (_, i) => (2026 - i).toString());
 const vehicleMakes = [
@@ -20,9 +22,9 @@ const vehicleModels: Record<string, string[]> = {
   Honda: ["Civic","Accord","CR-V","Pilot","Odyssey"],
   Ford: ["F-150","Mustang","Explorer","Escape","Bronco"],
 };
-import { whatsappUrl } from "@/lib/config";
 
 export function HeroBanner() {
+  const { t } = useLocale();
   const [search, setSearch] = useState({ year: "", make: "", model: "" });
   const makes = vehicleMakes;
   const models = search.make ? vehicleModels[search.make] ?? [] : [];

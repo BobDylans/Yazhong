@@ -24,6 +24,7 @@ const navLinks = [
 ];
 
 import { whatsappUrl } from "@/lib/config";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -137,7 +138,8 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <LanguageSwitcher />
             <a
               href={whatsappUrl()}
               target="_blank"

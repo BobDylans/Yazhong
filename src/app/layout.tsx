@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema } from "@/lib/schema";
+import { LocaleProvider } from "@/i18n/LocaleProvider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -106,9 +107,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" dir="ltr" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+      </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
-        {children}
+        <LocaleProvider>
+          {children}
+        </LocaleProvider>
         <OrganizationSchema />
       </body>
     </html>
