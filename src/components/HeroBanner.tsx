@@ -44,7 +44,7 @@ export function HeroBanner() {
         {/* Background image */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={getImageUrl("/images/hero-bg.jpg")}
+          src={getImageUrl("/images/imgs/layoutImgs/hero-bg.jpg")}
           alt=""
           className="absolute inset-0 h-full w-full object-cover animate-kenburns-in"
         />

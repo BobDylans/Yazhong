@@ -44,7 +44,7 @@ export default function ContactPage() {
       <main className="min-h-screen">
         {/* Hero */}
         <section className="relative flex min-h-[45vh] items-center justify-center overflow-hidden pt-20">
-          <img src="/images/luxus-hero.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src="/images/imgs/layoutImgs/luxus-hero.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
           <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
             <span className="inline-block text-gold text-xs tracking-[0.25em] uppercase mb-4 font-medium">{t("contactTitle")}</span>

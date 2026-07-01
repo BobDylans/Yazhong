@@ -37,7 +37,7 @@ export default function AboutPage() {
       <main className="min-h-screen">
         {/* Hero */}
         <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden pt-20">
-          <img src="/images/hero-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src="/images/imgs/layoutImgs/hero-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
           <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
             <span className="inline-block text-gold text-xs tracking-[0.25em] uppercase mb-4 font-medium">{t("aboutTitle")}</span>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-3">
                 {["luxus-series-diamond.webp","luxus-gallery1.webp","luxus-series-honeycomb.webp","luxus-series-doublelayer.webp"].map((img, i) => (
                   <div key={img} className={`aspect-square overflow-hidden rounded-xl bg-muted ${i === 1 ? "mt-8" : ""} ${i === 2 ? "-mt-4" : ""} ${i === 3 ? "mt-4" : ""}`}>
-                    <img src={`/images/${img}`} alt="" className="h-full w-full object-cover" />
+                    <img src={`/images/imgs/productsImgs/${img}`} alt="" className="h-full w-full object-cover" />
                   </div>
                 ))}
               </div>

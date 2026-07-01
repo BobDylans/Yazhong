@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
       **4. Style & Design**
       Match your covers to your interior. From sporty designs to elegant leather finishes, there's something for everyone.
     `,
-    image: "/images/blog-332b9adf0e8f9b85c64d83c35a9a7127.jpg",
+    image: "/images/imgs/blogImgs/blog-332b9adf0e8f9b85c64d83c35a9a7127.jpg",
     date: "2026-06-15",
     author: "Yazhong Team",
     category: "Buying Guide",
@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
       **5. Easy Installation**
       Most covers install in minutes with no special tools required.
     `,
-    image: "/images/blog-4df5e7ed37f95a8ab0e240e38046374a.jpg",
+    image: "/images/imgs/blogImgs/blog-4df5e7ed37f95a8ab0e240e38046374a.jpg",
     date: "2026-06-08",
     author: "Yazhong Team",
     category: "Product Tips",
@@ -79,7 +79,7 @@ export const blogPosts: BlogPost[] = [
       **5. Use Floor Mats**
       Quality floor mats trap dirt and moisture, protecting your car's original carpet.
     `,
-    image: "/images/blog-8ee524e053c77567e98f5fef35b056e7.jpg",
+    image: "/images/imgs/blogImgs/blog-8ee524e053c77567e98f5fef35b056e7.jpg",
     date: "2026-05-28",
     author: "Yazhong Team",
     category: "Maintenance",
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
       **Our Recommendation:**
       For daily drivers, custom-fit covers are worth the investment. For temporary protection or budget builds, universals work fine.
     `,
-    image: "/images/blog-d06f4523918e8419c0851634c29b1d3b.jpg",
+    image: "/images/imgs/blogImgs/blog-d06f4523918e8419c0851634c29b1d3b.jpg",
     date: "2026-05-20",
     author: "Yazhong Team",
     category: "Buying Guide",
@@ -137,7 +137,7 @@ export const blogPosts: BlogPost[] = [
       **5. Interior LED Lighting**
       Create ambiance and improve visibility at night.
     `,
-    image: "/images/blog-d4bf40c4ba66426e7db711b35fa0816c.jpg",
+    image: "/images/imgs/blogImgs/blog-d4bf40c4ba66426e7db711b35fa0816c.jpg",
     date: "2026-05-12",
     author: "Yazhong Team",
     category: "Trends",
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
 
       With proper care, leather seats can last 10-15 years or more.
     `,
-    image: "/images/blog-f53cda8eb8daa196ed7ff530ea74c381.jpg",
+    image: "/images/imgs/blogImgs/blog-f53cda8eb8daa196ed7ff530ea74c381.jpg",
     date: "2026-05-05",
     author: "Yazhong Team",
     category: "Maintenance",
