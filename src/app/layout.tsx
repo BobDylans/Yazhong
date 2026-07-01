@@ -112,6 +112,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+        <script dangerouslySetInnerHTML={{
+          __html: `(function(){var l=localStorage.getItem("yazhong-locale");if(l==="ar"){document.documentElement.dir="rtl";document.documentElement.lang="ar"}})()`
+        }} />
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased">
         <LocaleProvider>
