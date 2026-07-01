@@ -77,7 +77,7 @@ export function Header() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 -ml-2 text-foreground hover:text-accent transition-colors"
+            className="lg:hidden p-2 ltr:-ml-2 rtl:-mr-2 text-foreground hover:text-accent transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
@@ -121,7 +121,7 @@ export function Header() {
 
                 {/* Dropdown */}
                 {link.children && openDropdown === link.label && (
-                  <div className="absolute top-full left-0 bg-white border border-border shadow-lg rounded-md py-3 min-w-[200px] animate-in fade-in duration-200">
+                  <div className="absolute top-full ltr:left-0 rtl:right-0 bg-white border border-border shadow-lg rounded-md py-3 min-w-[200px] animate-in fade-in duration-200">
                     {link.children.map((child) => (
                       <Link
                         key={child.label}
@@ -163,7 +163,7 @@ export function Header() {
             {/* Header */}
             <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-border px-5 py-4 flex items-center justify-between">
               <span className="font-bold text-lg text-foreground">Yazhong</span>
-              <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 -mr-1.5 rounded-full hover:bg-muted transition-colors" aria-label="Close">
+              <button onClick={() => setMobileMenuOpen(false)} className="p-1.5 ltr:-mr-1.5 rtl:-ml-1.5 rounded-full hover:bg-muted transition-colors" aria-label="Close">
                 <X className="size-5" />
               </button>
             </div>
@@ -281,7 +281,7 @@ function MobileNavCard({ link, index }: { link: (typeof navLinks)[number]; index
           />
         </button>
         {expanded && (
-          <div className="ml-14 mt-1 mb-1 space-y-0.5">
+          <div className="ltr:ml-14 rtl:mr-14 mt-1 mb-1 space-y-0.5">
             {link.children.map((child) => {
               const childIcon = navIcons[child.label] || null;
               return (
