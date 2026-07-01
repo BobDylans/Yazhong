@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = "https://rimhappywoods.top";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
 
 /**
  * Helper to create page-level metadata with canonical URL.

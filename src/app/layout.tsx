@@ -18,7 +18,7 @@ const tajawal = Tajawal({
   display: "swap",
 });
 
-const SITE_URL = "https://rimhappywoods.top";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
 const SITE_NAME = "Yazhong";
 const SITE_DESCRIPTION =
   "Premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories. Handcrafted eco-leather, 3D laser-fit, made to order for your exact vehicle.";

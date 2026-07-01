@@ -33,6 +33,7 @@ export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [announcementVisible, setAnnouncementVisible] = useState(true);
   const pathname = usePathname();
+  const { t } = useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
