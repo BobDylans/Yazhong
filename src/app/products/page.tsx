@@ -9,6 +9,9 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { cn } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { ProductGridSkeleton } from "@/components/Skeleton";
+import { LinkCTA } from "@/components/LinkCTA";
 
 /** Category metadata: subtitle + description for SEO & UX */
 const categoryMeta: Record<
@@ -38,6 +41,7 @@ const categoryMeta: Record<
 };
 
 function ProductsContent() {
+  const { t } = useLocale();
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
   const [activeCategory, setActiveCategory] = useState(
@@ -68,11 +72,10 @@ function ProductsContent() {
       <section className="bg-secondary py-12 md:py-16">
         <div className="max-w-[1400px] mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-            Our Products
+            {t("productsTitle")}
           </h1>
           <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            Browse our selection of premium automotive accessories. Contact us
-            on WhatsApp for pricing and custom orders.
+            {t("productsDesc")}
           </p>
         </div>
       </section>
@@ -118,7 +121,7 @@ function ProductsContent() {
                     </h2>
                   </div>
                   <span className="text-sm text-muted-foreground">
-                    {items.length} {items.length === 1 ? "product" : "products"}
+                    {items.length} {items.length === 1 ? t("productSingular") : t("productPlural")}
                   </span>
                 </div>
                 {meta && (
@@ -137,9 +140,24 @@ function ProductsContent() {
         {visibleCategories.every(
           (cat) => (productsByCategory[cat] || []).length === 0,
         ) && (
-          <p className="text-center text-muted-foreground py-12">
-            No products found in this category.
-          </p>
+          <div className="text-center py-16 px-4">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+              <svg className="h-6 w-6 text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+            <p className="text-foreground font-medium mb-1">{t("noProducts")}</p>
+            <p className="text-sm text-muted-foreground mb-6">
+              {t("productsDesc")}
+            </p>
+            <button
+              onClick={() => setActiveCategory("All")}
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
+            >
+              {t("productsAll")}
+            </button>
+          </div>
         )}
       </section>
     </>
@@ -153,8 +171,8 @@ export default function ProductsPage() {
       <main className="pt-[106px] min-h-screen">
         <Suspense
           fallback={
-            <div className="flex items-center justify-center py-20">
-              <p className="text-muted-foreground">Loading products...</p>
+            <div className="py-12">
+              <ProductGridSkeleton count={8} />
             </div>
           }
         >

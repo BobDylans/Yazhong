@@ -100,9 +100,28 @@
     -webkit-text-size-adjust: 100%;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Poppins", Arial, sans-serif;
-    color: #1a1a1a;
+    font-family: var(--font-heading);
+    color: var(--foreground);
     letter-spacing: -0.02em;
+  }
+
+  /* Skeleton shimmer — brand-tinted (gold sweep over muted) */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(201, 154, 74, 0.08) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.6s ease-in-out infinite;
+  }
+  @keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton-shimmer { animation: none; opacity: 0.6; }
   }
 
   /* Subtle noise overlay for premium paper feel */

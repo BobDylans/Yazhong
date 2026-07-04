@@ -85,7 +85,7 @@ export default function BlogPage() {
               className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg"
             >
               <MessageCircle className="h-4 w-4" />
-              Chat on WhatsApp
+              {t("chatOnWA")}
             </a>
           </div>
         </section>

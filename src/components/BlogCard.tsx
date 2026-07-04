@@ -5,6 +5,7 @@ import { Calendar, User, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { BlogPost } from "@/types";
 import { getImageUrl } from "@/lib/images";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -12,6 +13,7 @@ interface BlogCardProps {
 }
 
 export function BlogCard({ post, className }: BlogCardProps) {
+  const { t } = useLocale();
   return (
     <Link
       href={`/blog/${post.slug}`}
@@ -56,7 +58,7 @@ export function BlogCard({ post, className }: BlogCardProps) {
           {post.excerpt}
         </p>
         <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-accent group-hover:gap-2 transition-all">
-          Read More <ArrowRight className="h-3 w-3" />
+          {t("blogReadMore")} <ArrowRight className="h-3 w-3" />
         </div>
       </div>
     </Link>

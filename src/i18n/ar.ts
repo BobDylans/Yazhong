@@ -47,6 +47,10 @@ const ar: Record<string, string> = {
   productsAll: "الكل",
   productViewDetails: "عرض التفاصيل",
   productInquireWA: "استفسر عبر واتساب",
+  productSingular: "منتج",
+  productPlural: "منتجات",
+  noProducts: "لا توجد منتجات في هذه الفئة.",
+  loading: "جارٍ التحميل...",
 
   // Product Detail
   pdHome: "الرئيسية",
@@ -217,8 +221,18 @@ const ar: Record<string, string> = {
   galleryTitle: "شاهد ما يقوله عملاؤنا",
   galleryDesc: "تركيبات حقيقية من عملاء حقيقيين. كل منتج مصنوع خصيصًا ومؤكد شخصيًا.",
   brandsTitle: "أغطية مقاعد سيارات مخصصة",
+  brandsLabel: "العلامات التجارية",
   insightsTitle: "نصائح المقصورة الداخلية",
   insightsDesc: "نصائح، أدلة إرشادية، وإلهام من فريق خبراء السيارات لدينا.",
+  allProducts: "عرض جميع المنتجات",
+  readMoreReviews: "اقرأ المزيد من التقييمات",
+  chatOnWA: "تحدث عبر واتساب",
+  allArticles: "اقرأ كل المقالات",
+  // Stats band
+  statInstallations: "مركبات مجهزة",
+  statCountries: "دولة شحن إليها",
+  statYears: "سنوات من الحرفية",
+  statSatisfaction: "رضا العملاء",
 
   // Language
   langSwitch: "English",

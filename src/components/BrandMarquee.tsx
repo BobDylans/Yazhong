@@ -31,12 +31,11 @@ export function BrandMarquee() {
   const doubledBrands = [...carBrands, ...carBrands];
 
   return (
-    <section className="w-full py-10 md:py-14 overflow-hidden">
+    <section className="w-full py-12 md:py-16 overflow-hidden">
       <div className="text-center mb-8 md:mb-10 px-4">
-        <span className="eyebrow mb-3">Brands</span>
-        <h2 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-          {t("brandsTitle")}
-        </h2>
+        <span className="text-[11px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium">
+          {t("brandsLabel")}
+        </span>
       </div>
 
       <div className="relative w-full overflow-x-hidden">

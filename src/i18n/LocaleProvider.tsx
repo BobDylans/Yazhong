@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 import en from "./en";
 import ar from "./ar";
 
@@ -25,14 +25,13 @@ const LocaleContext = createContext<LocaleContextType>({
 });
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
-
-  useEffect(() => {
+  // Lazy init: read localStorage during first render (SSR-safe via typeof window check).
+  // Avoids the setState-in-effect anti-pattern that triggers cascading renders.
+  const [locale, setLocaleState] = useState<Locale>(() => {
+    if (typeof window === "undefined") return "en";
     const saved = localStorage.getItem("yazhong-locale") as Locale | null;
-    if (saved && (saved === "en" || saved === "ar")) {
-      setLocaleState(saved);
-    }
-  }, []);
+    return saved === "en" || saved === "ar" ? saved : "en";
+  });
 
   const setLocale = (l: Locale) => {
     setLocaleState(l);

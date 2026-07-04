@@ -78,3 +78,4 @@ src/data/generated/
 
 # graphify output
 graphify-out/
+.claude/worktrees/

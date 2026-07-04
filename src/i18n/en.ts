@@ -47,6 +47,10 @@ const en = {
   productsAll: "All",
   productViewDetails: "View Details",
   productInquireWA: "Inquire on WhatsApp",
+  productSingular: "product",
+  productPlural: "products",
+  noProducts: "No products found in this category.",
+  loading: "Loading...",
 
   // Product Detail
   pdHome: "Home",
@@ -217,10 +221,18 @@ const en = {
   galleryTitle: "See What Our Customers Are Saying",
   galleryDesc: "Real installs from real customers. Every product is custom-fit and personally confirmed.",
   brandsTitle: "Custom Fit Car Seat Covers",
+  brandsLabel: "Brands",
   insightsTitle: "Car Interior Insights",
+  insightsDesc: "Tips, guides, and inspiration from our team of automotive experts.",
   allProducts: "View All Products",
   readMoreReviews: "Read More Reviews",
   chatOnWA: "Chat on WhatsApp",
+  allArticles: "Read All Articles",
+  // Stats band
+  statInstallations: "Vehicles Equipped",
+  statCountries: "Countries Shipped",
+  statYears: "Years of Craft",
+  statSatisfaction: "Customer Satisfaction",
 
   // Language
   langSwitch: "العربية",

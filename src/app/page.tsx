@@ -5,6 +5,8 @@ import { IconFeatures } from "@/components/IconFeatures";
 import { BrandMarquee } from "@/components/BrandMarquee";
 import { ProductGrid } from "@/components/ProductCard";
 import { TrustBadges } from "@/components/TrustBadges";
+import { LinkCTA } from "@/components/LinkCTA";
+import { StatsBand } from "@/components/StatsBand";
 
 export const metadata: Metadata = {
   title: "Yazhong — Premium Car Seat Covers & Auto Accessories",
@@ -45,6 +47,7 @@ export default function Home() {
       <main>
         <HeroBanner />
         <TrustBadges />
+        <StatsBand />
 
         {/* How It Works */}
         <HowItWorks />
@@ -62,17 +65,7 @@ export default function Home() {
             subheading=""
           />
             <div className="text-center mt-14">
-              <a
-                href="/products"
-                className="group inline-flex items-center gap-3 rounded-full border border-border px-8 py-3.5 text-sm font-semibold text-foreground transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-foreground hover:text-white active:scale-[0.97] shadow-ambient hover:shadow-ambient-hover"
-              >
-                View All Products
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-white group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </a>
+              <LinkCTA href="/products" labelKey="allProducts" />
             </div>
           </FeaturedSection>
 
@@ -107,13 +100,7 @@ export default function Home() {
           </div>
           <Reveal delay={300}>
             <div className="text-center mt-10">
-              <a
-                href="/about"
-                className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-foreground hover:bg-foreground hover:text-white transition-all duration-300"
-              >
-                Read More Reviews
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-              </a>
+              <LinkCTA href="/about" labelKey="readMoreReviews" size="sm" hideArrow />
             </div>
           </Reveal>
         </ReviewsSection>
@@ -121,7 +108,7 @@ export default function Home() {
         {/* Customer Gallery + Reviews */}
         <CustomerGallery />
 
-        <Reveal delay={150}>
+        <Reveal delay={150} direction="left">
           <BrandMarquee />
         </Reveal>
 
@@ -130,17 +117,7 @@ export default function Home() {
           <BlogGrid posts={blogPosts.slice(0, 3)} />
 
               <div className="text-center mt-14">
-                <a
-                  href="/blog"
-                  className="group inline-flex items-center gap-3 rounded-full border border-border px-8 py-3.5 text-sm font-semibold text-foreground transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-foreground hover:text-white active:scale-[0.97] shadow-ambient hover:shadow-ambient-hover"
-                >
-                  Read All Articles
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-foreground text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:bg-white group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </a>
+                <LinkCTA href="/blog" labelKey="allArticles" />
               </div>
           </InsightsSection>
       </main>
