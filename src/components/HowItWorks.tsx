@@ -92,10 +92,10 @@ export function HowItWorks({ className, showCta = true }: HowItWorksProps) {
   ];
 
   return (
-    <section className={cn("py-16 md:py-20", className)}>
+    <section className={cn("py-12 md:py-16", className)}>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal direction="up">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 md:mb-12">
             <span className="eyebrow">{t("howTitle")}</span>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-3">
               {t("howTitle")}

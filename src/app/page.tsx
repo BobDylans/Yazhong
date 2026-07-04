@@ -56,6 +56,11 @@ export default function Home() {
           <IconFeatures />
         </Reveal>
 
+        {/* Chapter break — quiet divider before the featured collection */}
+        <div className="max-w-[1400px] mx-auto px-4 pt-16 md:pt-24">
+          <div className="divider-premium" />
+        </div>
+
         {/* Featured Products — symmetrical grid */}
         <FeaturedSection>
           <FeaturedHeading />

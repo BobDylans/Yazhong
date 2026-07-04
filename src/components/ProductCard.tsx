@@ -54,7 +54,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
         className={cn("h-full", className)}
       >
         <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-ambient transition-all duration-500 group-hover:shadow-ambient-hover group-hover:border-gold/30">
-          {/* Image — bottom gradient eases product photo into the card edge */}
+          {/* Image — gradient veil softens product-photo white backgrounds so
+              they don't read as a stray white block on the cream card. */}
           <div className="relative aspect-square shrink-0 overflow-hidden bg-secondary">
           <motion.img
             src={getImageUrl(product.image)}
@@ -64,7 +65,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.6 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
           {product.badge && <Badge text={product.badge} color={product.badgeColor ?? "red"} />}
         </div>
 
@@ -92,9 +94,9 @@ export function ProductCard({ product, className }: ProductCardProps) {
           <div className="mt-auto pt-3">
             <div className="mb-2.5 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-medium uppercase tracking-wider text-gold group-hover:gap-1.5 transition-all inline-flex items-center gap-1">
+              <span className="text-[11px] font-medium text-gold group-hover:gap-1.5 transition-all inline-flex items-center gap-1">
                 {t("productViewDetails")}
-                <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </span>
             </div>
           </div>
