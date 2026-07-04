@@ -54,7 +54,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
         className={cn("h-full", className)}
       >
         <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-ambient transition-all duration-500 group-hover:shadow-ambient-hover group-hover:border-gold/30">
-          {/* Image */}
+          {/* Image — gradient veil softens product-photo white backgrounds so
+              they don't read as a stray white block on the cream card. */}
           <div className="relative aspect-square shrink-0 overflow-hidden bg-secondary">
           <motion.img
             src={getImageUrl(product.image)}
@@ -64,7 +65,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
             whileHover={{ scale: 1.08 }}
             transition={{ duration: 0.6 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
           {product.badge && <Badge text={product.badge} color={product.badgeColor ?? "red"} />}
         </div>
 

@@ -34,6 +34,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { CustomerGallery } from "@/components/CustomerGallery";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { FeaturedSection, FeaturedHeading, InsightsSection } from "@/components/SectionHeadings";
+import { StatsSection } from "@/components/StatsSection";
 import { testimonials } from "@/data/testimonials";
 import { featuredProducts, products } from "@/data/products";
 import { blogPosts } from "@/data/blog-posts";
@@ -45,6 +46,7 @@ export default function Home() {
       <main>
         <HeroBanner />
         <TrustBadges />
+        <StatsSection />
 
         {/* How It Works */}
         <HowItWorks />
@@ -52,6 +54,11 @@ export default function Home() {
         <Reveal>
           <IconFeatures />
         </Reveal>
+
+        {/* Chapter break — quiet divider before the featured collection */}
+        <div className="max-w-[1400px] mx-auto px-4 pt-16 md:pt-24">
+          <div className="divider-premium" />
+        </div>
 
         {/* Featured Products — symmetrical grid */}
         <FeaturedSection>
@@ -121,7 +128,7 @@ export default function Home() {
         {/* Customer Gallery + Reviews */}
         <CustomerGallery />
 
-        <Reveal delay={150}>
+        <Reveal delay={150} direction="left">
           <BrandMarquee />
         </Reveal>
 

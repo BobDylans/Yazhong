@@ -79,32 +79,33 @@ export function HeroBanner() {
         </div>
       </div>
 
-      {/* Search by Vehicle */}
+      {/* Search by Vehicle — stays stacked on tablet (640–768px) to avoid
+          cramping three selects + button into one row; goes row at md+. */}
       <div className="flex w-full justify-center bg-secondary px-4 py-6 md:py-8">
-        <div className="flex w-full max-w-3xl flex-col gap-3 sm:flex-row sm:items-center sm:gap-0 sm:rounded-xl sm:border sm:border-border sm:bg-white sm:p-1 sm:shadow-sm">
+        <div className="flex w-full max-w-3xl flex-col gap-3 md:flex-row md:items-center md:gap-0 md:rounded-xl md:border md:border-border md:bg-white md:p-1 md:shadow-sm">
           <select value={search.year} onChange={e => setSearch(s => ({ year: e.target.value, make: "", model: "" }))}
-            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-e-none sm:border-e-0 sm:flex-1 sm:border-0 sm:bg-transparent",
+            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 md:rounded-e-none md:border-e-0 md:flex-1 md:border-0 md:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.year && "text-muted-foreground")}>
             <option value="">{t("heroYear")}</option>
             {vehicleYears.map(y => <option key={y} value={y}>{y}</option>)}
           </select>
           <select value={search.make} disabled={!search.year} onChange={e => setSearch(s => ({ ...s, make: e.target.value, model: "" }))}
-            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-none sm:flex-1 sm:border-0 sm:bg-transparent",
+            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 md:rounded-none md:flex-1 md:border-0 md:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.make && "text-muted-foreground", !search.year && "cursor-not-allowed opacity-40")}>
             <option value="">{t("heroMake")}</option>
             {makes.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <select value={search.model} disabled={!search.make} onChange={e => setSearch(s => ({ ...s, model: e.target.value }))}
-            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 sm:rounded-none sm:flex-1 sm:border-0 sm:bg-transparent",
+            className={cn("w-full rounded-lg border px-3.5 py-3 text-sm outline-none transition-all duration-200 md:rounded-none md:flex-1 md:border-0 md:bg-transparent",
               "border-border bg-white text-foreground focus:border-accent focus:ring-1 focus:ring-accent/30 appearance-none cursor-pointer",
               !search.model && "text-muted-foreground", !search.make && "cursor-not-allowed opacity-40")}>
             <option value="">{t("heroModel")}</option>
             {models.map(m => <option key={m} value={m}>{m}</option>)}
           </select>
           <a href={getInquiryUrl()} target="_blank" rel="noopener noreferrer"
-            className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] sm:rounded-s-none sm:w-auto sm:px-5",
+            className={cn("group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-3 text-sm font-semibold text-white transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] md:rounded-s-none md:w-auto md:px-5",
               canSearch ? "bg-blue-gradient hover:shadow-lg hover:shadow-blue-500/25" : "bg-accent hover:bg-accent/90")}>
             <MessageCircle className="h-4 w-4 shrink-0" />
             {canSearch ? t("heroCheckWA") : t("heroContactUs")}

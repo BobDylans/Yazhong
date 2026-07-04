@@ -137,9 +137,32 @@ function ProductsContent() {
         {visibleCategories.every(
           (cat) => (productsByCategory[cat] || []).length === 0,
         ) && (
-          <p className="text-center text-muted-foreground py-12">
-            No products found in this category.
-          </p>
+          <div className="text-center py-16 max-w-md mx-auto">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-muted-foreground">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              No products found in this category.
+            </p>
+            <div className="flex items-center justify-center gap-3">
+              <button
+                onClick={() => setActiveCategory("All")}
+                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:bg-foreground hover:text-white"
+              >
+                View All Products
+              </button>
+              <a
+                href="https://wa.me/1234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-white transition-all hover:opacity-90"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
         )}
       </section>
     </>
@@ -153,8 +176,24 @@ export default function ProductsPage() {
       <main className="pt-[106px] min-h-screen">
         <Suspense
           fallback={
-            <div className="flex items-center justify-center py-20">
-              <p className="text-muted-foreground">Loading products...</p>
+            <div className="max-w-[1400px] mx-auto px-4 py-12">
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
+                  >
+                    <div className="aspect-square shrink-0 bg-secondary animate-pulse" />
+                    <div className="flex flex-col gap-2 px-4 pt-3.5 pb-4">
+                      <div className="h-2.5 w-12 bg-secondary rounded animate-pulse" />
+                      <div className="h-3 w-full bg-secondary rounded animate-pulse" />
+                      <div className="h-3 w-2/3 bg-secondary rounded animate-pulse mt-1" />
+                      <div className="h-px bg-border mt-3 mb-2.5" />
+                      <div className="h-2.5 w-20 bg-gold/20 rounded animate-pulse" />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           }
         >

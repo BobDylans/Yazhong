@@ -32,11 +32,14 @@ export function BrandMarquee() {
 
   return (
     <section className="w-full py-10 md:py-14 overflow-hidden">
-      <div className="text-center mb-8 md:mb-10 px-4">
-        <span className="eyebrow mb-3">Brands</span>
-        <h2 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-          {t("brandsTitle")}
-        </h2>
+      <div className="max-w-[1400px] mx-auto px-4 mb-6 md:mb-8">
+        <div className="flex items-center gap-4">
+          <span className="h-px flex-1 bg-gradient-to-r from-transparent to-border" />
+          <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground/70">
+            {t("brandsTitle")}
+          </span>
+          <span className="h-px flex-1 bg-gradient-to-l from-transparent to-border" />
+        </div>
       </div>
 
       <div className="relative w-full overflow-x-hidden">
