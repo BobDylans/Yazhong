@@ -1,58 +1,35 @@
 import type { MetadataRoute } from "next";
+import { products } from "@/data/products";
+import { blogPosts } from "@/data/blog-posts";
 
 export const dynamic = "force-static";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://rimhappywoods.top";
   const lastModified = new Date();
 
-  const staticPages = [
-    {
-      url: `${base}/`,
-      priority: 1.0,
-      changeFrequency: "weekly" as const,
-    },
-    {
-      url: `${base}/products`,
-      priority: 0.9,
-      changeFrequency: "weekly" as const,
-    },
-    {
-      url: `${base}/blog`,
-      priority: 0.7,
-      changeFrequency: "weekly" as const,
-    },
-    {
-      url: `${base}/about`,
-      priority: 0.6,
-      changeFrequency: "monthly" as const,
-    },
-    {
-      url: `${base}/contact`,
-      priority: 0.6,
-      changeFrequency: "monthly" as const,
-    },
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/`, lastModified, priority: 1.0, changeFrequency: "weekly" },
+    { url: `${SITE_URL}/products`, lastModified, priority: 0.9, changeFrequency: "weekly" },
+    { url: `${SITE_URL}/blog`, lastModified, priority: 0.7, changeFrequency: "weekly" },
+    { url: `${SITE_URL}/about`, lastModified, priority: 0.6, changeFrequency: "monthly" },
+    { url: `${SITE_URL}/contact`, lastModified, priority: 0.6, changeFrequency: "monthly" },
   ];
 
-  // Blog posts (from hardcoded data)
-  const blogSlugs = [
-    "how-to-choose-car-seat-covers",
-    "benefits-leather-steering-wheel-cover",
-    "interior-car-care-tips",
-    "why-custom-fit-seat-covers",
-    "floor-mats-protection-guide",
-    "car-accessories-upgrade-2026",
-  ];
-
-  const blogPages = blogSlugs.map((slug) => ({
-    url: `${base}/blog/${slug}`,
-    priority: 0.5,
-    changeFrequency: "monthly" as const,
+  const productPages: MetadataRoute.Sitemap = products.map((p) => ({
+    url: `${SITE_URL}/products/${p.id}`,
     lastModified,
+    priority: 0.8,
+    changeFrequency: "monthly",
   }));
 
-  return [
-    ...staticPages.map((p) => ({ ...p, lastModified })),
-    ...blogPages,
-  ];
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified,
+    priority: 0.5,
+    changeFrequency: "monthly",
+  }));
+
+  return [...staticPages, ...productPages, ...blogPages];
 }

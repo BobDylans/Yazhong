@@ -5,6 +5,8 @@
  */
 import Script from "next/script";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
+
 /* ------------------------------------------------------------------ */
 /*  Types                                                             */
 /* ------------------------------------------------------------------ */
@@ -52,8 +54,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Yazhong",
-    url: "https://rimhappywoods.top",
-    logo: "https://rimhappywoods.top/og-image.png",
+    url: SITE_URL,
+    logo: `${SITE_URL}/og-image.png`,
     description:
       "Premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories.",
     contactPoint: {
@@ -64,7 +66,7 @@ export function OrganizationSchema() {
     },
     sameAs: [
       "https://wa.me/15138009985",
-      "https://rimhappywoods.top",
+      SITE_URL,
     ],
   };
 
@@ -110,7 +112,7 @@ export function ProductSchema({
       price,
       priceCurrency,
       availability: `https://schema.org/${availability}`,
-      url: `https://rimhappywoods.top/products/${sku || ""}`,
+      url: `${SITE_URL}/products/${sku || ""}`,
     };
   }
 
@@ -158,12 +160,12 @@ export function ArticleSchema({
       name: "Yazhong",
       logo: {
         "@type": "ImageObject",
-        url: "https://rimhappywoods.top/og-image.png",
+        url: `${SITE_URL}/og-image.png`,
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://rimhappywoods.top",
+      "@id": SITE_URL,
     },
   };
 
@@ -189,7 +191,7 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: `https://rimhappywoods.top${item.href}`,
+      item: `${SITE_URL}${item.href}`,
     })),
   };
 

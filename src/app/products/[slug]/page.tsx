@@ -10,6 +10,8 @@ import type { Metadata } from "next";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 import { ProductSchema, BreadcrumbSchema } from "@/lib/schema";
 import { ProductConfigurator } from "@/components/ProductConfigurator";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
 import { ProductDetails } from "@/components/ProductDetails";
 
 interface Props {
@@ -33,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${product.title} — Yazhong`,
       description: product.description || "",
-      url: `https://rimhappywoods.top/products/${slug}`,
+      url: `${SITE_URL}/products/${slug}`,
       images: [{ url: img, width: 1200, height: 630, alt: product.title }],
     },
     twitter: {

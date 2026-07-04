@@ -25,6 +25,14 @@ const SITE_DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en": `${SITE_URL}/`,
+      "ar": `${SITE_URL}/`,
+      "x-default": `${SITE_URL}/`,
+    },
+  },
   title: {
     default: "Yazhong — Premium Car Seat Covers & Auto Accessories",
     template: "%s — Yazhong",
@@ -51,9 +59,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-  alternates: {
-    canonical: "/",
   },
   openGraph: {
     type: "website",
@@ -91,10 +96,9 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
       { url: "/icon.svg", type: "image/svg+xml" },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+    shortcut: ["/icon.svg"],
   },
 };
 

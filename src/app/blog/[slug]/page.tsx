@@ -10,6 +10,8 @@ import type { Metadata } from "next";
 import { WHATSAPP_NUMBER } from "@/lib/config";
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -33,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
-      url: `https://rimhappywoods.top/blog/${slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       images: [{ url: img, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
@@ -74,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   const relatedPosts = blogPosts.filter((p) => p.category === post.category && p.slug !== slug).slice(0, 3);
   const shareText = encodeURIComponent(`${post.title} — read more on Yazhong Blog`);
-  const whatsappShare = `https://wa.me/?text=${shareText}%20https://rimhappywoods.top/blog/${slug}`;
+  const whatsappShare = `https://wa.me/?text=${shareText}%20${SITE_URL}/blog/${slug}`;
 
   return (
     <>
