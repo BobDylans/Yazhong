@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ProductGrid } from "@/components/ProductCard";
@@ -47,6 +47,13 @@ function ProductsContent() {
   const [activeCategory, setActiveCategory] = useState(
     categoryParam || "All",
   );
+
+  // Sync category when query param changes (e.g. Header dropdown link)
+  useEffect(() => {
+    if (categoryParam) {
+      setActiveCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   // When "All" is active, render every category as its own section.
   // Otherwise render just the selected category.
