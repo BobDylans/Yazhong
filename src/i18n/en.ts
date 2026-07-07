@@ -234,6 +234,32 @@ const en = {
   statYears: "Years of Craft",
   statSatisfaction: "Customer Satisfaction",
 
+  // Product Configurator
+  configTitle: "Customize Your Order",
+  configColor: "Color",
+  configMaterial: "Material",
+  configStitch: "Stitching Color",
+  configSummary: "Selection Summary",
+  configInquire: "Inquire with Customization",
+  configNote: "Your selections will be included in the WhatsApp message",
+  configMsgTitle: "Hi! I'm interested in customizing:",
+  configMsgColor: "Color",
+  configMsgMaterial: "Material",
+  configMsgStitch: "Stitching",
+  configMsgFooter: "Can you tell me more about pricing and fitment for my vehicle?",
+
+  // Product Details
+  detailsSpecs: "Product Specifications",
+  detailsSpecsDesc: "Detailed specs for {category} — confirm fitment on WhatsApp before ordering.",
+  detailsFeatures: "Why Choose This Product",
+  detailsFeaturesDesc: "The details that make the difference.",
+  detailsMaterials: "Material & Craftsmanship",
+  detailsMaterialsDesc: "Premium materials, built to last.",
+
+  // Customer Gallery
+  galleryInstallPhoto: "Install Photo",
+  galleryShareCta: "Share Your Installation Photos",
+
   // Language
   langSwitch: "العربية",
   langEN: "English",

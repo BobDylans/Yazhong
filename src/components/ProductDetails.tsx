@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/i18n/LocaleProvider";
 import {
   Ruler,
   Layers,
@@ -267,6 +268,7 @@ export function ProductDetails({
   category?: string;
   className?: string;
 }) {
+  const { t } = useLocale();
   const content = category ? categoryContent[category] : null;
   if (!content || !category) return null;
 
@@ -275,10 +277,10 @@ export function ProductDetails({
       {/* Product Specifications */}
       <section>
         <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-          Product Specifications
+          {t("detailsSpecs")}
         </h2>
         <p className="text-sm text-muted-foreground mb-6">
-          Detailed specs for {category.toLowerCase()} — confirm fitment on WhatsApp before ordering.
+          {t("detailsSpecsDesc").replace("{category}", category.toLowerCase())}
         </p>
         <div className="rounded-xl border border-border bg-card overflow-hidden shadow-ambient">
           <dl className="divide-y divide-border">
@@ -302,10 +304,10 @@ export function ProductDetails({
       {/* Key Features */}
       <section>
         <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-          Why Choose This Product
+          {t("detailsFeatures")}
         </h2>
         <p className="text-sm text-muted-foreground mb-6">
-          The details that make the difference.
+          {t("detailsFeaturesDesc")}
         </p>
         <div className="grid sm:grid-cols-2 gap-5">
           {content.features.map((feature) => (
@@ -332,10 +334,10 @@ export function ProductDetails({
       {/* Material & Craftsmanship */}
       <section>
         <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-          Material &amp; Craftsmanship
+          {t("detailsMaterials")}
         </h2>
         <p className="text-sm text-muted-foreground mb-6">
-          Premium materials, built to last.
+          {t("detailsMaterialsDesc")}
         </p>
         <div className="space-y-4">
           {content.materials.map((mat, i) => (

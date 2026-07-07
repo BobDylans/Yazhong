@@ -51,10 +51,10 @@ export function BlogCard({ post, className }: BlogCardProps) {
             {post.author}
           </span>
         </div>
-        <h3 className="text-sm font-bold text-foreground leading-snug mb-2 group-hover:text-accent transition-colors line-clamp-2">
+        <h3 className="text-sm font-bold text-foreground leading-snug mb-2 group-hover:text-accent transition-colors line-clamp-2 overflow-hidden">
           {post.title}
         </h3>
-        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">
+        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3 overflow-hidden">
           {post.excerpt}
         </p>
         <div className="inline-flex items-center gap-1 text-[11px] font-semibold text-accent group-hover:gap-2 transition-all">

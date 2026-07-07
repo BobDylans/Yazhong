@@ -1,3 +1,5 @@
+import type { Locale } from "@/i18n/LocaleProvider";
+
 export interface Testimonial {
   name: string;
   vehicle: string;
@@ -7,7 +9,7 @@ export interface Testimonial {
   avatar?: string;
 }
 
-export const testimonials: Testimonial[] = [
+const en: Testimonial[] = [
   {
     name: "James M.",
     vehicle: "BMW X5 2024",
@@ -51,3 +53,53 @@ export const testimonials: Testimonial[] = [
     avatar: "bg-stone-800",
   },
 ];
+
+const ar: Testimonial[] = [
+  {
+    name: "جيمس م.",
+    vehicle: "BMW X5 2024",
+    text: "غطسات المقاعد المفصلة حسب الطلب غيّرت مقصورة سيارتي بالكامل. التركيب استغرق 15 دقيقة والملاءمة مثالية تماماً. أنصح بشدة!",
+    rating: 5,
+    avatar: "bg-amber-700",
+  },
+  {
+    name: "سارة ك.",
+    vehicle: "Mercedes C-Class 2023",
+    text: "كنت مترددة في طلب غطسات مقاعد عبر الإنترنت، لكن فريق واتساب ساعدني في اختيار اللون والموديل المثالي. النتيجة أفضل من الأصلي!",
+    rating: 5,
+    avatar: "bg-zinc-600",
+  },
+  {
+    name: "مايك ر.",
+    vehicle: "Toyota RAV4 2025",
+    text: "دواسات الأرضية بجودة رائعة. الحواف المرتفعة أمسكت انسكاب القهوة بشكل مثالي. سهلة التنظيف أيضاً. سأشتري مرة أخرى لسيارتي الثانية.",
+    rating: 5,
+    avatar: "bg-stone-700",
+  },
+  {
+    name: "عمر ح.",
+    vehicle: "Porsche Cayenne 2024",
+    text: "حرفية ممتازة في غطاء المقود. ألياف الكربون مع الخياطة الذهبية تبدو رائعة في سيارتي. الشحن كان سريعاً أيضاً!",
+    rating: 5,
+    avatar: "bg-amber-800",
+  },
+  {
+    name: "ليزا س.",
+    vehicle: "Honda CR-V 2025",
+    text: "أحب غطسات مقاعدي الجديدة! لون البيج يطابق مقصورتي بشكل مثالي. ساعدني الفريق في تأكيد الملاءمة عبر واتساب — سهل جداً.",
+    rating: 5,
+    avatar: "bg-zinc-700",
+  },
+  {
+    name: "ديفيد ل.",
+    vehicle: "Ford F-150 2024",
+    text: "دواسات أرضية متينة تناسب سيارتي تماماً. الملاءمة لسيارتي F-150 دقيقة، وتتحمل الطين والثلج ببراعة.",
+    rating: 4,
+    avatar: "bg-stone-800",
+  },
+];
+
+export const testimonialsByLocale: Record<Locale, Testimonial[]> = { en, ar };
+
+/** Default export for backward compatibility (English) */
+export const testimonials = en;

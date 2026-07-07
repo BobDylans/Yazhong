@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_NUMBER } from "@/lib/config";
+import { useLocale } from "@/i18n/LocaleProvider";
 import { Check, MessageCircle } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -158,16 +159,18 @@ export function ProductConfigurator({
   const [selectedMaterial, setSelectedMaterial] = useState(defaultMaterial || materials[0]?.id);
   const [selectedStitch, setSelectedStitch] = useState(defaultStitch || stitches[0]?.id);
 
+  const { t } = useLocale();
+
   const activeColor = colors.find((c) => c.id === selectedColor);
   const activeMaterial = materials.find((m) => m.id === selectedMaterial);
   const activeStitch = stitches.find((s) => s.id === selectedStitch);
 
   const whatsappMsg = encodeURIComponent(
-    `Hi! I'm interested in customizing: ${productTitle}.\n` +
-    `- Color: ${activeColor?.label || "—"}\n` +
-    `- Material: ${activeMaterial?.label || "—"}\n` +
-    `- Stitching: ${activeStitch?.label || "—"}\n` +
-    `Can you tell me more about pricing and fitment for my vehicle?`,
+    `${t("configMsgTitle")} ${productTitle}.\n` +
+    `- ${t("configMsgColor")}: ${activeColor?.label || "—"}\n` +
+    `- ${t("configMsgMaterial")}: ${activeMaterial?.label || "—"}\n` +
+    `- ${t("configMsgStitch")}: ${activeStitch?.label || "—"}\n` +
+    t("configMsgFooter"),
   );
 
   return (
@@ -176,13 +179,13 @@ export function ProductConfigurator({
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/10 text-xs font-bold text-gold">
           1
         </span>
-        Customize Your Order
+        {t("configTitle")}
       </h3>
 
       {/* Color */}
       <div className="mb-5">
         <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2.5">
-          Color
+          {t("configColor")}
         </label>
         <div className="flex flex-wrap gap-2.5">
           {colors.map((c) => (
@@ -199,7 +202,7 @@ export function ProductConfigurator({
       {/* Material */}
       <div className="mb-5">
         <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2.5">
-          Material
+          {t("configMaterial")}
         </label>
         <div className="flex flex-wrap gap-2">
           {materials.map((m) => (
@@ -216,7 +219,7 @@ export function ProductConfigurator({
       {/* Stitching */}
       <div className="mb-6">
         <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2.5">
-          Stitching Color
+          {t("configStitch")}
         </label>
         <div className="flex flex-wrap gap-2.5">
           {stitches.map((s) => (
@@ -233,15 +236,15 @@ export function ProductConfigurator({
       {/* Selection Summary */}
       <div className="mb-5 p-3 rounded-lg bg-secondary/60 border border-border text-xs space-y-1.5">
         <div className="flex justify-between text-muted-foreground">
-          <span>Color</span>
+          <span>{t("configColor")}</span>
           <span className="font-medium text-foreground">{activeColor?.label || "—"}</span>
         </div>
         <div className="flex justify-between text-muted-foreground">
-          <span>Material</span>
+          <span>{t("configMaterial")}</span>
           <span className="font-medium text-foreground">{activeMaterial?.label || "—"}</span>
         </div>
         <div className="flex justify-between text-muted-foreground">
-          <span>Stitching</span>
+          <span>{t("configStitch")}</span>
           <span className="font-medium text-foreground">{activeStitch?.label || "—"}</span>
         </div>
       </div>
@@ -254,10 +257,10 @@ export function ProductConfigurator({
         className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-3 px-5 rounded-xl text-sm font-semibold hover:bg-[#22c35e] transition-all duration-200 active:scale-[0.98] shadow-sm"
       >
         <MessageCircle className="h-4 w-4" />
-        Inquire with Customization
+        {t("configInquire")}
       </a>
       <p className="text-center text-[10px] text-muted-foreground mt-2">
-        Your selections will be included in the WhatsApp message
+        {t("configNote")}
       </p>
     </div>
   );

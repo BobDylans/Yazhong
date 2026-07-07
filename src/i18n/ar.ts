@@ -234,6 +234,32 @@ const ar: Record<string, string> = {
   statYears: "سنوات من الحرفية",
   statSatisfaction: "رضا العملاء",
 
+  // Product Configurator
+  configTitle: "خصص طلبك",
+  configColor: "اللون",
+  configMaterial: "المادة",
+  configStitch: "لون الخياطة",
+  configSummary: "ملخص الاختيار",
+  configInquire: "استفسر مع التخصيص",
+  configNote: "سيتم تضمين اختياراتك في رسالة واتساب",
+  configMsgTitle: "مرحبا! أنا مهتم بتخصيص:",
+  configMsgColor: "اللون",
+  configMsgMaterial: "المادة",
+  configMsgStitch: "الخياطة",
+  configMsgFooter: "هل يمكنك إخباري بالمزيد عن الأسعار والملاءمة لسيارتي؟",
+
+  // Product Details
+  detailsSpecs: "مواصفات المنتج",
+  detailsSpecsDesc: "مواصفات تفصيلية لـ {category} — أكد الملاءمة على واتساب قبل الطلب.",
+  detailsFeatures: "لماذا تختار هذا المنتج",
+  detailsFeaturesDesc: "التفاصيل التي تصنع الفارق.",
+  detailsMaterials: "المادة والحرفية",
+  detailsMaterialsDesc: "مواد فاخرة، مصنوعة لتدوم.",
+
+  // Customer Gallery
+  galleryInstallPhoto: "صورة التركيب",
+  galleryShareCta: "شارك صور تركيبك",
+
   // Language
   langSwitch: "English",
   langEN: "English",

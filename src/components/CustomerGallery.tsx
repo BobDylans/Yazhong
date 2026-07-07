@@ -190,7 +190,7 @@ export function CustomerGallery({
                           <div className="text-4xl mb-2 opacity-50">{item.icon}</div>
                           <Camera className="h-8 w-8 mx-auto text-white/20" />
                           <p className="text-[10px] text-white/30 mt-2 font-medium">
-                            Install Photo
+                            {t("galleryInstallPhoto")}
                           </p>
                         </div>
                       ) : null}
@@ -299,7 +299,7 @@ export function CustomerGallery({
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold/80 transition-colors"
                   >
                     <MessageCircle className="h-3.5 w-3.5" />
-                    Share Your Installation Photos
+                    {t("galleryShareCta")}
                   </a>
                 </div>
               </div>
