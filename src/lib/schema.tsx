@@ -1,9 +1,9 @@
 /**
  * JSON-LD structured data generators for SEO.
  * Outputs <script type="application/ld+json"> snippets.
- * Usage: drop <Script id="..." type="application/ld+json">{schema}</Script> in a layout or page.
+ * Usage: drop the schema component in a layout or page.
  */
-import Script from "next/script";
+
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
 
@@ -71,8 +71,7 @@ export function OrganizationSchema() {
   };
 
   return (
-    <Script
-      id="schema-organization"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -125,8 +124,7 @@ export function ProductSchema({
   }
 
   return (
-    <Script
-      id="schema-product"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -174,8 +172,7 @@ export function ArticleSchema({
   }
 
   return (
-    <Script
-      id="schema-article"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -196,8 +193,7 @@ export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
   };
 
   return (
-    <Script
-      id="schema-breadcrumb"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
@@ -220,8 +216,7 @@ export function FaqPageSchema({ items }: { items: FaqItem[] }) {
   };
 
   return (
-    <Script
-      id="schema-faq"
+    <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

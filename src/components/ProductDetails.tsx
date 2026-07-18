@@ -3,8 +3,6 @@
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleProvider";
 import {
-  Ruler,
-  Layers,
   Car,
   ShieldCheck,
   Wind,
@@ -12,7 +10,6 @@ import {
   Sparkles,
   Wrench,
   Truck,
-  Factory,
   Leaf,
 } from "lucide-react";
 

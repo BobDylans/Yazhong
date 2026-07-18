@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/Reveal";
 import { Search, PenLine, MessageCircle } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 function StepCard({
@@ -116,7 +116,7 @@ export function HowItWorks({ className, showCta = true }: HowItWorksProps) {
           <Reveal delay={450} direction="up">
             <div className="mt-12 text-center">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20"

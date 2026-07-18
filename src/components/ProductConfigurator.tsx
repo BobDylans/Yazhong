@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { Check, MessageCircle } from "lucide-react";
 
@@ -165,13 +165,12 @@ export function ProductConfigurator({
   const activeMaterial = materials.find((m) => m.id === selectedMaterial);
   const activeStitch = stitches.find((s) => s.id === selectedStitch);
 
-  const whatsappMsg = encodeURIComponent(
+  const whatsappMsg =
     `${t("configMsgTitle")} ${productTitle}.\n` +
     `- ${t("configMsgColor")}: ${activeColor?.label || "—"}\n` +
     `- ${t("configMsgMaterial")}: ${activeMaterial?.label || "—"}\n` +
     `- ${t("configMsgStitch")}: ${activeStitch?.label || "—"}\n` +
-    t("configMsgFooter"),
-  );
+    t("configMsgFooter");
 
   return (
     <div className="rounded-xl border border-border bg-card p-5 md:p-6 shadow-ambient">
@@ -251,7 +250,7 @@ export function ProductConfigurator({
 
       {/* CTA */}
       <a
-        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`}
+        href={whatsappUrl(whatsappMsg)}
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-3 px-5 rounded-xl text-sm font-semibold hover:bg-[#22c35e] transition-all duration-200 active:scale-[0.98] shadow-sm"

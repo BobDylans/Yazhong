@@ -5,17 +5,7 @@ import { getImageUrl } from "@/lib/images";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useLocale } from "@/i18n/LocaleProvider";
-
-export interface ProductCardData {
-  id: string;
-  title: string;
-  description?: string;
-  image: string;
-  badge?: string;
-  badgeColor?: "red" | "blue" | "green" | "gold";
-  category?: string;
-  series?: string;
-}
+import type { ProductCardData } from "@/types";
 
 interface ProductCardProps {
   product: ProductCardData;
@@ -131,7 +121,7 @@ export function ProductGrid({
           transition={{ duration: 0.6 }}
           className="text-center mb-10 md:mb-12"
         >
-          <span className="inline-block text-gold text-xs tracking-[0.25em] uppercase mb-4 font-medium">Collection</span>
+          <span className="inline-block text-gold text-xs tracking-[0.25em] uppercase mb-4 font-medium">{t("collectionLabel")}</span>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground tracking-tight">
             {heading}
           </h2>

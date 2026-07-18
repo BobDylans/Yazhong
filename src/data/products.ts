@@ -1,4 +1,4 @@
-import type { ProductCardData } from "@/components/ProductCard";
+import type { ProductCardData } from "@/types";
 import { generatedProducts, generatedCategories } from "./generated/products-data";
 
 export const products = generatedProducts as ProductCardData[];

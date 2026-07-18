@@ -7,7 +7,7 @@ import Link from "next/link";
 import { getImageUrl } from "@/lib/images";
 import { ArrowLeft, Calendar, User, Tag, Share2, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
 import { ArticleSchema, BreadcrumbSchema } from "@/lib/schema";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
@@ -47,6 +47,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function renderContent(content: string): string {
   const lines = content.split("\n").filter(Boolean);
   let html = "";
@@ -54,15 +63,15 @@ function renderContent(content: string): string {
 
   for (const line of lines) {
     if (line.startsWith("**") && line.endsWith("**")) {
-      html += `<h2 class="text-lg md:text-xl font-bold text-foreground mt-8 mb-4">${line.replace(/\*\*/g, "")}</h2>`;
+      html += `<h2 class="text-lg md:text-xl font-bold text-foreground mt-8 mb-4">${escapeHtml(line.replace(/\*\*/g, ""))}</h2>`;
     } else if (line.startsWith("- ")) {
       if (!inList) { html += '<ul class="list-disc pl-5 space-y-2 my-3">'; inList = true; }
-      html += `<li class="text-sm text-muted-foreground leading-relaxed">${line.slice(2)}</li>`;
+      html += `<li class="text-sm text-muted-foreground leading-relaxed">${escapeHtml(line.slice(2))}</li>`;
     } else if (line.match(/^\d+\.\s/)) {
-      html += `<li class="text-sm text-muted-foreground leading-relaxed mb-1">${line}</li>`;
+      html += `<li class="text-sm text-muted-foreground leading-relaxed mb-1">${escapeHtml(line)}</li>`;
     } else {
       if (inList) { html += "</ul>"; inList = false; }
-      html += `<p class="text-sm text-muted-foreground leading-relaxed mb-3">${line}</p>`;
+      html += `<p class="text-sm text-muted-foreground leading-relaxed mb-3">${escapeHtml(line)}</p>`;
     }
   }
   if (inList) html += "</ul>";
@@ -158,7 +167,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <div className="text-sm font-semibold text-foreground">Need a custom fit for your car?</div>
                 <div className="text-xs text-muted-foreground mt-1">Chat with us on WhatsApp for personalized recommendations.</div>
               </div>
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
+              <a href={whatsappUrl("Hi! I'd like a custom fit for my car. Can you help?")} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 text-sm font-medium rounded-full hover:bg-[#22c35e] transition-colors whitespace-nowrap">
                 <MessageCircle className="h-4 w-4" />
                 Ask on WhatsApp
@@ -175,7 +184,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link key={rp.slug} href={`/blog/${rp.slug}`}
                     className="group">
                     <div className="aspect-[16/9] rounded-lg overflow-hidden bg-muted mb-3">
-                      <img src={getImageUrl(rp.image)} alt={rp.title}
+                      <img src={getImageUrl(rp.image)} alt={rp.title} loading="lazy"
                         className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105" />
                     </div>
                     <div className="text-xs text-muted-foreground mb-1">{rp.date}</div>

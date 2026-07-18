@@ -8,7 +8,7 @@ import { blogPosts, blogCategories } from "@/data/blog-posts";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { cn } from "@/lib/utils";
 import { MessageCircle, Search } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export default function BlogPage() {
@@ -79,7 +79,7 @@ export default function BlogPage() {
               {t("blogNeedHelpDesc")}
             </p>
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg"

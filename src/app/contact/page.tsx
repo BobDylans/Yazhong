@@ -4,25 +4,24 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MessageCircle, Mail, MapPin, Clock, CheckCircle, Star, ChevronRight, HelpCircle, Send } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export default function ContactPage() {
   const { t, isRTL } = useLocale();
 
-  const waBase = `https://wa.me/${WHATSAPP_NUMBER}`;
   const quickLinks = [
-    { labelKey: "contactCheckFitment", href: waBase },
-    { labelKey: "contactRequestQuote", href: `${waBase}?text=${encodeURIComponent("Hi! I'd like a quote for custom-fit seat covers.")}` },
-    { labelKey: "contactTrackOrder", href: `${waBase}?text=${encodeURIComponent("Hi! I'd like to track my order.")}` },
-    { labelKey: "contactBulkInquiry", href: `${waBase}?text=${encodeURIComponent("Hi! I'm interested in bulk ordering.")}` },
+    { labelKey: "contactCheckFitment", href: whatsappUrl() },
+    { labelKey: "contactRequestQuote", href: whatsappUrl("Hi! I'd like a quote for custom-fit seat covers.") },
+    { labelKey: "contactTrackOrder", href: whatsappUrl("Hi! I'd like to track my order.") },
+    { labelKey: "contactBulkInquiry", href: whatsappUrl("Hi! I'm interested in bulk ordering.") },
   ];
 
   const statsData = [
-    { icon: MessageCircle, labelKey: "contactWAResp", valueKey: "contactWARespVal", sub: "Average reply time" },
-    { icon: Clock, labelKey: "contactEmailResp", valueKey: "contactEmailRespVal", sub: "Weekdays" },
-    { icon: CheckCircle, labelKey: "contactOrdersShipped", value: "15,000+", sub: "Worldwide" },
-    { icon: Star, labelKey: "contactRating", value: "4.9/5", sub: "Based on 2,000+ reviews" },
+    { icon: MessageCircle, labelKey: "contactWAResp", valueKey: "contactWARespVal", subKey: "contactStatsSubReplyTime" },
+    { icon: Clock, labelKey: "contactEmailResp", valueKey: "contactEmailRespVal", subKey: "contactStatsSubWeekdays" },
+    { icon: CheckCircle, labelKey: "contactOrdersShipped", value: "15,000+", subKey: "contactStatsSubWorldwide" },
+    { icon: Star, labelKey: "contactRating", value: "4.9/5", subKey: "contactStatsSubReviews" },
   ];
 
   const faqs = [
@@ -51,7 +50,7 @@ export default function ContactPage() {
             <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl leading-tight">{t("contactHero")}</h1>
             <p className="mt-4 text-sm text-zinc-300 sm:text-base max-w-xl mx-auto">{t("contactHeroDesc")}</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-8 py-3.5 text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20">
                 <MessageCircle className="h-5 w-5" /> {t("contactChatWA")}
               </a>
@@ -72,7 +71,7 @@ export default function ContactPage() {
                   <s.icon className="h-5 w-5 mx-auto text-gold mb-1" />
                   <div className="text-[10px] uppercase tracking-wider text-zinc-500">{t(s.labelKey)}</div>
                   <div className="text-lg md:text-xl font-bold text-white mt-0.5">{s.value || (s.valueKey ? t(s.valueKey) : "")}</div>
-                  <div className="text-[11px] text-zinc-400">{s.sub}</div>
+                  <div className="text-[11px] text-zinc-400">{t(s.subKey)}</div>
                 </div>
               ))}
             </div>
@@ -101,11 +100,11 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-foreground">{t("navContact")}</h3>
                       <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{t("contactWADesc")}</p>
                       <div className="mt-3 flex flex-wrap gap-2">
-                        <a href={waBase} target="_blank" rel="noopener noreferrer"
+                        <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 bg-[#25D366] text-white px-4 py-2 text-sm font-medium rounded-full hover:bg-[#22c35e] transition-all duration-300">
                           <MessageCircle className="h-4 w-4" /> {t("contactStartChat")}
                         </a>
-                        <a href={`${waBase}?text=${encodeURIComponent("Hi! I'd like to know if you have seat covers for my car.")}`} target="_blank" rel="noopener noreferrer"
+                        <a href={whatsappUrl("Hi! I'd like to know if you have seat covers for my car.")} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 border border-border text-foreground px-4 py-2 text-sm font-medium rounded-full hover:bg-secondary transition-all duration-300">
                           {t("contactAskFitment")}
                         </a>
@@ -119,7 +118,7 @@ export default function ContactPage() {
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent/10"><Mail className="h-6 w-6 text-accent" /></div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-foreground">Email</h3>
+                      <h3 className="font-semibold text-foreground">{t("contactEmailHeading")}</h3>
                       <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{t("contactEmailDesc")}</p>
                       <a href="mailto:info@yazhong.com" className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">info@yazhong.com <ChevronRight className="h-3.5 w-3.5" /></a>
                     </div>
@@ -171,7 +170,7 @@ export default function ContactPage() {
         <section className="py-16 md:py-20 bg-secondary">
           <div className="max-w-[1400px] mx-auto px-4">
             <div className="text-center mb-12">
-              <span className="eyebrow mb-3">FAQ</span>
+              <span className="eyebrow mb-3">{t("contactFAQEyebrow")}</span>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">{t("contactFAQTitle")}</h2>
             </div>
             <div className="max-w-3xl mx-auto grid gap-4">
@@ -195,7 +194,7 @@ export default function ContactPage() {
           <div className="max-w-[1400px] mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{t("contactStillQuestions")}</h2>
             <p className="text-sm text-muted-foreground max-w-md mx-auto mb-8">{t("contactStillDesc")}</p>
-            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I'd like help finding the right car accessories for my vehicle. My car is: [Make] [Model] [Year]")}`}
+            <a href={whatsappUrl("Hi! I'd like help finding the right car accessories for my vehicle. My car is: [Make] [Model] [Year]")}
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-8 py-3.5 text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20">
               <MessageCircle className="h-5 w-5" /> {t("contactStartWAChat")}

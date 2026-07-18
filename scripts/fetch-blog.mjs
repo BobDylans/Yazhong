@@ -12,6 +12,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { fetchJsonWithFallback } from "./lib/fetch-with-fallback.mjs";
+import { rawBlogPostsResponseSchema } from "./schemas.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ADMIN_API = process.env.ADMIN_API_URL || "https://admin.rimhappywoods.top";
@@ -29,6 +30,16 @@ async function main() {
     cachePath: BLOG_CACHE,
     label: "blog posts",
   });
+
+  try {
+    rawBlogPostsResponseSchema.parse(posts);
+  } catch (err) {
+    const summary = err.issues
+      .map((i) => i.path.join(".") + ": " + i.message)
+      .join("; ");
+    console.error(`❌ Blog API response failed validation: ${summary}. Build aborted to prevent shipping malformed data.`);
+    process.exit(1);
+  }
 
   const mapped = posts
     .filter((p) => p.published && p.slug)

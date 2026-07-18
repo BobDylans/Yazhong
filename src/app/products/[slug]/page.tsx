@@ -5,14 +5,13 @@ import { products } from "@/data/products";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getImageUrl } from "@/lib/images";
-import { ArrowLeft, CheckCircle, Truck, Shield, RotateCcw } from "lucide-react";
+import { CheckCircle, Truck, Shield, RotateCcw } from "lucide-react";
 import type { Metadata } from "next";
-import { WHATSAPP_NUMBER } from "@/lib/config";
 import { ProductSchema, BreadcrumbSchema } from "@/lib/schema";
 import { ProductConfigurator } from "@/components/ProductConfigurator";
+import { ProductDetails } from "@/components/ProductDetails";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://rimhappywoods.top";
-import { ProductDetails } from "@/components/ProductDetails";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -62,10 +61,6 @@ export default async function ProductDetailPage({ params }: Props) {
   const relatedProducts = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
-
-  const whatsappMsg = encodeURIComponent(
-    `Hi! I'm interested in: ${product.title}. Can you tell me more about pricing and fitment for my vehicle?`
-  );
 
   return (
     <>
@@ -184,6 +179,7 @@ export default async function ProductDetailPage({ params }: Props) {
                       <img
                         src={getImageUrl(rp.image)}
                         alt={rp.title}
+                        loading="lazy"
                         className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
                       />
                     </div>

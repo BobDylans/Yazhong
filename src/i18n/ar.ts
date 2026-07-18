@@ -4,6 +4,12 @@ const ar: Record<string, string> = {
   siteTagline: "إكسسوارات سيارات مخصصة فاخرة",
   siteDescription: "أغطية مقاعد سيارات مخصصة فاخرة، أغطية عجلة القيادة، حصائر الأرضية، وإكسسوارات السيارات. مصنوعة يدويًا من الجلد البيئي، حسب طلب سيارتك بالضبط.",
 
+  // Header
+  headerAnnouncement: "اتصل بنا على واتساب لطلب أغطية المقاعد المخصصة والاستشارة المجانية",
+  headerWhatsApp: "واتساب",
+  headerChatWA: "دردشة على واتساب",
+  headerFreeShipping: "شحن مجاني حول العالم للطلبات فوق 200$",
+
   // Navigation
   navHome: "الرئيسية",
   navProducts: "المنتجات",
@@ -43,6 +49,7 @@ const ar: Record<string, string> = {
 
   // Products
   productsTitle: "منتجاتنا",
+  collectionLabel: "المجموعة",
   productsDesc: "تصفح مجموعتنا من إكسسوارات السيارات الفاخرة. تواصل معنا على واتساب للاستفسار عن الأسعار والطلبات المخصصة.",
   productsAll: "الكل",
   productViewDetails: "عرض التفاصيل",
@@ -130,6 +137,12 @@ const ar: Record<string, string> = {
 
   // Contact
   contactTitle: "تواصل معنا",
+  contactStatsSubReplyTime: "متوسط وقت الرد",
+  contactStatsSubWeekdays: "أيام الأسبوع",
+  contactStatsSubWorldwide: "حول العالم",
+  contactStatsSubReviews: "بناءً على أكثر من 2000 تقييم",
+  contactEmailHeading: "البريد الإلكتروني",
+  contactFAQEyebrow: "الأسئلة الشائعة",
   contactHero: "نحن هنا للمساعدة",
   contactHeroDesc: "لديك سؤال حول المقاس، السعر، أو الطلبات المخصصة؟ فريقنا يرد عادةً في دقائق على واتساب.",
   contactChatWA: "تحدث عبر واتساب",

@@ -12,7 +12,7 @@ import {
   ChevronRight,
   Camera,
 } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -293,7 +293,7 @@ export function CustomerGallery({
                 {/* Bottom CTA */}
                 <div className="mt-5 pt-4 border-t border-border text-center">
                   <a
-                    href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                    href={whatsappUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold/80 transition-colors"

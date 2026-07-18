@@ -5,7 +5,8 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Shield, Truck, Award, Headphones, Star, MessageCircle, ChevronRight } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleProvider";
-import { WHATSAPP_NUMBER } from "@/lib/config";
+import { whatsappUrl } from "@/lib/config";
+import { getImageUrl } from "@/lib/images";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -79,7 +80,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-3">
                 {["luxus-series-diamond.webp","luxus-gallery1.webp","luxus-series-honeycomb.webp","luxus-series-doublelayer.webp"].map((img, i) => (
                   <div key={img} className={`aspect-square overflow-hidden rounded-xl bg-muted ${i === 1 ? "mt-8" : ""} ${i === 2 ? "-mt-4" : ""} ${i === 3 ? "mt-4" : ""}`}>
-                    <img src={`/images/imgs/productsImgs/${img}`} alt="" className="h-full w-full object-cover" />
+                    <img src={getImageUrl(`/images/imgs/productsImgs/${img}`)} alt="" className="h-full w-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -142,7 +143,7 @@ export default function AboutPage() {
           <div className="max-w-[1400px] mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{t("aboutReady")}</h2>
             <p className="text-zinc-400 text-sm max-w-lg mx-auto mb-8">{t("aboutReadyDesc")}</p>
-            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-8 py-3 text-sm font-semibold hover:bg-[#22c35e] transition-all duration-300 hover:shadow-lg">
               <MessageCircle className="h-4 w-4" /> {t("aboutChat")}
             </a>

@@ -4,6 +4,12 @@ const en = {
   siteTagline: "Premium Custom-Fit Car Accessories",
   siteDescription: "Premium custom-fit car seat covers, steering wheel covers, floor mats, and auto accessories. Handcrafted eco-leather, made to order for your exact vehicle.",
 
+  // Header
+  headerAnnouncement: "Contact us on WhatsApp for custom seat cover orders & free consultation",
+  headerWhatsApp: "WhatsApp",
+  headerChatWA: "Chat on WhatsApp",
+  headerFreeShipping: "Free shipping worldwide on orders over $200",
+
   // Navigation
   navHome: "Home",
   navProducts: "Products",
@@ -43,6 +49,7 @@ const en = {
 
   // Products
   productsTitle: "Our Products",
+  collectionLabel: "Collection",
   productsDesc: "Browse our selection of premium automotive accessories. Contact us on WhatsApp for pricing and custom orders.",
   productsAll: "All",
   productViewDetails: "View Details",
@@ -130,6 +137,12 @@ const en = {
 
   // Contact
   contactTitle: "Get in Touch",
+  contactStatsSubReplyTime: "Average reply time",
+  contactStatsSubWeekdays: "Weekdays",
+  contactStatsSubWorldwide: "Worldwide",
+  contactStatsSubReviews: "Based on 2,000+ reviews",
+  contactEmailHeading: "Email",
+  contactFAQEyebrow: "FAQ",
   contactHero: "We're Here to Help",
   contactHeroDesc: "Have a question about fitment, pricing, or custom orders? Our team typically responds within minutes on WhatsApp.",
   contactChatWA: "Chat on WhatsApp",
