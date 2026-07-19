@@ -33,7 +33,7 @@ export function Reveal({
     <div
       ref={ref}
       className={cn(
-        "transition-all",
+        "reveal-motion transition-all",
         isVisible
           ? "translate-y-0 translate-x-0 opacity-100 blur-0"
           : `${directionOffset[direction]} opacity-0 blur-[2px]`,
@@ -41,7 +41,7 @@ export function Reveal({
       )}
       style={{
         transitionDuration: `${duration}ms`,
-        transitionTimingFunction: "cubic-bezier(0.32, 0.72, 0, 1)",
+        transitionTimingFunction: "var(--ease-brand)",
         transitionDelay: `${delay}ms`,
         willChange: "transform, opacity",
       }}

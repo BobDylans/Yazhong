@@ -1,0 +1,439 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1784439847819,
+  "projectRoot": "/home/ivan/Projects/Yazhong",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": ">=24",
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "next",
+        "version": "16.2.1",
+        "category": "fullstack"
+      },
+      {
+        "name": "react",
+        "version": "19.2.4",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.4",
+        "category": "frontend"
+      },
+      {
+        "name": "playwright",
+        "version": "1.61.1",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": "Node.js 24"
+  },
+  "build": {
+    "buildCommand": "cd /home/ivan/Projects/Yazhong\necho \"=== 本地带环境变量 build(把 admin URL 烤进产物)===\"\nNEXT_PUBLIC_ADMIN_URL=https://admin.rimhappywoods.top NEXT_PUBLIC_SITE_URL=https://luxus-car-mats.pages.dev timeout 200 npm run build > /tmp/build-img.log 2>&1\necho \"build exit: $?\"\necho \"\"\necho \"=== 确认产物里图片路径已重写为 admin 代理 ===\"\ngrep -rhoE 'https://admin\\.rimhappywoods\\.top/r2/imgs/[^\"]+' out/ 2>/dev/null | head -3\necho \"\"\necho \"=== 如果 build 因 Google Fonts 失败,看错误 ===\"\ngrep -E 'Failed to fetch|Build error|✓ Compiled' /tmp/build-img.log | head -5",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "next dev",
+      "prebuild": "node scripts/fetch-products.mjs && node scripts/fetch-blog.mjs",
+      "build": "npm run prebuild && next build",
+      "start": "next start",
+      "lint": "eslint",
+      "typecheck": "tsc --noEmit",
+      "check": "npm run lint && npm run typecheck && npm run build"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "public",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 1,
+      "lastAccessed": 1784439847811,
+      "keyFiles": [
+        "optimization-plan.md"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 3,
+      "lastAccessed": 1784439847812,
+      "keyFiles": [
+        "icon.svg",
+        "og-image.png",
+        "og-image.svg"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 10,
+      "lastAccessed": 1784439847815,
+      "keyFiles": [
+        "deploy-cloudflare.sh",
+        "download-assets.mjs",
+        "fetch-blog.mjs",
+        "fetch-products.mjs",
+        "reconnaissance.mjs"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 0,
+      "lastAccessed": 1784439847816,
+      "keyFiles": []
+    },
+    "scripts/lib": {
+      "path": "scripts/lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1784439847817,
+      "keyFiles": [
+        "fetch-with-fallback.mjs"
+      ]
+    },
+    "src/app": {
+      "path": "src/app",
+      "purpose": "Application code",
+      "fileCount": 7,
+      "lastAccessed": 1784439847817,
+      "keyFiles": [
+        "favicon.ico",
+        "globals.css",
+        "layout.tsx"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 24,
+      "lastAccessed": 1784439847818,
+      "keyFiles": [
+        "BlogCard.tsx",
+        "BrandMarquee.tsx",
+        "CustomerGallery.tsx"
+      ]
+    },
+    "src/data": {
+      "path": "src/data",
+      "purpose": "Data files",
+      "fileCount": 3,
+      "lastAccessed": 1784439847818,
+      "keyFiles": [
+        "blog-posts.ts",
+        "products.ts",
+        "testimonials.ts"
+      ]
+    },
+    "src/lib": {
+      "path": "src/lib",
+      "purpose": "Library code",
+      "fileCount": 5,
+      "lastAccessed": 1784439847818,
+      "keyFiles": [
+        "config.ts",
+        "images.ts",
+        "schema.tsx"
+      ]
+    },
+    "src/types": {
+      "path": "src/types",
+      "purpose": "Type definitions",
+      "fileCount": 3,
+      "lastAccessed": 1784439847818,
+      "keyFiles": [
+        "carfurnisher.ts",
+        "index.ts"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/app/globals.css",
+      "accessCount": 9,
+      "lastAccessed": 1784442296077,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CustomerGallery.tsx",
+      "accessCount": 6,
+      "lastAccessed": 1784441171506,
+      "type": "file"
+    },
+    {
+      "path": "src/components/StatsBand.tsx",
+      "accessCount": 6,
+      "lastAccessed": 1784442354592,
+      "type": "file"
+    },
+    {
+      "path": "src/components/HeroBanner.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1784442000909,
+      "type": "file"
+    },
+    {
+      "path": "src/components/TrustBadges.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1784442528865,
+      "type": "file"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1784440395116,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ProductCard.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1784441294372,
+      "type": "file"
+    },
+    {
+      "path": "src/components/HowItWorks.tsx",
+      "accessCount": 4,
+      "lastAccessed": 1784441521955,
+      "type": "file"
+    },
+    {
+      "path": "src/types/index.ts",
+      "accessCount": 3,
+      "lastAccessed": 1784441237340,
+      "type": "file"
+    },
+    {
+      "path": "scripts/fetch-products.mjs",
+      "accessCount": 3,
+      "lastAccessed": 1784441237907,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1784441350471,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Reveal.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1784442283336,
+      "type": "file"
+    },
+    {
+      "path": "src/i18n/en.ts",
+      "accessCount": 3,
+      "lastAccessed": 1784442401375,
+      "type": "file"
+    },
+    {
+      "path": "src/app/products/page.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1784440476283,
+      "type": "file"
+    },
+    {
+      "path": "src/i18n/ar.ts",
+      "accessCount": 2,
+      "lastAccessed": 1784442401934,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Header.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440000460,
+      "type": "file"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440000572,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ReviewsSection.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440012942,
+      "type": "file"
+    },
+    {
+      "path": "src/components/SectionHeadings.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440013063,
+      "type": "file"
+    },
+    {
+      "path": "src/components/IconFeatures.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440013127,
+      "type": "file"
+    },
+    {
+      "path": "src/components/HomeReviews.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440013209,
+      "type": "file"
+    },
+    {
+      "path": "src/components/BlogCard.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440020134,
+      "type": "file"
+    },
+    {
+      "path": "src/components/BrandMarquee.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440020216,
+      "type": "file"
+    },
+    {
+      "path": "src/components/HeaderMobileNav.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440020274,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Skeleton.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440020330,
+      "type": "file"
+    },
+    {
+      "path": "src/components/LinkCTA.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440020387,
+      "type": "file"
+    },
+    {
+      "path": "src/hooks/useScrollReveal.ts",
+      "accessCount": 1,
+      "lastAccessed": 1784440027272,
+      "type": "file"
+    },
+    {
+      "path": "src/types/carfurnisher.ts",
+      "accessCount": 1,
+      "lastAccessed": 1784440027327,
+      "type": "file"
+    },
+    {
+      "path": "src/components/WhatsAppButton.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440027377,
+      "type": "file"
+    },
+    {
+      "path": "src/components/LanguageSwitcher.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440027435,
+      "type": "file"
+    },
+    {
+      "path": "src/data/products.ts",
+      "accessCount": 1,
+      "lastAccessed": 1784440033096,
+      "type": "file"
+    },
+    {
+      "path": "src/data/testimonials.ts",
+      "accessCount": 1,
+      "lastAccessed": 1784440033166,
+      "type": "file"
+    },
+    {
+      "path": "src/components/HeaderData.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440033279,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/images.ts",
+      "accessCount": 1,
+      "lastAccessed": 1784440040107,
+      "type": "file"
+    },
+    {
+      "path": "src/app/about/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440040196,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ProductDetails.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440040229,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ProductConfigurator.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440040256,
+      "type": "file"
+    },
+    {
+      "path": "src/app/products/[slug]/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784440040308,
+      "type": "file"
+    },
+    {
+      "path": "src/lib/config.ts",
+      "accessCount": 1,
+      "lastAccessed": 1784440044490,
+      "type": "file"
+    },
+    {
+      "path": "docs/beautify-plan-phase2.md",
+      "accessCount": 1,
+      "lastAccessed": 1784440251644,
+      "type": "file"
+    },
+    {
+      "path": "src/app/not-found.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1784442414597,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

@@ -19,4 +19,6 @@ export interface ProductCardData {
   badgeColor?: "red" | "blue" | "green" | "gold";
   category?: string;
   series?: string;
+  /** Display-only price anchor (e.g. "From $89"). Optional — inquiry-driven model. */
+  priceFrom?: string;
 }

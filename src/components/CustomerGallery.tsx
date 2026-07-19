@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/Reveal";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -10,53 +10,42 @@ import {
   Quote,
   ChevronLeft,
   ChevronRight,
-  Camera,
 } from "lucide-react";
 import { whatsappUrl } from "@/lib/config";
+import { getImageUrl } from "@/lib/images";
+import { generatedProducts } from "@/data/generated/products-data";
 
 /* ------------------------------------------------------------------ */
-/*  Data                                                               */
+/*  Gallery — real product photos sourced from the build-time pipeline */
+/*  (R2 via admin proxy). Falls back gracefully if a path is missing.  */
 /* ------------------------------------------------------------------ */
 
 interface GalleryItem {
   id: string;
   label: string;
   description: string;
-  /** Placeholder gradient/color — no real images */
-  gradient: string;
-  icon: string; // emoji representing the product type
+  image: string;
 }
 
-const galleryItems: GalleryItem[] = [
-  {
-    id: "seat-covers",
-    label: "Sports Series Seat Covers",
-    description: "Smoked Black · Lacoste fabric with leather trim",
-    gradient: "from-zinc-900 via-zinc-800 to-zinc-700",
-    icon: "🛋️",
-  },
-  {
-    id: "leather-seats",
-    label: "Leather Seat Cover Set",
-    description: "Madrid Beige · Premium Nappa leather",
-    gradient: "from-amber-900 via-amber-800 to-stone-700",
-    icon: "🪑",
-  },
-  {
-    id: "steering-wheel",
-    label: "Carbon Fiber Steering Wheel",
-    description: "Blue stitch · Sport series",
-    gradient: "from-slate-900 via-slate-800 to-slate-700",
-    icon: "🔷",
-  },
-  {
-    id: "floor-mats",
-    label: "Custom Floor Mats",
-    description: "Mercedes C-Class · PU leather with piping",
-    gradient: "from-stone-900 via-stone-800 to-neutral-700",
-    icon: "🚗",
-  },
-];
+// Pick one representative product per category for the install showcase.
+function buildGalleryItems(): GalleryItem[] {
+  const seen = new Set<string>();
+  const items: GalleryItem[] = [];
+  for (const p of generatedProducts) {
+    if (!p.category || !p.image || seen.has(p.category)) continue;
+    seen.add(p.category);
+    items.push({
+      id: p.id,
+      label: p.title,
+      description: p.series || p.category,
+      image: p.image,
+    });
+    if (items.length >= 4) break;
+  }
+  return items;
+}
+
+const galleryItems = buildGalleryItems();
 
 /* ------------------------------------------------------------------ */
 /*  Reviews                                                            */
@@ -141,19 +130,36 @@ function Stars({ count, size = "sm" }: { count: number; size?: "sm" | "md" }) {
 
 interface CustomerGalleryProps {
   className?: string;
-  /** Show placeholder as gradient blocks instead of real images */
-  placeholder?: boolean;
 }
 
-export function CustomerGallery({
-  className,
-  placeholder = true,
-}: CustomerGalleryProps) {
+export function CustomerGallery({ className }: CustomerGalleryProps) {
   const [activeReview, setActiveReview] = useState(0);
   const { t } = useLocale();
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const prevReview = () => setActiveReview((p) => (p === 0 ? reviews.length - 1 : p - 1));
   const nextReview = () => setActiveReview((p) => (p === reviews.length - 1 ? 0 : p + 1));
+
+  // Auto-advance testimonials; pause on hover/focus.
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayRef.current = setInterval(nextReview, 6000);
+  };
+  const stopAutoplay = () => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  };
+  useEffect(() => {
+    startAutoplay();
+    return stopAutoplay;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Guard: if no products were generated, hide the whole section rather than
+  // show empty/placeholder content (trust protection).
+  if (galleryItems.length === 0) return null;
 
   return (
     <section className={cn("py-16 md:py-20", className)}>
@@ -178,25 +184,17 @@ export function CustomerGallery({
               {galleryItems.map((item, i) => (
                 <Reveal key={item.id} delay={i * 100} direction="up">
                   <div className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-ambient transition-all duration-500 hover:shadow-ambient-hover">
-                    {/* Placeholder gradient — replace with actual images later */}
-                    <div
-                      className={cn(
-                        "aspect-[4/3] bg-gradient-to-br flex items-center justify-center transition-all duration-500 group-hover:scale-105",
-                        item.gradient,
-                      )}
-                    >
-                      {placeholder ? (
-                        <div className="text-center">
-                          <div className="text-4xl mb-2 opacity-50">{item.icon}</div>
-                          <Camera className="h-8 w-8 mx-auto text-white/20" />
-                          <p className="text-[10px] text-white/30 mt-2 font-medium">
-                            {t("galleryInstallPhoto")}
-                          </p>
-                        </div>
-                      ) : null}
+                    {/* Real product photo (R2 via admin proxy) */}
+                    <div className="aspect-[4/3] overflow-hidden bg-secondary">
+                      <img
+                        src={getImageUrl(item.image)}
+                        alt={item.label}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
                     {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
                       <div>
                         <div className="text-xs font-semibold text-white">
                           {item.label}
@@ -212,10 +210,16 @@ export function CustomerGallery({
             </div>
           </div>
 
-          {/* Right: Testimonial Carousel */}
+          {/* Right: Testimonial Carousel — auto-advances, pauses on hover/focus */}
           <div className="lg:col-span-2 flex flex-col justify-center">
             <Reveal direction="right" delay={200}>
-              <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-ambient relative">
+              <div
+                className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-ambient relative"
+                onMouseEnter={stopAutoplay}
+                onMouseLeave={startAutoplay}
+                onFocus={stopAutoplay}
+                onBlur={startAutoplay}
+              >
                 {/* Quote icon */}
                 <Quote className="h-8 w-8 text-gold/20 absolute top-4 end-4" />
 

@@ -206,6 +206,7 @@ const en = {
 
   // How It Works
   howTitle: "Three Simple Steps to Your Perfect Fit",
+  howEyebrow: "How It Works",
   howDesc: "From browsing to delivery — we keep it simple, personal, and fast.",
   howStep1: "Choose Your Style",
   howStep1Desc: "Browse our collection and pick your preferred product — seat covers, steering wheel covers, floor mats, or accessories.",
@@ -275,6 +276,11 @@ const en = {
 
   // Language
   langSwitch: "العربية",
+  // 404 page
+  notFoundCode: "404",
+  notFoundTitle: "Page Not Found",
+  notFoundDesc: "The page you're looking for doesn't exist or has been moved.",
+  notFoundCta: "Back to Home",
   langEN: "English",
   langAR: "العربية",
 };

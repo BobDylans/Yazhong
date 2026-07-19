@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Poppins, Tajawal } from "next/font/google";
+import { Poppins, Playfair_Display, Tajawal } from "next/font/google";
 import "./globals.css";
 import { OrganizationSchema } from "@/lib/schema";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -7,7 +7,15 @@ import { LocaleProvider } from "@/i18n/LocaleProvider";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["100", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+// Display serif for h1/h2 — pairs with Poppins (sans) body for luxury contrast.
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -118,7 +126,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" className={`${poppins.variable} ${tajawal.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" dir="ltr" className={`${poppins.variable} ${playfair.variable} ${tajawal.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `(function(){var l=localStorage.getItem("yazhong-locale");if(l==="ar"){document.documentElement.dir="rtl";document.documentElement.lang="ar"}})()`

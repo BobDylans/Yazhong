@@ -10,7 +10,8 @@
   --font-sans: var(--font-poppins), "Poppins", "Poppins Fallback", Arial, sans-serif;
   --font-arabic: var(--font-arabic), "Tajawal", "Noto Sans Arabic", sans-serif;
   --font-mono: ui-monospace, monospace;
-  --font-heading: var(--font-sans);
+  /* Display serif for h1/h2 — luxury contrast against the Poppins body. */
+  --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -70,7 +71,9 @@
   --secondary-foreground: #1a1a1a;
   --muted: #f0eeeb;
   --muted-foreground: #8a8a8a;
-  --accent: #45a0de;
+  /* Brand accent is gold (single confident accent, per 2026 design direction).
+     Blue is retained only as a functional color for focus rings and selection. */
+  --accent: #c99a4a;
   --accent-foreground: #ffffff;
   --accent-warm: #c99a4a;
   --accent-warm-foreground: #ffffff;
@@ -99,11 +102,29 @@
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans;
+  /* Type scale — semantic headings own their size so components use <hN>, not ad-hoc Tailwind classes.
+     h1/h2 use the display serif (Playfair); h3-h6 stay on Poppins for tighter UI text. */
+  h1, h2 {
+    font-family: var(--font-heading);
     color: var(--foreground);
     letter-spacing: -0.02em;
+    font-weight: 600;
+    line-height: 1.1;
+    font-size: 2.25rem;        /* h1 default 36px, overridden per-page up to 64px */
   }
+  h1 { font-size: clamp(2rem, 1.2rem + 3.2vw, 3.5rem); }     /* 32→~56px */
+  h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem); }   /* 24→~36px */
+  h3, h4, h5, h6 {
+    @apply font-sans;
+    color: var(--foreground);
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  h3 { font-size: 1.5rem; }     /* 24px */
+  h4 { font-size: 1.25rem; }    /* 20px */
+  h5 { font-size: 1.125rem; }  /* 18px */
+  h6 { font-size: 1rem; }      /* 16px */
 
   /* Skeleton shimmer — brand-tinted (gold sweep over muted) */
   .skeleton-shimmer {
@@ -131,7 +152,7 @@
     inset: 0;
     z-index: 9999;
     pointer-events: none;
-    opacity: 0.012;
+    opacity: 0.028;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 128px 128px;
@@ -170,6 +191,21 @@
 }
 
 @layer utilities {
+  /* Motion tokens — one shared timing language across CSS transitions,
+     framer-motion, and RAF animations (see Reveal.tsx, StatsBand.tsx).
+     fast=200ms (micro), base=400ms (standard), slow=700ms (entrance). */
+  --ease-brand: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+
+  /* Reduced motion: drop the GPU-expensive blur filter, keep a plain
+     opacity+translate fade so entrance still reads but never janks. */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-motion { filter: none !important; }
+    .reveal-motion.blur-\[2px\], .reveal-motion .blur-\[2px\] { filter: none !important; }
+  }
+
   /* Glass morphism — fixed/sticky only */
   .glass {
     background: rgba(255, 255, 255, 0.7);
@@ -233,7 +269,7 @@
     background: linear-gradient(135deg, #45a0de 0%, #7cbbea 100%);
   }
 
-  /* Eyebrow badge */
+  /* Eyebrow badge — gold to match the single brand accent */
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -243,8 +279,8 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     border-radius: 9999px;
-    background: rgba(69, 160, 222, 0.08);
-    color: #45a0de;
+    background: rgba(201, 154, 74, 0.1);
+    color: #c99a4a;
   }
 
   /* Premium gradient divider */

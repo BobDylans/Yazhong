@@ -55,6 +55,7 @@ async function main() {
         badgeColor: p.badge_color || undefined,
         category: p.category_name || undefined,
         series: p.series_name || undefined,
+        priceFrom: p.price ? `From ${p.price}` : undefined,
       };
     })
     .filter((p) => p.image);

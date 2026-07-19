@@ -22,8 +22,13 @@ function StepCard({
   return (
     <Reveal delay={index * 150} direction="up">
       <div className="group relative">
+        {/* Desktop: horizontal dashed connector between steps */}
         {index < 2 && (
           <div className="hidden lg:block absolute top-12 start-[calc(50%+3rem)] w-[calc(100%-6rem)] h-px border-t border-dashed border-border z-0" />
+        )}
+        {/* Mobile/tablet: vertical dashed connector down to the next step */}
+        {index < 2 && (
+          <div className="lg:hidden absolute top-16 start-1/2 -translate-x-1/2 w-px h-8 border-l border-dashed border-border z-0" />
         )}
 
         <div className="relative z-10 flex flex-col items-center text-center">
@@ -96,7 +101,7 @@ export function HowItWorks({ className, showCta = true }: HowItWorksProps) {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal direction="up">
           <div className="text-center mb-10 md:mb-12">
-            <span className="eyebrow">{t("howTitle")}</span>
+            <span className="eyebrow">{t("howEyebrow")}</span>
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-3">
               {t("howTitle")}
             </h2>

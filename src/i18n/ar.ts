@@ -206,6 +206,7 @@ const ar: Record<string, string> = {
 
   // How It Works
   howTitle: "ثلاث خطوات بسيطة للمقاس المثالي",
+  howEyebrow: "كيف نعمل",
   howDesc: "من التصفح إلى التوصيل — نبقيه بسيطًا، شخصيًا، وسريعًا.",
   howStep1: "اختر أسلوبك",
   howStep1Desc: "تصفح مجموعتنا واختر المنتج الذي تفضله — أغطية المقاعد، أغطية عجلة القيادة، حصائر الأرضية، أو الإكسسوارات.",
@@ -275,6 +276,11 @@ const ar: Record<string, string> = {
 
   // Language
   langSwitch: "English",
+  // 404 page
+  notFoundCode: "404",
+  notFoundTitle: "الصفحة غير موجودة",
+  notFoundDesc: "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+  notFoundCta: "العودة إلى الرئيسية",
   langEN: "English",
   langAR: "العربية",
 };

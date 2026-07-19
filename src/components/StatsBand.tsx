@@ -9,6 +9,33 @@ interface Stat {
   labelKey: string;
 }
 
+// Evaluate a cubic-bezier easing curve at t∈[0,1] (same form as CSS
+// cubic-bezier(p1x,p1y,p2x,p2y)). Solves for parameter s with x(s)=t
+// (Newton-Raphson), then returns y(s) — keeps JS count-up on the same
+// easing as the site's CSS transitions (var(--ease-brand)).
+function bezierEase(t: number, p1x: number, p1y: number, p2x: number, p2y: number): number {
+  const cx = 3 * p1x;
+  const bx = 3 * (p2x - p1x) - cx;
+  const ax = 1 - cx - bx;
+  const cy = 3 * p1y;
+  const by = 3 * (p2y - p1y) - cy;
+  const ay = 1 - cy - by;
+  const sampleX = (s: number) => ((ax * s + bx) * s + cx) * s;
+  const sampleY = (s: number) => ((ay * s + by) * s + cy) * s;
+  const sampleDX = (s: number) => (3 * ax * s + 2 * bx) * s + cx;
+
+  let s = t;
+  for (let i = 0; i < 8; i++) {
+    const x = sampleX(s) - t;
+    if (Math.abs(x) < 1e-5) break;
+    const dx = sampleDX(s);
+    s -= dx > 0 ? x / dx : x;
+    if (s < 0) s = 0;
+    else if (s > 1) s = 1;
+  }
+  return sampleY(s);
+}
+
 const stats: Stat[] = [
   { value: 15000, suffix: "+", labelKey: "statInstallations" },
   { value: 50, suffix: "+", labelKey: "statCountries" },
@@ -39,8 +66,10 @@ function useCountUp(target: number, inView: boolean, duration = 1600) {
     const tick = (now: number) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // easeOutExpo for a premium decelerating count
-      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      // Brand easing (cubic-bezier(0.32, 0.72, 0, 1)) — matches the CSS
+      // transition timing used across Reveal / LinkCTA / ProductCard so the
+      // whole site shares one motion language.
+      const eased = bezierEase(progress, 0.32, 0.72, 0, 1);
       setValue(Math.round(target * eased));
       if (progress < 1) raf = requestAnimationFrame(tick);
     };
